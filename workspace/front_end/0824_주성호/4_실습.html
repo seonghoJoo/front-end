@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Model S | Tesla</title>
+    <link href="img/tesla_favicon.ico" rel="icon">
+
+    <style>
+
+        #carBox{
+
+            border: 1px solid gray;
+            /*가운데로 정렬*/
+            width: 1000px;
+            height: 400px;
+            left: 50%;
+            top: 50%;
+            margin-left: -500px;
+            margin-top: -200px;
+            position: fixed;
+            text-align: center;
+        }
+
+        #car{
+            /*이미지 불러오기*/
+            background: url("img/car_body.png");
+            /*중앙 아래에 배치*/
+            width: 1000px;
+            height: 235px;
+            left: 50%;
+            top: 50%;
+            margin-left: -500px;
+            margin-top: -80px;
+            position: absolute;
+            /*애니메이션 효과*/
+            animation: bounce 1s infinite ease;
+        }
+        /*위아래로 움직이는 애니메이션*/
+        @keyframes bounce {
+            0%{
+                left:500px;
+                top:200px;
+            }
+            25%{
+                left:500px;
+                top:210px;
+            }
+            50%{
+                left:500px;
+                top: 200px;
+            }
+            75%{
+                left:500px;
+                top:190px;
+            }
+            100%{
+                left:500px;
+                top:200px;
+            }
+        }
+        /*바퀴 클래스*/
+        .wheel{
+            width: 105px;
+            height: 105px;
+            /*바퀴가 돌아가는 애니메이션*/
+            animation: rotate1  .1s infinite linear;
+        }
+        /*바퀴가 굴러가는 애니메이션*/
+        @keyframes rotate1 {
+            0%{ transform : rotate(0)}
+            100%{transform : rotate(360deg)}
+        }
+        /*뒷바퀴 위치설정*/
+        .rear{
+            margin-top: 120px;
+            margin-left:-310px;
+            position: absolute;
+        }
+        /*앞바퀴 위치설정*/
+        .front{
+            margin-top: 120px;
+            margin-left:150px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<!--HTML 변경 불가-->
+    <div id="carBox">
+        <h1>테슬라 S</h1>
+        <div id="car">
+            <img class="wheel rear" src="img/wheel21.png" />
+            <img class="wheel front" src="img/wheel21.png" />
+        </div>
+    </div>
+	
+</body>
+</html>

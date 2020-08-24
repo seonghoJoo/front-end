@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+<!--    웹폰트 위한 css 불러오는 링크-->
+    <link href="css/all.min.css" rel="stylesheet">
+<!--    notosans KR 폰트 불러오는 링크-->
+    <link href="css/notosanskr.css" rel="stylesheet">
+    <title>CSS 실습</title>
+    <style>
+        /*tab1 css*/
+        #tab1{
+            width: 200px;
+            height: 50px;
+            /*보더두께 3px */
+            border : 3px solid rebeccapurple;
+            /*위 좌측 보더 radius 10px */
+            border-top-left-radius: 10px;
+            /*위 우측 보더 radius 10px */
+            border-top-right-radius: 10px;
+            background: purple;
+            /*탭 안의 텍스트를 수직정렬 하기 위함*/
+            line-height: 50px;
+            /*탭 안의 텍스트를 수평정렬 하기 위함*/
+            text-align: center;
+
+            /*폰트 설정*/
+            font-family: "Noto Sans KR",sans-serif;
+            font-weight: 700;
+            color: white;
+            font-size: 20px;
+        }
+        #tab2{
+            width: 280px;
+            height : 300px;
+            border : 3px solid rebeccapurple;
+            /*아래 좌측 보더 radius 10px */
+            border-bottom-left-radius: 10px;
+            /*위 우측 보더 radius 10px */
+            border-top-right-radius: 10px;
+            /*아래 우측 보더 radius 10px */
+            border-bottom-right-radius: 10px;
+            /*탭 안의 텍스트 가운데로 오게끔 함*/
+            padding: 15px;
+            background: mediumpurple;
+            /*폰트 설정*/
+            font-family: "Noto Sans KR",sans-serif;
+            font-weight: 700;
+        }
+        #profile_box{
+            width:200px;
+            height:300px;
+            /*profile box 내 텍스트 수평정렬*/
+            text-align: center;
+            border: 3px solid black;
+            /*profile box 내의 profile img와 text(자식)을 위해 아무거나 설정 fixed도 가능*/
+            position: absolute;
+            /*검은색의 그림자를 주기 위함*/
+            box-shadow: 0 0 20px black;
+        }
+        #profile_big_image{
+            width: 150px;
+            height:150px;
+            border: 10px solid black;
+            /*사각형의 image를 원의 형태로 crop 해줌*/
+            border-radius: 100%;
+            /*profile-box 내의 포지션 결정*/
+            left: 50%;
+            top: 40%;
+            margin-left: -85px;
+            margin-top: -85px;
+            /*부모인 profile_box의 위에 위치하도록 하기 위함*/
+            position:absolute;
+        }
+        #profile_small_img_name{
+            /*profile-box 내의 포지션 결정*/
+            left: 50%;
+            top:80%;
+            margin-left: -50px;
+            /*부모인 profile_box의 위에 위치하도록 하기 위함*/
+            position: absolute;
+        }
+        #profile_name{
+            font-family: "Noto Sans KR",sans-serif;
+            font-weight: 500;
+            font-size: 20px;
+        }
+        .fa-user-circle{
+            color: purple;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1><i class="fab fa-connectdevelop"></i>&nbsp;실습</h1>
+    <h2>탭 모양 만들기</h2>
+<!--    탭 1 / 탭 2-->
+    <div>
+        <div id="tab1">탭1</div>
+        <div id="tab2">내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉내용이 쭉쭉
+        </div>
+    </div>
+    <hr />
+    <h2>프로필 만들기</h2>
+<!--    profile_box / profile_big_image / profile_small_img_name  -->
+    <div>
+        <div id="profile_box" >
+            <img id="profile_big_image" src="img/profile.jpg" alt="프로필 사진">
+            <div id="profile_small_img_name">
+                <i class="fas fa-user-circle"></i>
+                <span id="profile_name">김필구</span></div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

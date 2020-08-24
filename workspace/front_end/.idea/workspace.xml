@@ -1,7 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3934a87-588c-4606-b24a-98b286101229" name="Default Changelist" comment="" />
+    <list default="true" id="d3934a87-588c-4606-b24a-98b286101229" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/0824/1_포지션.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/2_그림자.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/3_table요소.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/4_table의 활용.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/5_애니메이션.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/6_애니메이션복습.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/CSS/all.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/CSS/apple.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/CSS/notosanskr.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/CSS/test.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/NotoSansKR-Black-Hestia.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/NotoSansKR-Black-Hestia.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/NotoSansKR-Black-Hestia.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/NotoSansKR-Bold-Hestia.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/NotoSansKR-Bold-Hestia.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/NotoSansKR-Bold-Hestia.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/NotoSansKR-DemiLight-Hestia.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/NotoSansKR-DemiLight-Hestia.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/NotoSansKR-DemiLight-Hestia.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/NotoSansKR-Light-Hestia.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/NotoSansKR-Light-Hestia.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/NotoSansKR-Light-Hestia.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/NotoSansKR-Medium-Hestia.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/NotoSansKR-Medium-Hestia.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/NotoSansKR-Medium-Hestia.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/NotoSansKR-Regular-Hestia.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/NotoSansKR-Regular-Hestia.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/NotoSansKR-Regular-Hestia.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/NotoSansKR-Thin-Hestia.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/NotoSansKR-Thin-Hestia.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/NotoSansKR-Thin-Hestia.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/SFProKR_regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/SFProKR_semibold.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/fa-brands-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/fa-brands-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/fa-brands-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/fa-brands-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/fa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/fa-regular-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/fa-regular-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/fa-regular-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/fa-regular-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/fa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/fa-solid-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/fa-solid-900.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/fa-solid-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/sf-pro-display_regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824/webfonts/sf-pro-display_semibold.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824_주성호/img/poster/poster1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824_주성호/img/poster/poster2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824_주성호/img/poster/poster3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824_주성호/img/poster/poster4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824_주성호/img/poster/poster5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0824_주성호/img/poster/poster6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0820/5_복습.html" beforeDir="false" afterPath="$PROJECT_DIR$/0820/5_복습.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0821/1_색상값.html" beforeDir="false" afterPath="$PROJECT_DIR$/0821/1_색상값.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0821/8_fontawesome아이콘사용.html" beforeDir="false" afterPath="$PROJECT_DIR$/0821/8_fontawesome아이콘사용.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0821/9_애플폰트.html" beforeDir="false" afterPath="$PROJECT_DIR$/0821/9_애플폰트.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +95,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="ProjectId" id="1gLpYUFTd5kvVYcXw8NfY0K2Gc5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -24,15 +108,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/0821" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/0824_주성호/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\BMJ\workspace\front_end" />
+      <recent name="C:\BMJ\workspace\front_end\0824" />
+      <recent name="C:\BMJ\workspace\front_end\0821\CSS" />
       <recent name="C:\BMJ\workspace\front_end\0821" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\BMJ\workspace\front_end\0821\CSS" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\BMJ\workspace\front_end\0824_주성호\img" />
       <recent name="C:\BMJ\workspace\front_end\0821" />
     </key>
   </component>
@@ -46,20 +134,38 @@
       <updated>1597903774485</updated>
       <workItem from="1597903775523" duration="10916000" />
       <workItem from="1597971089589" duration="22892000" />
+      <workItem from="1598000882672" duration="541000" />
+      <workItem from="1598229901761" duration="25702000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="817" y="410" key="Github.ShareDialog" timestamp="1597974538780">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="817" y="410" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597974538780" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1597986154085">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1598250446840">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597986154085" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598250446840" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1598233912433">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598233912433" />
   </component>
 </project>

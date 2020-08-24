@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>포지션</title>
+    <style>
+        body{
+            /* 스크롤 생기게 만듦 */
+            height:10000px;
+        }
+        #box{
+            width: 600px;
+            height:400px;
+            background-color: #0F4C82;
+            position : fixed;
+            /*
+                top ,right ,bottom ,left 속성이 있음
+                left:100px 어디를 기준으로 100px 움직이냐?
+                위의 4가지 속성이 작동되기 위해서는 position값을 지정해야함
+                position이 static이 아닌 값으로 지정해야함
+
+                (기본값 : static 이어서 안움직임)
+                posiion의 값
+                -  fixed : 브라우저(윈도우) 기준 (진짜 많이 씀) (내비게이션 바 네이버 웹툰 원격 리모콘)
+                -  absolute : 포지셔닝 컨텍스트를 기준
+                              (가장 가까운 조상중에 포지션이 absolute, fixed, relative인 요소)
+                -  relative
+                -
+            */
+            /*
+                브라우저를 기준으로 수평수직 가운데 정렬
+            */
+            left:50%;
+            top: 50%;
+            /*보더 크기까지 고려해야 하므로 30을 더 빼준다*/
+            margin-left: -330px;
+            margin-top: -230px;
+            /* 보더 + width // 보더 + height */
+            border : 30px solid deeppink;
+        }
+        #ang{
+            /*
+            (600 - imgwidth) / 2
+            (400 - imgheight) / 2
+            absolute는 내 바로 위 부모에게 맞춰줌
+            */
+
+            position:absolute;
+            right: 0px;
+            bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+    <img id="ang" src="img/ang.jpg" width="100"/>
+    </div>
+</body>
+</html>
