@@ -17,7 +17,7 @@
 	<h1><i class="fas fa-film"></i> 아주 멋진 영화 사이트</h1>
 	<h2><i class="fas fa-search"></i> 영화검색</h2>
 
-	<form action="" target="_blank" method="get">
+	<form name="inp_solrSearch" id="inp_solrSearch" action="http://www.kobis.or.kr/kobis/business/mast/mvie/searchMovieList.do"  target="_blank" method="post">
 		<fieldset>
 			<legend>영화 검색폼</legend>
 			<label for="search">검색</label>
@@ -27,13 +27,16 @@
 	</form>
 	<hr/>
 	<h2><i class="fas fa-clipboard-list"></i> 일일 박스오피스</h2>
+	<!-- 테이블 시작-->
 	<table border="2">
+<!--		테이블 헤드-->
 		<thead>
 			<th>순위</th>
 			<th>포스터</th>
 			<th>영화명</th>
 			<th>관객수</th>
 		</thead>
+<!--		테이블 바디-->
 		<tbody>
 		<tr>
 			<td>1</td>
@@ -66,8 +69,10 @@
 			<td>1,772,991</td>
 		</tr>
 		</tbody>
+<!--		테이블 풋-->
 		<tfoot>
 			<tr>
+<!--				열 4개 합치기-->
 				<td colspan="4">
 					<a href="">영화진흥위원회</a>
 					<a href="">영화관</a>
@@ -78,10 +83,5 @@
 		</tfoot>
 	</table>
 </body>
-<script language="javascript" type="text/javascript">
-	function buttonClick(){
-		var url = document.getElementById("inputURL").value;
-		window.location = url;
-	}
-</script>
+
 </html>
