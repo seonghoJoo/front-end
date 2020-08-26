@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지애니메이션</title>
+    <style>
+        #dice{
+            width: 190px;
+            height: 190px;
+            background-image: url("img/dice.png");
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin: -95px 0 0 -95px;
+            /*6단계에 걸쳐서 steps*/
+            animation: ani 1s infinite steps(6) ;
+        }
+        @keyframes ani {
+            0%{
+                background-position: 0 0;
+            }
+            100%{
+                background-position: -1140px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="dice"></div>
+</body>
+</html>

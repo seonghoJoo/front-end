@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>IR &amp; IS 기법</title>
+    <style>
+        /*
+            IR 기법(Image Replacement)
+            -  글자를 이미지로 대체하는 기법
+            -  장점 : 글자가 HTML에 존재하니깐 웹접근성, 검색엔진 최적화(SE0)가 좋고 하지만 글자보다 이미지가 더 간지
+
+        */
+        .ir{
+            /*부모요소에서 벗어난 자식을 숨기기*/
+            text-indent: -9999px;
+            overflow: hidden;
+        }
+        /*
+            IS 기법(Image Sprite)
+            -  하나의 이미지에 여러 이미지를 모아놓고 포지션으로 각각 이미지를 표현하는 기법
+            -  장점 : 서버의 부하를 줄여줌
+         */
+
+        #logo{
+            /*너비*/
+            width: 450px;
+            /*높이*/
+            height: 100px;
+            /*반복*/
+            background-repeat: no-repeat;
+            /*뒷배경색*/
+            background-color :gray;
+            /*뒷배경 이미지*/
+            background-image: url("img/sp_main_b46ce0.png");
+            background-position: 0 -316px;
+        }
+        #creator{
+            width: 196px;
+            height: 76px;
+            /*background-color: gray;*/
+            background-repeat: no-repeat;
+            background-image: url("img/sp_main_b46ce0.png");
+            background-position: -550px -332px;
+        }
+        #dark_mode{
+            width:260px;
+            height: 90px;
+            background-color: gray;
+            background-repeat: no-repeat;
+            background-image: url("img/sp_main_b46ce0.png");
+            background-position: -550px -224px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="logo" class="ir">네이버</h1>
+    <div id="creator" class="ir">크리에이터</div>
+    <div id="dark_mode" class="ir">다크모드</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>다양한 색상 표현 및 반투명</title>
+    <link href="../0824/CSS/test.css" rel="stylesheet">
+    <style>
+        #box_red{
+            /*
+                CSS 색상표현
+                1. 키워드(red, blue, green...)
+                2. #16진수 3자리 (#000, #fff, ...)
+                3. #16진수 6자리 (#00bfff, ...)
+                4. rgb() 함수형
+                -  rgb(퍼센트, 퍼센트, 퍼센트)
+                -  rgb(0~255, 0~255, 0~255)
+                5. rgba() 함수형
+                -  a는 alpha 값 : 투명도 (0~1) 0: 진해짐 1: 연해짐 0.75 : 4분의 3 반투명
+                -  rgba(0~255,0~255,0~255, 0~1)
+                빛의 3요소 : RGB
+            */
+            background-color: rgb(100%,0%,0%);
+        }
+        #box_blue{
+            /*현업에선 글자 1 byte라도 아끼기 위해서 글자를 가능한 짧게 써야함*/
+           background-color: rgba(0%,0%,100%,.5);
+
+            /*겹치게 하자*/
+            margin-left: 100px;
+            margin-top: -180px;
+            position:relative;
+
+            /*
+                opacity(불투명도)
+                -  값 : 0~1
+                -  요소 전체가 불투명해짐 따라서 rgba를 많이 씀 뒷배경만 투명하게 만들기 위해서
+                -  겹칠땐 사용하지말아야한다
+            */
+
+        }
+        .box{
+            /*글자의 수평 가운데 정렬*/
+            text-align: center;
+            /*글자의 수직 가운데 정렬*/
+            /*글자가 딱 한줄일 때 height와 line-height를 같게*/
+            line-height : 200px;
+            font-size: 50px;
+            /*글자 두께*/
+            font-weight: bold;
+            color: #fff;
+            /*너비*/
+            width: 200px;
+            /*높이*/
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>하이루</h1>
+    <div class="box" id="box_red">RED</div>
+    <div class="box" id="box_blue">BLUE</div>
+</body>
+</html>

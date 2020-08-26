@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>가상요소활용</title>
+    <link rel="stylesheet" href="css/notosanskr.css">
+    <style>
+        body{
+            font-family: "Noto Sans KR",sans-serif;
+        }
+        .msg{
+            font-weight: 200;
+            font-size: 13px;
+            background-color: #daf3e7;
+            width: 120px;
+            padding: 10px;
+            /*포지셔닝 컨텍스트 지정*/
+            position:relative;
+            /*
+                width, height 공간을 콘텐츠
+                콘텐츠와 padding사이의 공간을
+            */
+            border-radius: 20px 0 20px 20px;
+        }
+        /*
+           가상요소 선택자의 사용이유
+        -  요소가 필요한데 꾸미는 용도일때
+           (HTML안에 삽입할 경우 쓸데없는 요소가 들어감
+        */
+        .msg::after{
+            /*content 속성은 필요한데 안쓸거야!*/
+            content: "";
+            right: -15px;
+            top: 0;
+            position:absolute;
+            border-top:20px solid #daf3e7;
+            border-right:20px solid transparent;
+        }
+        #tri{
+            height: 0;
+            width: 0;
+            border-top: 50px solid red;
+            border-left: 50px solid transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="msg">
+        선생님 제가 20분정도 늦을거 같아요,,,
+        <div class="arrow"></div>
+    </div>
+
+    <hr/>
+    <div id="tri"></div>
+
+</body>
+</html>
