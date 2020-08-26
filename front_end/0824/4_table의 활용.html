@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>KBO 팀순위</title>
+
+</head>
+<body>
+    <h1>KBO 팀순위</h1>
+    <!--
+        테이블의 제목 : caption 요소
+        의미에 맞게 코딩하려면
+        thead , tbody , tfoot  머리 몸통 발
+        th : table headline의 줄임말(제목)
+    -->
+    <table border="1">
+        <caption>팀별 순위표</caption>
+        <thead>
+            <th>순위</th>
+            <th>팀</th>
+            <th>승</th>
+            <th>패</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1위</td>
+                <td><img src="img/dinos.png" alt="NC 다이노스"/>NC</td>
+                <td>50</td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td>2위</td>
+                <td><img src="img/heros.png" alt="키움 히어로즈"/>키움</td>
+                <td>45</td>
+                <td>45</td>
+            </tr>
+            <tr>
+                <td>3위</td>
+                <td><img src="img/twins.png" alt="LG 트윈스"/>LG</td>
+                <td>43</td>
+                <td>47</td>
+            </tr>
+            <tr>
+                <td>4위</td>
+                <td><img src="img/wyverns.png" alt="SK 와이번즈"/>SK</td>
+                <td>41</td>
+                <td>49</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <!-- colspan="4" 하나의 td가 4개의 공간 차지 -->
+                <td colspan="4">제공 : KBO</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

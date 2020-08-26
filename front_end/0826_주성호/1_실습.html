@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- 파비콘-->
+    <link rel="icon" href="img/favicon.ico">
+    <title>회원가입 | 밴드</title>
+   
+</head>
+<body>
+
+    <h2><a href="https://band.us/">BAND</a></h2>
+    <h1>회원가입</h1>
+    <form action="" method="post">
+        <div>
+            <label for="id">이메일</label>
+            <input name="id" id="id" placeholder="이메일" type="text"/>
+        </div><!-- //이메일 div 종료-->
+        <div>
+            <label for="pw">비밀번호</label>
+            <input name="pw" id="pw" placeholder="비밀번호" type="password"/>
+            <button type="button" id="pwShowBtn">비밀번호 표시</button>
+        </div> <!-- //비밀번호 div 종료-->
+        <p>비밀번호는 알파벳과 숫자를 포함해야 하고 8자 이상이어야 합니다.</p>
+        <div>
+            <label for="name">이름</label>
+            <input name="name" id="name" placeholder="이름" type="text"/>
+        </div><!-- //이름 div 종료-->
+        <div>
+            생년월일
+            <select id="year" name="year">
+                <option value="2020">2020</option>
+            </select>년<!-- //selection  year div 종료-->
+
+            <select id="month" name="month">
+                <option value="1">1</option>
+            </select>월<!-- //selection  month div 종료-->
+
+            <select id="day" name="day">
+                <option value="1">1</option>
+            </select>일<!-- //selection  day div 종료-->
+        </div>
+        <button type="submit">확인</button><!-- //form 전체 submit 버튼-->
+    </form>
+    <div>
+        <img src="img/captcha.jpg" width="258" alt="catcha"/>
+    </div>
+    <textarea></textarea>
+
+
+    <script src="js/jquery.js"></script><!-- jQuery-->
+    <script>
+        // 비밀번호 표시 토글 flag
+        var flag=0;
+        var arr = new Array();
+        //1월부터 12월 까지 다른 일 수 고려
+        arr=[31,29,31,30,31,30,31,31,30,31,30,31];
+
+        //비밀번호 표시 click 함수 시작
+        $("#pwShowBtn").click(function () {
+            //현재 비밀번호 type : password
+            if(flag==0){
+                $("#pw").attr('type', 'text');
+                $("#pwShowBtn").text("비밀번호 가리기");
+                // pw type toggle ON
+                flag=1;
+            }
+            //현재 비밀번호 type : text
+            else if(flag==1){
+                $("#pw").attr('type', 'password');
+                $("#pwShowBtn").text("비밀번호 표시");
+                // pw type toggle OFF
+                flag=0;
+            }
+        });//click 함수종료
+
+        //년 selection for문으로 늘리는 코드
+        for(var i=2019;i>=1930;i--)
+        {
+            //2019년 부터 1930년까지 option 추가
+            var option = $("<option value="+i+">"+i+"</option>");
+            $('#year').append(option);
+
+        }//년 종료
+
+        // 월 selection for문으로 늘리는 코드
+        for(var i=2;i<=12;i++)
+        {
+            //2월~12월 option 추가
+            var option = $("<option value="+i+">"+i+"</option>");
+            $('#month').append(option);
+
+        }//월 종료
+
+        //일 selection for문으로 늘리는 코드 단 클릭시에 무슨 월인지 받아서 일수(29~31)를 구해줌
+        $("#day").click(function () {
+            for(var i=2;i<=arr[$("#month option:selected").val()-1];i++)
+            {
+                //alert($("#month option:selected").val());
+                var option = $("<option value="+i+">"+i+"</option>");
+                $('#day').append(option);
+            }}
+        );
+
+    </script><!-- jquery 종료 -->
+</body>
+</html>

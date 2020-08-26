@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>클릭이벤트처리</title>
+</head>
+<body>
+    <h1>안녕?</h1>
+    <button id="btn" class="btnClass">난 버튼!</button>
+    <!-- jquery.js import -->
+    <script src="js/jquery.js"></script>
+    <!-- 작성하는 코드 script -->
+    <script>
+        // $("#btn").css("background-color","red");
+        //$("#btn").text("넌 버튼~");
+        /*
+        *   유저가 하는 행동 : 이벤트
+        *   이벤트의 종류 : click, mousemove, mouseover ...
+        *
+        * */
+
+        //이벤트 핸들러라는 함수
+        $("#btn").click(function() {
+            //multi thread -> javascript 를 먼저 읽는 것일뿐
+            $("h1").text("앙 후훗");
+            $("#btn").css("background-color","blue");
+        });//click() end
+
+        // 1) 유저가 btn클래스인 button요소를 클릭했을때
+        $(".btnClass").click(function(){
+            // 2) h1 요소를 선택하고 글자색을 변경하고
+            // 글자를 변경
+            $("h1").css("color","red")
+                   .text("Bye!");
+
+        });//click() end
+
+    </script>
+
+</body>
+</html>

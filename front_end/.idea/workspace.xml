@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d3934a87-588c-4606-b24a-98b286101229" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/0826/1_여러가지input요소들.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0826/2_변수.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0826/3_함수.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0826/4_jquery시작.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0826/5_클릭이벤트처리.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0826/6_mvoe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0826_주성호/1_실습.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0826_주성호/2_실습.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0826_주성호/3_실습.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0825/3_가상요소선택자.html" beforeDir="false" afterPath="$PROJECT_DIR$/0825/3_가상요소선택자.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0825/9_ul요소와li요소.html" beforeDir="false" afterPath="$PROJECT_DIR$/0825/9_ul요소와li요소.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0825_주성호/3_실습.html" beforeDir="false" afterPath="$PROJECT_DIR$/0825_주성호/3_실습.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1gLpYUFTd5kvVYcXw8NfY0K2Gc5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/0825_주성호/css" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\BMJ\workspace\front_end\0826_주성호" />
+      <recent name="C:\BMJ\workspace\front_end\0826" />
+      <recent name="C:\BMJ\workspace\front_end\0825" />
+      <recent name="C:\BMJ\workspace\front_end" />
+      <recent name="C:\BMJ\workspace\front_end\0824" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\BMJ\workspace\front_end\0825_주성호\css" />
+      <recent name="C:\BMJ\workspace\front_end\0825_주성호" />
+      <recent name="C:\BMJ\workspace\front_end\0825" />
+      <recent name="C:\BMJ\workspace\front_end\0824_주성호\img" />
+      <recent name="C:\BMJ\workspace\front_end\0821" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d3934a87-588c-4606-b24a-98b286101229" name="Default Changelist" comment="" />
+      <created>1597903774485</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597903774485</updated>
+      <workItem from="1597903775523" duration="10916000" />
+      <workItem from="1597971089589" duration="22892000" />
+      <workItem from="1598000882672" duration="541000" />
+      <workItem from="1598229901761" duration="26962000" />
+      <workItem from="1598315629395" duration="24960000" />
+      <workItem from="1598344286956" duration="1185000" />
+      <workItem from="1598345499480" duration="632000" />
+      <workItem from="1598401171154" duration="26419000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598335594238">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598335594238" />
+    <state x="817" y="410" key="Github.ShareDialog" timestamp="1597974538780">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="817" y="410" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597974538780" />
+    <state x="787" y="221" key="RollbackChangesDialog" timestamp="1598320984412">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="787" y="221" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598320984412" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1598321998692">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598321998692" />
+    <state x="92" y="92" width="1736" height="856" key="dock-window-1" timestamp="1598337543319">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1598337543319" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1598250446840">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598250446840" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1598430787913">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598430787913" />
+  </component>
+</project>

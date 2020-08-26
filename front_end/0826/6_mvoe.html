@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>move</title>
+    <style>
+        #container{
+            background-color: lightpink;
+            width: 800px;
+            height: 800px;
+            position: fixed;
+            overflow: hidden;
+        }
+        #ang{
+            /*귀찮아*/
+            /*background-position: left top;*/
+            /*position: relative;*/
+
+            /*translate : 운반하다*/
+            transform: translate(0,0);
+            /* left : 0px top : 0px과 같다   */
+        /*    부드럽게 하자*/
+            transition: .1s ease;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="leftBtn">왼쪽</button>
+        <button id="rightBtn">오른쪽</button>
+        <button id="upBtn">위쪽</button>
+        <button id="downBtn">아래쪽</button>
+    </div>
+    <div id="container">
+        <div id="ang"><img src="img/scappy.gif" width="100" alt="앙"/></div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script>
+        // script 영역 안에 선언된 변수
+        // 전역 변수 x를 선언하고 0으로 초기화(대입)
+        // ang 요소를 선택한 후 css의 transform 속성의 값을 translate(x의 값으로,0)으로 변경
+        var x=0,y=0;
+        $("#rightBtn").click(function () {
+            if(x<=600){
+                x+=100;
+            }
+            $("#ang").css("transform",
+                          "translate("+ x +"px,"+y+"px)");
+        })
+        $("#leftBtn").click(function () {
+            if(x>=100) {
+                x -= 100;
+            }
+            $("#ang").css("transform",
+                "translate("+ x +"px,"+y+"px)");
+
+        })
+        $("#upBtn").click(function () {
+            if(y>=100) {
+                y -= 100;
+            }
+            $("#ang").css("transform",
+                "translate("+ x +"px,"+y+"px)");
+        })
+        $("#downBtn").click(function () {
+            if(y<=600){
+                y+=100;
+            }
+            $("#ang").css("transform",
+                "translate("+ x +"px,"+y+"px)");
+        })
+    </script><!-- script 끝나는 줄-->
+</body>
+</html>

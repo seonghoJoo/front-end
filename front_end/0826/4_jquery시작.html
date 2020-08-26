@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery의 시작</title>
+</head>
+<body>
+    <h1>안녕?</h1>
+    <button>눌러봐!</button>
+<!--
+    jquery import
+    적게쓰고 많이 하자
+-->
+    <script src="js/jquery.js"></script>
+<!--    우리가 작성하는 코드-->
+<!--
+    j쿼리는 $만 기억하세요
+    $(선택자) <- 요소 선택됨
+
+    jquery의 메서드
+    1) css() : css 관련
+    2) text() : 글자 관련
+
+    -->
+<script>
+    $("button").css();
+    $('h1').css("color","red").text("Bye!");
+
+
+
+
+    // 순수 자바스크립트(복잡함)
+    // var btn = document.getElementsByTagName("button")[0];     =     $("button");  // 같은이야기
+    // btn.addEventListener("click", function(){},true);
+
+</script>
+</body>
+</html>
