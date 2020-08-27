@@ -20,19 +20,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3934a87-588c-4606-b24a-98b286101229" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/0826/1_여러가지input요소들.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0826/2_변수.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0826/3_함수.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0826/4_jquery시작.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0826/5_클릭이벤트처리.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0826/6_mvoe.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0826_주성호/1_실습.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0826_주성호/2_실습.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0826_주성호/3_실습.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/10_이벤트객채활용.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/11_실습.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/1_요소의종류.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/2_함수_인자_리턴.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/3_문자열합침.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/4_css메서드.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/5_자바스크립트객체.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/6_jquery함수.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/7_속성관련메서드.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/8_난수발생.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/9_색상랜덤.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/img/ang.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/img/ico1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/img/ico2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/img/ico3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/img/ico4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/img/ico5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/img/ico6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/img/ico7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/img/ico8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/img/scappy.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/js/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0827/js/temp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0825/3_가상요소선택자.html" beforeDir="false" afterPath="$PROJECT_DIR$/0825/3_가상요소선택자.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0825/9_ul요소와li요소.html" beforeDir="false" afterPath="$PROJECT_DIR$/0825/9_ul요소와li요소.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0825_주성호/3_실습.html" beforeDir="false" afterPath="$PROJECT_DIR$/0825_주성호/3_실습.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0826_주성호/1_실습.html" beforeDir="false" afterPath="$PROJECT_DIR$/0826_주성호/1_실습.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0826_주성호/2_실습.html" beforeDir="false" afterPath="$PROJECT_DIR$/0826_주성호/2_실습.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,12 +57,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="JavaScript File" />
         <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1gLpYUFTd5kvVYcXw8NfY0K2Gc5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -62,25 +77,25 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/0825_주성호/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/0827" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\BMJ\workspace\front_end\0827" />
+      <recent name="C:\BMJ\workspace\front_end\0825_주성호\css" />
+      <recent name="C:\BMJ\workspace\front_end\0825_주성호" />
+      <recent name="C:\BMJ\workspace\front_end\0825" />
+      <recent name="C:\BMJ\workspace\front_end\0824_주성호\img" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\BMJ\workspace\front_end\0826_주성호" />
       <recent name="C:\BMJ\workspace\front_end\0826" />
       <recent name="C:\BMJ\workspace\front_end\0825" />
       <recent name="C:\BMJ\workspace\front_end" />
       <recent name="C:\BMJ\workspace\front_end\0824" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\BMJ\workspace\front_end\0825_주성호\css" />
-      <recent name="C:\BMJ\workspace\front_end\0825_주성호" />
-      <recent name="C:\BMJ\workspace\front_end\0825" />
-      <recent name="C:\BMJ\workspace\front_end\0824_주성호\img" />
-      <recent name="C:\BMJ\workspace\front_end\0821" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -100,6 +115,7 @@
       <workItem from="1598345499480" duration="632000" />
       <workItem from="1598401171154" duration="26419000" />
       <workItem from="1598432525323" duration="1018000" />
+      <workItem from="1598488660578" duration="26022000" />
     </task>
     <servers />
   </component>
@@ -143,9 +159,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598250446840" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1598430787913">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1598504148289">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598430787913" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598504148289" />
   </component>
 </project>

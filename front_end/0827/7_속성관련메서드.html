@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 속성관련 메서드</title>
+</head>
+<body>
+<p>
+    <button id="btn1">이미지 변경</button>
+    <button id="btn2">alt 얻기</button>
+    <button id="btn3">여러속성 한번에 변경</button>
+</p>
+    <img id="image" src="img/ico1.png" alt="무지아빠 콘" width="241" height="120" />
+
+    <script src="js/jquery.js"></script>
+    <script>
+        // HTML 속성관련 메서드명 : attr
+        // 1) attr(속성명, 속성값)
+        // 2) attr(속성명)
+        // 3) attr(객체)
+        let num = 0;
+        $("#btn1").click(function () {
+            if(num<=7){
+                num++;
+            }else{
+                num=1;
+            }
+
+            $("#image").attr("src","img/ico"+ num +".png");
+        });//#btn1 click() 종료
+
+        $("#btn2").click(function (){
+            let alt = $("#image").attr("alt");
+            console.log(alt);
+        }); // #btn2 click end
+
+        $('#btn3').click(function () {
+            $("#image").attr({
+                "src" :  "img/ang.jpg",
+                "alt" :  "앙",
+                'width' : 221,
+                'height' : 228
+
+            });
+        }); //#btn3 click end
+    </script>
+</body>
+</html>

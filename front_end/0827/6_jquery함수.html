@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery 함수</title>
+</head>
+<body>
+    <h1>후후</h1>
+<!--jquery.js 파일을 import 한다-->
+<script src="js/jquery.js"></script>
+<script>
+    //  jquery 는 라이브러리입니다.
+    //  $("h1")  <- javascript 관점으로 함 보자
+    //  $(달러) 라는 함수를 호출
+    //  jQuery("h1").css("color","red"); 도 호출이 가능 $ 나 jQuery나 같다
+    //  var $h1 =jQuery('h1'); 객체를 반환해
+
+    /*
+    *   jQuery() -> $() 로 바꿔버림 귀찮아서
+    *   jQuery 함수를 호출했을때 리턴되는 결과가 객체 jQuery객체(순수자바스크립트 객체와는 다름)
+    *   jQuery 함수를 호출하여 jQuery 객체를 얻어와서
+    *   변수 $h1에 대입*/
+    var $h1 = $('h1');
+    $h1.css("color","red")
+        .text("32분까지 쉽니다" +32 +"");
+    /*
+       CSS 메서드의 용법
+       setter와 getter가 있다.
+       setName
+
+
+    * */
+
+</script>
+</body>
+</html>

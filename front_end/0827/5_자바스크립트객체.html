@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 객체</title>
+</head>
+<body>
+    <h1 id="test">안녕?</h1>
+    <script>
+
+        var hwang ={
+            name : '황정민',
+            height : 180,
+            weight : 75,
+            test:function (){
+                alert("이게 메서드!!");
+            }//test 함수 종료
+
+        };
+
+        /* test 함수 변형
+        function test(){
+
+        }
+        var test = function (){
+
+        }
+
+        */
+        //이름 속성값을 이정재로 변경
+        hwang.name="이정재";
+        //이정재 몸무게 71로 변경
+        hwang.weight=71;
+        //hwang 객체가 가진 test 메서드를 호출
+        hwang.test();
+        //개발자도구(F12)의 콘솔에 출력
+        console.log(hwang.height);
+         /*
+             객체란?
+             자바스크립트 객체 : "속성"들의 묶음
+             자바 클래스 기반의 객체
+             자바스크립트는 class를 바로 만들어 낼 수 있음
+             객체 생성 :  객체가 {} 요렇게 생기게 되면 연결된다 이를 reference라고 한다.
+             -  {}
+             -  new Object();
+             속성명은 자료형이 무조건 문자열형 : 그래서 ' ' , " " 생략가능
+             객체의 속성접근법 : .    (점 dot)
+         */
+
+    </script>
+</body>
+</html>

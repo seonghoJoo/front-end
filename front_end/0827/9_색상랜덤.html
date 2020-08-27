@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>색상랜덤</title>
+    <style>
+        html{
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <script src="js/jquery.js">
+    </script>
+    <script>
+        $("html").click(function () {
+            const r = Math.floor(Math.random()*256);
+            const g = Math.floor(Math.random()*256);
+            const b = Math.floor(Math.random()*256);
+            $("body").css("backgroundColor" , "rgb("+r+","+ g+"," +b+")");
+        });
+    </script>
+</body>
+</html>

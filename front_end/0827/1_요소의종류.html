@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>요소의종류</title>
+    <style>
+        span{
+            /*
+                 인라인 레벨 요소들은
+                 글자 자체이기 때문에
+                 width, height 지정할 수 없고
+                 단지 글자의 크기입니다.
+            */
+            background-color: red;
+        }
+        div{
+            width: 400px;
+            /*
+                display 속성으로 block <-> inline으로 왔다갔다 할 수 있음
+                display : inline / block / none
+            */
+            display: block;
+            background-color: red;
+        }
+        li{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<audio controls></audio>
+<video controls></video>
+<h1>나는 블록 레벨</h1>
+<h2>나도 블록레벨</h2>
+<dl>
+    <dt>나도역시</dt>
+    <dd>블록레벨</dd>
+</dl>
+<ol>
+    <li>리스트1</li>
+    <li>리스트2</li>
+</ol>
+<p>
+    나는 블록레벨인데 특이하게 자손은 무조건 인라인 레벨이어야합니다.
+</p>
+<div>대표적인 블록레벨</div>
+<hr/>
+<em>인라인레벨</em>
+<strong>나도 인라인</strong>
+<span>대표적인 인라인</span>
+<a href="">a요소</a>
+<img src="../0826/img/ang.jpg" width="50"/>
+<button>난 버튼</button>
+<i>원래 i는 이텔릭</i>
+<select></select>
+<textarea></textarea>
+<input/>
+<!--
+    요소를 나누는 종류
+    1) 대체되는 요소 / 대체되지 않는 요소
+    -  대체되는 요소란 input 이나 img, button처럼
+       UI 컴포넌트로 대체되는 요소들(거의 인라인 레벨)
+
+    2) 블록(레벨) 요소 / 인라인(레벨) 요소 <- 이걸 알아야 네이버 밴드 만들수 잇당 (컨테이너와 컨텐츠 란 개념을 이해하자)
+    ※  블록레벨 (컨테이너)
+    -  컨테이너 : 레이아웃을 담당함
+    -  줄바꿈이 일어남
+    -  (css에서) width, height 가 적용됨
+    -  h1~h6 , ul, ol, dl, li, p, br, hr
+    -  가장 대표적인 블록레벨이 바로 'div' (공간이 필요해??) 응 div~
+
+    ※ 인라인 레벨
+    -  컨텐츠 : 내용을 담당함
+    -  줄바꿈이 일어나지 않고 한줄로(Inline)
+    -  width, height이 적용되지 않음 (단 대체되는 요소인 img, audio, textarea,select, button, input은 먹힘)
+       (대체되는 요소들은 inline이지만 적용됨)
+    -  a, input, select, img, em, strong, i, button, textarea.....
+    -  대표적인 inline 요소는 'span'
+-->
+<!-- -->
+</body>
+</html>

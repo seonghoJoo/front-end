@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>실습</title>
+    <style>
+        html{
+            cursor: crosshair;
+            background-color: #daf3e7;
+        }
+        #circle{
+            color: white;
+            background-color: #000000;
+            user-select: none;
+            top:0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            font-size: 25px;
+            line-height: 50px;
+            border-radius: 50px;
+            text-align: center;
+            position: fixed;
+            border: 0 solid black;
+            transition: .1s ease;
+            box-shadow: 0 0 3px black;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="circle">1</div>
+    <script src="js/jquery.js"></script>
+    <script>
+        let num=2;
+        $("html").click(function (evt) {
+            const borderRadius = Math.floor(Math.random()*200) + 50;
+            const x = evt.clientX;
+            const y = evt.clientY;
+            const r = Math.floor(Math.random()*256);
+            const g = Math.floor(Math.random()*256);
+            const b = Math.floor(Math.random()*256);
+            const rh = Math.floor(Math.random()*256);
+            const gh= Math.floor(Math.random()*256);
+            const bh = Math.floor(Math.random()*256);
+
+            $("html").css({
+                backgroundColor : "rgb("+rh+","+ gh+"," +bh+")"
+            });
+            $("#circle").css({
+                    lineHeight : borderRadius+"px",
+                    fontSize : borderRadius *0.5,
+                    borderRadius :borderRadius,
+                    width: borderRadius,
+                    height : borderRadius,
+                    left : x - borderRadius*0.5,
+                    top : y - borderRadius*0.5,
+                    backgroundColor : "rgb("+r+","+ g+"," +b+")"
+            });
+
+            $("#circle").text(num++);
+        });
+
+    </script>
+</body>
+
+</html>

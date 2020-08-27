@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>함수인자리턴</title>
+</head>
+<body>
+    <script>
+        // 변수 이름규칙 : 명사
+        // 함수 이름규칙 : 동사
+
+        //  script 요소에 선언된 변수나 함수는
+        //  코딩 순서와 상관없이 로딩먼저 됨
+
+        //  v8엔진 크롬을 만들면서 웹앱이 가능하게 됨  nodejs가 생겨나게 됨
+        function multiply(num1, num2){
+            return num1 * num2;
+        }
+        var result = multiply(5,6);
+        function sum(a,b){
+            alert(a);
+            return 5;
+        }
+        sum(4,5);
+
+        test();
+        //  test라는 이름의 함수를 선언
+        function test(){
+            alert('크크크');
+        }//test() end
+
+
+
+    </script>
+</body>
+</html>

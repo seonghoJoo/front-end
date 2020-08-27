@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>css 메서드</title>
+    <style>
+        #box{
+            background-image: url("img/ico1.png");
+            width: 241px;
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+<p>
+<!--    낙타표기법  // 카멜표기법-->
+    <button id="changeBtn">변경!</button>
+    <button id="getBtn">height 얻기</button>
+    <button id="changeAllBtn">여러개 한번에 변경!</button>
+</p>
+<div id="box"></div>
+
+
+<!--   jquery.js를 import -->
+<script src="js/jquery.js"></script>
+<script>
+    //$().css() 는 메서드
+    /*
+           CSS 메서드의 용법
+           setter와 getter가 있다.
+           setXXXX : 셋팅
+           getXXXX : 값얻어옴
+           이런식으로 작성(Java의 역사)
+           그러나 jquery는 setter나 getter의 이름이 같음(편리함)
+
+           1)  css(속성명 , 속성값) : 1개의 속성 setter
+           2)  css(속성명) : 1개의 속성(값) getter
+           3)  css(객체) : 여러개 속성 setter
+
+     * */
+    let num=0;
+    let $btn = $("#changeBtn");
+
+    /*2020-08-27 15:03:03 주성호*/
+
+    //아이디가 changeBtn인 버튼을 선택하고
+    $btn.click(function () {
+        //alert("변경");
+        num%=8;
+        num++;
+
+        //  아이디가 box인 div요소를 선택하고
+        //  box 의 속성인 css 메소드를 사용하여 background-image의 속성을 바꿔준다.
+        $("#box").css("background-image","url(img/ico"+num+".png)" );
+    });//changeBtn click() 종료
+
+    //  id가 getBtn인 버튼을 선택하고
+    //  click 이벤트를 처리
+    $("#getBtn").click(function () {
+
+        // id가 box인 div 요소를 선택하고
+        // css의 height속성값을 얻어와서
+        // 변수 height에 대입
+        let height = $("#box").css("height");
+
+        //변수 height값을 확인버튼 한개가 있는 다이얼로그창에 띄움
+        alert(height);
+    });//getBtn click 종료
+    $("#changeAllBtn").click(function () {
+        //width : 221px
+        //height : 228px
+        //border: 10px solid #424242;
+        //background-image
+        //border-radius: 12px
+
+        // $("#box").css("height","228px")
+        //          .css("width","221px")
+        //          .css("border" , "10px solid #424242")
+        //          .css("background-image","url(img/ang.jpg)")
+        //          .css("border-radius","12px");
+        // 객체를 만들어 주자 {}
+        $("#box").css({
+            height : 228,
+            width : 221,
+            backgroundImage : "url(img/ang.jpg)",
+            border:"10px solid #424242",
+            borderRadius : 12
+        });
+
+    });//changeAllBtn click() 종료
+
+</script>
+</body>
+</html>

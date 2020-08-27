@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트객체활용</title>
+    <style>
+        #ang{
+            position: fixed;
+            left: 0;
+            top: 0;
+            /*transition: .1s ease;*/
+            box-shadow: 0 0 1px black;
+            user-select: none;
+        }
+        html{
+            cursor: crosshair;
+        }
+    </style>
+</head>
+<body>
+    <img id="ang" src="img/ang.jpg" width="100" alt="ang" />
+    <script src="js/jquery.js"></script>
+    <script>
+        $("html").click(function (evt) {
+            //  evt 는 event 객체(이벤트에 대한 데이터를 가지고 있음
+            //  예) 마우스이벤트  : x y 좌표
+            //  키보드 이벤트 : keyCode
+            // console.log(evt.clientX);
+            // console.log(evt.clientY);
+            const x = evt.clientX;
+            const y = evt.clientY;
+            $("#ang").css({
+                left:x-50,
+                top:y-50
+            });
+        }); // html click() end
+    </script>
+</body>
+</html>
