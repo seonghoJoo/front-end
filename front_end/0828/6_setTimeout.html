@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>타이머관련 함수</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        #loading{
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin : -100px 0 0 -100px;
+        }
+    </style>
+</head>
+<body>
+<h1>5초후 구글로 이동</h1>
+<img id="loading" src="../Image/img/loader.svg" alt="로딩이미지" />
+<script>
+    /*
+        BOM(Browser Object Model) 브라우저를 객체화 시킨 모델
+        -  window : 브라우저 그 자체를 의미
+        -  document : HTML 문서 자체를 의미
+        -  location : 주소창 자체를 의미
+        -  history : 히스토리
+
+    */
+
+    /*
+        타이머 관련 함수
+        -  setTimeout(함수, 시간) : 시간 후에 함수 1번 만 호출
+
+        -  setInterval(함수, 시간) : 시간 마다 함수 계속 호출
+
+        -  clearInterval(id값)
+        -  clearTimeout(id값)
+    */
+    setTimeout(function () {
+        //구글로 이동(주소창을 의미하는 객체 location)
+        location.href="https://google.com";
+
+    },1500);
+
+</script>
+</body>
+</html>

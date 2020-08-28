@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>타이머관련함수 2</title>
+    <style>
+        button{
+            user-select: none;
+            transition: .1s ;
+        }
+        button:active{
+            transform:scale(.8);
+            background-color: #616161;
+        }
+    </style>
+</head>
+<body>
+<h1>?</h1>
+
+<button id="startBtn">시작</button>
+<button id="stopBtn">멈춤</button>
+<!--disabled 이렇게 쓴것도 속성이다 이말이야-->
+<button id="resetBtn" disabled>리셋</button>
+<script src="../library/jquery.js"></script>
+<script>
+    // 시간 num 1 선언
+    let num1=1;
+    let id1=0;
+    //시작 버튼 click
+    $("#startBtn").click(function () {
+        if(id1!=0) {
+        }
+        else {
+            //interval 시작 0.001 초마다 호출
+            id1 = setInterval(function () {
+                $("h1").text(num1++);
+            }, 1);
+            // 리셋버튼 비활성화
+            $("#resetBtn").attr("disabled", true);
+            $("#startBtn").attr("disabled", true);
+        }
+    }); // 시작 버튼 click 종료
+
+    // 멈춤 버튼 click 시작
+    $("#stopBtn").click(function () {
+        console.log(id1);
+        if(id1!=0) {
+            //interval을 멈춤
+            clearInterval(id1);
+            id1 = 0;
+            console.log(id1);
+            // 리셋버튼 활성화 (비활성화를 비활성화)
+            $("#resetBtn").attr("disabled", false);
+            $("#startBtn").attr("disabled",false);
+        }
+    }); // 멈춤 버튼 click 종료
+
+    //리셋 버튼 click
+    $("#resetBtn").click(function () {
+        //num1 초기화
+        num1=0;
+        id1=0;
+        $("h1").text("?");
+        $("#startBtn").attr("disabled",false);
+    });// 리셋 버튼 click 종료
+</script>
+</body>
+</html>

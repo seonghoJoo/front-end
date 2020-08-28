@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>박스모델</title>
+    <style>
+        body{
+            border : 1px solid cadetblue;
+        }
+        #box{
+            /*컨텐츠 영역*/
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            border:50px solid #424242;
+            padding : 50px;
+            margin:100px;
+
+
+            /*뒷배경 적용범위 지정*/
+            background-clip: content-box;
+            /*
+                박스모델
+                -  width, height, border, margin, padding 을 합쳐서 계산
+                -  기본값 or 음수값(?)
+                -  auto값
+                -  width, height (default) 기본값은 auto
+                -  width 값이 auto면 부모의 width 단 absolute fixed는 아님
+                -  height 값이 auto면 자식의 높이 합
+                -  뒷배경색은 (기본적으로) 보더까지 적용됩니다. solid -> dotted로 바꿔보면 보더까지 적용되는걸 확인가능
+
+                width? height?
+                박스모델의 너비, 높이?
+                (margin, border, padding)
+
+            */
+
+        }
+    </style>
+</head>
+<body>
+    <div id="box">안녕하세요</div>
+</body>
+</html>

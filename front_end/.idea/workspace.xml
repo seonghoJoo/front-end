@@ -20,33 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3934a87-588c-4606-b24a-98b286101229" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/0827/10_이벤트객채활용.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0827/11_실습.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0827/1_요소의종류.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0827/2_함수_인자_리턴.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0827/3_문자열합침.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0827/4_css메서드.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0827/5_자바스크립트객체.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0827/6_jquery함수.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0827/7_속성관련메서드.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0827/8_난수발생.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0827/9_색상랜덤.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0827/img/ang.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0827/img/ico1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0827/img/ico2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0827/img/ico3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0827/img/ico4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0827/img/ico5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0827/img/ico6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0827/img/ico7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0827/img/ico8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0827/img/scappy.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0827/js/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0827/js/temp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0828/1_0827실습문제.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0828/2_박스모델.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0826_주성호/1_실습.html" beforeDir="false" afterPath="$PROJECT_DIR$/0826_주성호/1_실습.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0826_주성호/2_실습.html" beforeDir="false" afterPath="$PROJECT_DIR$/0826_주성호/2_실습.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0827/11_실습.html" beforeDir="false" afterPath="$PROJECT_DIR$/0827/11_실습.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +54,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/0827" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -115,7 +92,8 @@
       <workItem from="1598345499480" duration="632000" />
       <workItem from="1598401171154" duration="26419000" />
       <workItem from="1598432525323" duration="1018000" />
-      <workItem from="1598488660578" duration="26022000" />
+      <workItem from="1598488660578" duration="26474000" />
+      <workItem from="1598575114042" duration="1796000" />
     </task>
     <servers />
   </component>
@@ -139,6 +117,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598335594238" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1598576910802">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598576910802" />
     <state x="817" y="410" key="Github.ShareDialog" timestamp="1597974538780">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

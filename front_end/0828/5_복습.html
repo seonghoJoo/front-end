@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>복습</title>
+</head>
+<body>
+    <p>
+        <button>변경</button>
+        <button>변경</button>
+        <button>변경</button>
+        <button>변경</button>
+
+        <button>변경</button>
+        <button>변경</button>
+        <button>변경</button>
+        <button>변경</button>
+    </p>
+    <img src="../Image/img/footer_face01.gif" alt="무지" width="127"/>
+    <script src="../library/jquery.js"></script>
+    <script>
+        let altArray = new Array(
+            ''
+            ,'무지'
+            , '어피치'
+            , '제이지'
+            ,'프로도'
+            ,'네오'
+            ,'튜브'
+            ,'콘'
+            ,'라이언'
+        );
+        //let a = 0;
+        //alert("9"+(a + 1) + "3");
+        $("button").click(function () {
+            let idx = $(this).index()+1;
+            $("img").attr({
+                "src" :"../Image/img/footer_face0"+idx+".gif",
+                "alt" : altArray[idx],
+                "title" : altArray[idx]
+            });
+        })
+    </script>
+</body>
+</html>

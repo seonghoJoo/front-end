@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>this</title>
+</head>
+<body>
+    <button>버튼1</button>
+    <button>버튼2</button>
+    <button>버튼3</button>
+    <button>버튼4</button>
+    <button>버튼5</button>
+
+    <script src="../library/jquery.js"></script>
+    <script>
+        $("button").click(function (e) {
+            console.log(this);
+            //this라는 키워드가 있음 : 그 요소
+            // this는 순수 자바스크립트 요소 객체 (jQuery 객체가 아님)
+            // 순수 자바스크립트객체 => jquery객체로 변경
+            // HOW? $(this)
+
+            $(this).css("background-color" , "red");
+            // 모든 버튼의 색깔이 변함
+            // $("button").css("background-color","red");
+        });
+    </script>
+</body>
+</html>

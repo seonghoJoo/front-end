@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html{
+            /*body를 브라우저에 꽉 맞춰주자*/
+            /*브라우저의 높이*/
+            height: 100%;
+        }
+        /*body 크기 알아보자*/
+        body{
+            /*body를 브라우저에 꽉 맞춰주자*/
+            width: auto;
+            height: 100%;
+            margin:0;
+            /*border:1px solid black;*/
+            /*
+                다른 모든 요소들은 뒷배경(이미지, 색상)이 border까지만 적용됩니다.
+                다만 body는 옛날스타일과의 호환을 위해서 예외(무조건 브라우저크기만큼 적용됨)
+
+            */
+            /*css가 html에 이후에 만들어져서 만들어진 잘못된 관행*/
+            background-color: orange;
+            cursor: crosshair;
+            user-select: none;
+        }
+        #circle{
+            /*바뀜*/
+            width:100px;
+            height: 100px;
+            background-color: red;
+            font-size: 50px;
+            line-height: 100px;
+            left:-200px;
+            top:-200px;
+
+
+
+            /*안 바뀜*/
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            text-shadow: 2px 2px 2px #424242;
+            color:#fff;
+            text-align: center;
+            border-radius: 50%;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            position: fixed;
+            transition: .1s ease;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div id="circle">0</div>
+    <script src="../library/jquery.js"></script>
+    <script>
+        //전역변수
+        let num = 1;
+        $("body").click(function (e){
+            //이벤트가 발생했을때의 여러가지 데이터 묶음이 바로 이벤트 객체
+            //마우스이벤트의 경우 좌표가 있음
+            /*
+                여러가지 좌표들
+                -  screenX, screenY : 모니터의 좌표
+                -  clientX, clientY : 브라우저의 좌표
+                -  pageX, pageY : 페이지에서의 좌표
+            * */
+
+            // 지역변수
+            // let num = 1
+
+            const x = e.clientX;
+            const y = e.clientY;
+            const size = Math.floor(Math.random()*200)+75;
+
+
+            console.log("x: " + x + " y : "+ y);
+            // const size = Math.floor(Math.random()*)
+            $("#circle").css({
+                width : size,
+                height : size,
+                left : x-size*0.5,
+                top : y-size*0.5,
+
+                backgroundColor : getRandomColor(),
+                fontSize : size*0.5,
+                lineHeight : size+"px"
+            }); // circle css end
+            $("body").css({
+                backgroundColor : getRandomColor()
+            });
+            $("#circle").text(num++);
+        });//body click end
+
+
+        //중복된 코드가 있다면 함수로 빼라
+        //getColor 함수 시작
+        function getRandomColor(){
+            const r = Math.floor(Math.random()*256);
+            const g = Math.floor(Math.random()*256);
+            const b = Math.floor(Math.random()*256);
+            return "rgb("+r + ", " +g + ", " + b+ ")";
+        }//getColor 함수 종료
+    </script>
+</body>
+</html>

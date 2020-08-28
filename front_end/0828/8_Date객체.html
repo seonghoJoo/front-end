@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Date객체</title>
+</head>
+<body>
+    <h1>???</h1>
+    <script src="../library/jquery.js"></script>
+    <script>
+
+        function displaytime(){
+            //  Date객체 생성 (
+            const now = new Date();
+
+            //  역사 1900년대 사람들은 2000년대를 고려하지 않고 getYear라는 함수를 만들었었음
+            //  연도 얻기
+            const year = now.getFullYear();
+            //월 얻기(0월 부터 시작)
+            const month = now.getMonth() + 1;
+            //일 얻기 (주의 getDay면 1주일 월화~~일) 이거 얻어오는 거임
+            const day = now.getDate();
+            //시 얻기
+            const hour = now.getHours();
+            //분 얻기
+            const minute = now.getMinutes();
+            //초 얻기
+            const seconds = now.getSeconds();
+
+            const fullTime = year+"년 "+month +"월 " + day + "일 " + hour+"시 " + minute+"분 " + seconds+"초";
+
+            $("h1").text(fullTime);
+
+        }//displayTime() end
+        setInterval(function (){
+            displaytime();
+        },1000);
+    </script>
+</body>
+</html>
