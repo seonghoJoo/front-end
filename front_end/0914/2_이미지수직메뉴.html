@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 수직메뉴</title>
+    <link rel="stylesheet" href="css/reset.css" />
+
+    <style>
+        #gnb{
+            width: 300px;
+            margin:30px auto;
+            transition : 1s ease;
+            user-select: none;
+        }
+        #gnb li{
+            width: 300px;
+            height: 100px;
+            transition : .3s ease;
+        }
+        #gnb li>a{
+            width: 300px;
+            height: 100px;
+            /*a가 inline 요소이기 때문에 발현이 안됨*/
+            display: block;
+            text-align: center;
+            line-height: 60px;
+            color:#0277BD;
+            /*text-decoration : none;*/
+            font-size:20px;
+            font-weight: 700;
+            cursor: pointer;
+            /* 무난 하게 쓰윽~ */
+            transition:.2s ease;
+            /*border: 10px solid black;*/
+        }
+        #gnb .mail{
+            background-image: url("img/mail_a.gif");
+        }
+        #gnb .cafe{
+            background-image: url("img/cafe_a.gif");
+        }
+        #gnb .blog{
+            background-image: url("img/blog_a.gif");
+        }
+        #gnb .kin{
+            background-image: url("img/kin_a.gif");
+        }
+        #gnb li:hover{
+           background-position: 0 -100px;
+        }
+        #gnb li:active{
+            background-position: 0 100px;
+        }
+    </style>
+</head>
+<body>
+<div id="gnb"><h2 class="screen_out">주요서비스</h2>
+    <ul>
+        <li class="mail screen_out"><a href="https://mail.naver.com/">메일</a></li>
+        <li class="cafe screen_out"><a href="https://mail.naver.com/">카페</a></li>
+        <li class="blog screen_out"><a href="https://mail.naver.com/">블로그</a></li>
+        <li class="kin screen_out"><a href="https://mail.naver.com/">지식in</a></li>
+    </ul>
+</div>
+</body>
+</html>

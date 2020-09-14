@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 수직메뉴</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <style>
+        #gnb{
+            width: 300px;
+            height: 400px;
+            background-color: red;
+            /*부모를 기준으로 수평 가운데 정렬*/
+            margin:32px auto;
+        }
+        /*gnb 자식 => ul li*/
+
+        #gnb li{
+            line-height: 100px;
+            text-align: center;
+            width: 300px;
+            height: 100px;
+            background: blue;
+        }
+        /* 0 1 0 2 */
+        #gnb li>a{
+            width: 300px;
+            height: 100px;
+            display: block;
+            /*
+                백그라운드 대표 속성
+                image도 기본값으로 들어감
+                background :green; => background-image 속성에도 들어감
+
+            body {
+                background: lightblue url("img_tree.gif") no-repeat fixed center;
+            }
+
+            */
+            background :green;
+            transition:.2s ease;
+        }
+        #gnb a:hover{
+            background-position: 0 -100px;
+        }
+        /*hover 보다 밑에여야 함 hover보다 나중에 오도록*/
+        #gnb a:active{
+            /*transition 각 속성마다 따로 지정 가능*/
+            /*transition : all - */
+            transition: background-position 0s, box-shadow .5s ease;
+            background-position: 0 -200px;
+            box-shadow: inset 0 0 20px #424242;
+        }
+        /* 0 0 1 1*/
+        #gnb .mail>a{
+            background-image: url("img/mail_a.gif");
+        }
+        /* 0 0 1 1*/
+        #gnb .cafe>a{
+            background-image: url("img/cafe_a.gif");
+        }
+        /* 0 0 1 1*/
+        #gnb .blog>a{
+            background-image: url("img/blog_a.gif");
+        }
+        /* 0 0 1 1*/
+        #gnb .kin>a{
+            background-image: url("img/kin_a.gif");
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="gnb">
+    <h2 class="screen_out">주요 서비스</h2>
+    <ul>
+        <li class="mail"><a href=""><span class="screen_out">메 일</span></a></li>
+        <li class="cafe"><a href=""><span class="screen_out">카 페</span></a></li>
+        <li class="blog"><a href=""><span class="screen_out">블로그</span></a></li>
+        <li class="kin"><a href=""><span class="screen_out">지식in</span></a></li>
+    </ul>
+</div><!--// gnb -->
+</body>
+</html>

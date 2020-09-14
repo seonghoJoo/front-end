@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>float의 활용</title>
+    <style>
+        #parent {
+            width: 300px;
+            border : 5px solid black;
+            /*overflow: hidden;*/
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            /*글자를 밀어내는 속성이 있었음. 논문 신문 미국 국기*/
+            float: left;
+        }
+        #red{
+            background: #e91E63;
+            /*2층에 뜨고 공간을 갖고 있지 않아*/
+            /*float을 하나에만 주면 헷갈린다 그래서 box 에 줘버리자*/
+            /*float: left;*/
+        }
+        #blue{
+            background: #0277BD;
+        }
+        #green{
+            background: #046304;
+        }
+        #yellow{
+            width: 350px;
+            height: 100px;
+            background: yellowgreen;
+            clear : both;
+        }
+        /*
+            float의 문제점
+            -  공간을 차지하지 않기 때문에 부모의 height값이 0이 됨
+
+            해결책
+            -  부모에 height값 주면 됨 (하지만 우린 auto값을 줬을때 어떻게 해결할까?)
+
+            -  부모에 overflow 속성을 지정(height 값을 고정하지 못할경우 해법)
+               float 된것을 막을 수 있음.
+
+            -  float이 끝나는 다음 형제에 clear:both 지정 (height 값을 고정하지 못할경우 해법)
+               쓸때없는 요소가 들어갈 수 있는 낭비가 있다(요즘 거의 안씀)
+
+            -  가상요소를 활용하여 clear:both 지정 (3번과 상통하는 얘기)
+
+
+
+        */
+        #test{
+            width: 500px;
+            height: 150px;
+            background: gainsboro;
+        }
+    </style>
+</head>
+<body>
+<div id="parent">
+    <div id="red" class="box">가나다</div>
+    <div id="blue" class="box">다라마</div>
+    <div id="green" class="box">마바사</div>
+    <div id="yellow"></div>
+</div>
+<!--<div id="test"></div>-->
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>블록레벨의 수평 레이아웃</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <style>
+        .box{
+            width: 1250px;
+            background: silver;
+            margin : 100px auto;
+            opacity: .5;
+            /*
+                해결책
+                1)  overflow : hidden (visible은 기본값이기에 불가!)
+                2)  height 값 120px 지정
+                3)  clear:both
+
+            */
+            /*overflow: hidden;*/
+        }
+        .box div{
+            margin:0 50px 0 50px;
+            width: 150px;
+            height: 120px;
+            background-size: 100% 100%;
+            float: left;
+            /*
+                블록레벨 수평
+                1) float
+                2) display : inline-block 진보
+            */
+        }
+        .box div:nth-child(1){
+            background-image: url("img/c1.jpg");
+        }
+        .box div:nth-child(2){
+            background-image: url("img/c2.jpg");
+        }
+        .box div:nth-child(3){
+            background-image: url("img/c3.jpg");
+        }
+        .box div:nth-child(4){
+            background-image: url("img/c4.jpg");
+        }
+        .box div:nth-child(5){
+            background-image: url("img/c5.jpg");
+        }
+        /*
+            가상요소에는 content 속성이 필요
+            가상요소 inline 임
+        */
+        /*
+            잘난체 하는 사람들이 이 악물고 쓰는 방법
+            우린 overflow 쓰도록 하고 overflow 쓰면 안될때 이 방법 쓰자
+        */
+        .box::after{
+            content: "";
+            display: block;
+            clear:both;
+        }
+        h1{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<h1>엄청 큰 문제가 생겼어요!!</h1>
+
+<!--
+
+    블록레벨은 줄바꿈이 일어납니다.
+    기본적으론 수직 레이아웃
+
+    그런데 웹서비스에서는 수평인 경우가 정말 많습니다.
+
+    블록레벨의 수평 레이아웃 방법
+    1) float (2000년대 초반)
+    2) inline-block (IE 8부터 적용)
+    3) flex-box (CSS3 이고 최신인데 데스크탑 웹에서는 브라우저중에 적용 안되는 경우도 있어서 수업때는 얘기를 안 할 예정)
+
+-->
+
+</body>
+</html>

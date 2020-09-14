@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>수직메뉴</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-family: "Noto Sas KR", sans-serif ,Serif;
+        }
+        #gnb{
+            /*
+                width값이 있는 상태에서 마진 auto 를 주면 가운데로 정렬이 된다
+                부모의 가운데로 정렬(body)
+            */
+            width : 160px;
+            margin:32px auto;
+            border:10px solid black;
+            border-bottom: none;
+        }
+        #gnb li{
+            line-height: 60px;
+            /*text-align: center;*/
+            width: 160px;
+            height: 60px;
+            background-color: beige;
+            border-bottom: 10px solid black;
+            /*border: 5px solid black;*/
+        }
+        /*a요소는 item 아무데나 누르면 들어가기가 가능해야 함*/
+        #gnb li>a{
+            width: 160px;
+            height: 60px;
+            /*a가 inline 요소이기 때문에 발현이 안됨*/
+            display: block;
+            text-align: center;
+            line-height: 60px;
+            color:#0277BD;
+            /*text-decoration : none;*/
+            font-size:20px;
+            font-weight: 700;
+            /* 무난 하게 쓰윽~ */
+            transition:.2s ease;
+            /*border: 10px solid black;*/
+        }
+
+        #gnb li>a:hover{
+            background-color: antiquewhite;
+            font-size:24px;
+            font-weight: 900;
+            color:#fff;
+        }
+        #gnb li>a:active{
+            transform: perspective(100px) scale(.8) rotateX(180deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- gnb = global navigation bar -->
+    <!-- 다음의 경우-->
+    <!--
+        screen_out 클래스를 주면 CSS상에서 숨김
+        (시멘틱웹이나 웹 접근성을 위해서 필요한 글자이지만
+        디자인 및 레이아웃에서 필요없는 요소들을 위해서
+    -->
+    <div id="gnb"><h2 class="screen_out">주요서비스</h2>
+        <ul>
+            <li class="mail"><a href="https://mail.naver.com/">메일</a></li>
+            <li class="cafe"><a href="https://mail.naver.com/">카페</a></li>
+            <li class="blog"><a href="https://mail.naver.com/">블로그</a></li>
+            <li class="kin"><a href="https://mail.naver.com/">지식in</a></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>1층 그리고 2층</title>
+    <style>
+        /*
+            css 같은 구체성이면 아래있는게 적용이 됨
+            같은 층수면 아래있는게 올라감 stack
+        */
+        div{
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+
+        }
+        span{
+            font-size: 50px;
+            padding: 30px 0;
+            /*display: none;!*층수 초급*!*/
+        }
+        #red{
+          background: #e91E63;
+            /*3층으로 보내기*/
+            /*position:relative;*/
+            /*2층 얘기*/
+            /*float: left;*/
+        }
+        #red span{
+            background: #046304;
+        }
+        #blue{
+            background: #0277BD;
+            /*margin-left :50px;*/
+            /*margin-top : -150px;*/
+
+
+            margin-top:-150px;
+            margin-left: 50px;
+        }
+        #blue span{
+            background: #ffeb3b;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="red">
+    <span>가나다</span>
+</div>
+
+<div id="blue">
+    <span>다라마</span>
+</div>
+
+
+
+</body>
+</html>
