@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>margin_auto</title>
+    <style>
+        #parent{
+            width: 800px;
+            height: 500px;
+            background-color: silver;
+        }
+        #child{
+            /*부모한테 width값 상속*/
+            width:500px;
+            /*
+                width와 margin에 auto를 같이 지정하면 width가 이깁니다.\
+
+                하지만 width값을 지정할 경우
+                부모의 width에서 width값을 빼고 그 값을 /2 해서
+                margin-left와 margin-right가 나눠가집니다.
+
+                결론: 블록레벨의 수평 가운데 정렬하기 위해선
+                width 값 지정후 margin:auto 면 됨
+
+
+                margin-top, bottom은 auto값이 0
+                margin-left, right 값이 auto일 경우에는 부모 width - 자식 width 나머지를 left와 right가 나눠 갖는다.
+            */
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: auto;
+            margin-right: auto;
+            /*
+                    margin:auto; 하나면 됨
+            */
+
+            height: 200px;
+            background-color: #0F4C82;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="child"></div>
+    </div>
+</body>
+</html>

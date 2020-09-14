@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>each 메서드</title>
+</head>
+<body>
+    <script src="../library/jquery.js"></script>
+    <script>
+        const bts=["RM","슈가","진","지민","정국","뷔","제이홉"];
+
+        /*
+                $.each(배열,함수)
+                $(배열).each(함수)
+                전부~다 접근해 주겠다
+        * */
+        $.each(bts,function (idx) {
+            console.log(idx+" 번째 "+this);
+            /*
+            *       this는 대명사야 예를 들어 영어에서도 주성호 면 이제 he라고 부르는게 국룰임
+            * */
+        }); //$.each() end
+        $(bts).each(function (idx) {
+            console.log(idx+" 번지 "+this);
+        })
+    </script>
+</body>
+</html>

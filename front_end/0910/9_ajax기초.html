@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax의 기초</title>
+</head>
+<body>
+<script src="../library/jquery.js"></script>
+<script>
+
+    /*
+            $.ajax(옵션객체); 이용해서 ajax
+
+            옵션객체의 주요 속성
+            -  url : 서버주소 (필수) 고양아 피자스쿨 피자 시켜줘
+            -  error : 에러가 발생했을 때 호출되는 함수(콜백)
+            -  success : 성공했을때 호출되는 함수(콜백)
+            핸들러 -> 이벤트에 대해서만
+            콜백 -> 나머지는
+
+    */
+
+    $.ajax({
+        url:"http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=430156241533f1d058c603178cc3ca0e&targetDt=20120101",
+        error: function () {
+            alert("에러!!");
+        },
+        success: function (json) {
+            console.log(json.boxOfficeResult.boxofficeType);
+
+
+        }
+    });//$.ajax() end
+
+    /*
+            순수 자바스크립트 API 이용해서 ajax를 개발하는것은 복잡합니다
+    */
+
+
+    /*
+        eXtensible Markup Language
+        (확장가능한 마크업 언어)
+        비동기 통신의 자바스크립트 그리고 XML
+        ajax(Asynchronous javascript and XML)
+
+        (고양이)
+        XMLHTTPRequest 객체가 요청 / 응답
+        피자가 올때까지 문열고 기다리는 짓 (답답 기존의 웹방식)
+
+        객체 하나가 주소 요청 -> 응답 받고 그때 페이지를 갱신
+
+        ajax란 전체 페이지 새로고침 없이
+        페이지의 특정부분만 업데이트 시키는 기술
+        (네이버 검색창에 ㅇ -> 유튜브 바로가기 / 우 -> 우리은행 바로바로 뜸)
+
+
+
+
+    */
+</script>
+
+</body>
+</html>

@@ -20,10 +20,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3934a87-588c-4606-b24a-98b286101229" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/0828/1_0827실습문제.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0828/2_박스모델.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0909/1_0824_실습1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0909/2_주성호_사연.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0909/3_0824_실습2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0909/4_자식_자손선택자.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0910/1_이미지슬라이드기초.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0910/2_margin_auto.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0910/3_if문.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0910/5_이미지로테이트.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0910/6_나홀로 복습.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0911/1_ajax기초.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0911/2_json.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0911/3_each메서드.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0911/4_ajax 복습.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0911/5_박스오피스.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0911/6_change.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0911/7_영화검색.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0911/data/playList.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0911/data/seriesList.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Image/img/android-icon-36x36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Image/img/apeach.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Image/img/bg_pdp_localtab.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Image/img/frodo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Image/img/jayg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Image/img/kakaofriends_btn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Image/img/loader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Image/img/muzi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Image/img/n1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Image/img/n2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Image/img/n3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Image/img/n4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Image/img/neo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Image/img/niniz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Image/img/sp_shop160614.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Image/img/sp_shopping_v180921.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Image/img/t1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Image/img/t2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Image/img/t3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Image/img/tube.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0827/11_실습.html" beforeDir="false" afterPath="$PROJECT_DIR$/0827/11_실습.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0824_주성호/img/band2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Image/img/band2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0824_주성호/img/profile.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Image/img/profile.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,10 +91,11 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -68,11 +106,11 @@
       <recent name="C:\BMJ\workspace\front_end\0824_주성호\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\WebstormProjects\JAVA_Class\front_end\Image\img" />
       <recent name="C:\BMJ\workspace\front_end\0826_주성호" />
       <recent name="C:\BMJ\workspace\front_end\0826" />
       <recent name="C:\BMJ\workspace\front_end\0825" />
       <recent name="C:\BMJ\workspace\front_end" />
-      <recent name="C:\BMJ\workspace\front_end\0824" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -94,6 +132,8 @@
       <workItem from="1598432525323" duration="1018000" />
       <workItem from="1598488660578" duration="26474000" />
       <workItem from="1598575114042" duration="1796000" />
+      <workItem from="1599697114092" duration="24800000" />
+      <workItem from="1599781657719" duration="29364000" />
     </task>
     <servers />
   </component>
@@ -141,9 +181,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598250446840" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1598504148289">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1599812463849">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599812463849" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598504148289" />
   </component>
 </project>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이펙트예제</title>
+    <style>
+        #box{
+            width: 1024px;
+            height: 960px;
+            /*background-repeat: no-repeat;*/
+            background-image: url("https://file.mk.co.kr/meet/neds/2020/07/image_readtop_2020_760065_15955774294292275.png");
+            background-size: 240px 240px;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button id="showBtn">show/hide</button>
+        <button id="fadeBtn">fadeIn/Out</button>
+        <button id="slideBtn">slideUp/Down</button>
+    </p>
+    <div id="box"></div>
+    <script src="../library/jquery.js"></script>
+    <script>
+        /*
+            이펙트 관련 메서드
+            -  hide() : 내부적으로는 display: none 으로 처리
+            -  show() : display : block, inline
+            -  toggle() : show/hide 토글
+            -  fadeIn() : 쓰으윽 나타나는 효과
+            -  fadeOut() : 쓰으윽 사라지는 효과
+            -  fadeToggle() : fadeOut / fadeIn 토글
+            -  $('#box').slideUp(); 숨겨지는 것
+            -  $('#box').slideDown(); 보여짐
+        * */
+        let flag=0;
+        $('#showBtn').click(function () {
+                    $('#box').toggle(500);
+            });//event 핸들러 함수
+        $('#fadeBtn').click(function () {
+            //$('#box').fadeOut();
+            //$('#box').fadeIn();
+            $('#box').fadeToggle();
+        });
+        $('#slideBtn').click(function () {
+            // $('#box').slideUp(); 숨겨지는 것
+            // $('#box').slideDown(); 보여짐
+            $('#box').slideToggle();
+        });
+
+    </script>
+</body>
+</html>

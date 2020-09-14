@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>아주 멋진 웹서비스</h1>
+<form id="joinForm" method="post" action="https://band.us/discover/search">
+
+</form>
+<!--    HTML5 에 추가된 방법으로
+        form 요소의  id 속성을 각 버튼 및 input 등에 form 속성으로
+        쓸 경우 연결이 됩니다
+-->
+    <label for="search">검색뭐함?</label>
+    <input id="search" form="joinForm" placeholder="검색어 입력"/>
+    <button form="joinForm">검색</button>
+</body>
+<script src="../library/jquery.js"></script>
+<script>
+    /*
+        input, textarea, select 요소들에서 파라미터값을 얻어오거나 세팅하려면
+        : val 메서드
+    * */
+
+    // 이벤트 리스너 듣고있다가 function을 호출함
+    //이벤트 핸들러 -> 이벤트를 처리하는 함수
+    // form 요소에 submit 이벤트리스너를 붙이는 메서드
+    $('#joinForm').submit(function () {
+        // 1) 유저가 입력한 값을 얻어옴
+        const _search = $('#search').val();
+        // 2) form 요소에서 action 속성값을 얻어옴
+        const _action = $('#joinForm').attr("action");
+        let _url = _action+"/"+_search;
+        // 3) form 요소에 action 속성값으로 세팅
+        $('#joinForm').attr("action",_url);
+
+    });
+   console.log(t);
+</script>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax 복습</title>
+    <style>
+        #loader{
+            width: 100%;
+            height: 100%;
+            position:fixed;
+            background-position: center;
+            background-image: url("../Image/img/loader.svg");
+            background-repeat: no-repeat;
+            background-color: rgba(255,255,255,0.75);
+            left: 0;
+            top:0;
+            /*loader 이미지 가리기*/
+            display : none;
+        }
+    </style>
+</head>
+<body>
+    <button id="loadBtn">불러오기</button>
+    <h1>내 플레이 목록</h1>
+
+    <ul id="songList">
+        <li id="emptyList">아직 없음</li>
+<!--        <li>-->
+<!--            <h2>물감</h2>-->
+<!--            <strong>가수 : 문문</strong>-->
+<!--            <em>재생시간 : 03:08</em>-->
+<!--        </li>-->
+    </ul>
+    <div id="loader"></div>
+<script src="../library/jquery.js"></script>
+<script>
+
+
+    $('#loadBtn').click(function () {
+        $('#loader').show();
+        const $songList = $('#songList');
+        $.ajax({
+            url:"data/playList.json",//요청하는 서버주소
+
+            method:"GET", //GET POST 클라이언트 -> 서버(default)
+
+            dataType :"json", //XML JSON 서버 -> 클라이언트 데이터 타입(default)
+
+            error:function (xhr, code, type) {
+                console.log("xhr : " +xhr);  // XMLHttpRequest 객체
+                console.log("code : " +code);
+                console.log("type : " +type);
+                alert("서버 문제있어?");
+            },// error() end
+            success:function (json) {
+
+                // 그 요소를 지우려면
+                $('#emptyList').remove();
+
+                $(json).each(function () {
+                    const $h2 = $('<h2>').text(this.title);
+                    const $strong = $('<strong>').text("가수: "+this.singer);
+                    const $em = $('<em>').text("재생시간 : "+this.playTime);
+                    $('<li>').append($h2,$strong,$em)
+                             .appendTo($songList);
+
+                }); // each() end
+                $('#loader').fadeOut();
+            }// success() end
+        }); //.ajax() end
+
+    });
+</script>
+</body>
+</html>

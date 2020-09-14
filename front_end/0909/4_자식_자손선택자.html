@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>자식 자손 선택자</title>
+    <style>
+        li:first-child{
+            background-color: red;
+        }
+        li:last-child{
+            background-color: blue;
+        }
+        /*짝수 선택*/
+        li:nth-child(even){
+            color : green;
+        }
+        /*홀수 선택*/
+        li:nth-child(odd){
+            color: pink;
+        }
+        /*1 4 7...*/
+        li:nth-child(3n+1){
+            background: deepskyblue;
+        }
+        /**
+                자손 선택자 : ' '
+                자식 선택자 : '>'
+
+                자식 선택자가 익스플로러에서 적용이 안되었던 적이 많아서 하위호환성(크로스 브라우징) 때문에
+                현업에서는 자손선택자를 많이 사용함
+         */
+       div span{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>
+            <span>나는 무슨색?</span>
+        </p>
+    </div>
+    <ul>
+        <li>리스트1</li>
+        <li>리스트2</li>
+        <li>리스트3</li>
+        <li>리스트4</li>
+        <li>리스트5</li>
+        <li>리스트6</li>
+        <li>리스트7</li>
+        <li>리스트8</li>
+        <li>리스트9</li>
+        <li>리스트10</li>
+
+    </ul>
+</body>
+</html>

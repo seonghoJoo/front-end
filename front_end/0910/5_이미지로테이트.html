@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 로테이트</title>
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <style>
+        #wrap {
+            width:600px;
+            height:520px;
+            position: fixed;
+            left:50%;
+            top:50%;
+            margin-left:-300px;
+            margin-top:-260px;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #kakaoBox {
+            width:480px;
+            height: 500px;
+            border:10px solid #424242;
+            /* 블록레벨의 수평 가운데 정렬 */
+            margin:auto;
+            /* 포지셔닝컨텍스트 지정 */
+            position: relative;
+            overflow: hidden;
+        }
+
+        #friends {
+            /*480 + 500 + 500*/
+            width:1480px;
+            height: 1480px;
+            left:-500px;
+
+            position: absolute;
+            transition: .5s cubic-bezier(.37,-0.45,.61,1.56);
+        }
+        #friends img{
+            position: absolute;
+            top:0;
+            left:500px;
+
+            transform-origin: 50% 740px;
+            /*animation: rotate 2s linear infinite;*/
+        }
+
+        #friends img:nth-child(2){
+            transform:rotateZ(90deg);
+        }
+        #friends img:nth-child(3){
+            transform:rotateZ(180deg);
+        }
+        #friends img:nth-child(4){
+            transform:rotateZ(270deg);
+        }
+
+        .btn {
+            position: absolute;
+            width:50px;
+            height:50px;
+            border:none;
+            background-color: transparent;
+            font-size:40px;
+            color:#673AB7;
+            top:235px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            color: deeppink;
+        }
+
+        #prevBtn {
+            left:0;
+        }
+        #nextBtn {
+            right:0;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <button id="prevBtn" class="btn fas fa-arrow-circle-left"></button>
+    <button id="nextBtn" class="btn fas fa-arrow-circle-right"></button>
+    <div id="kakaoBox">
+        <div id="friends">
+            <img src="../Image/img/muzi.png" alt="캐릭터 설명" width="480"/><!--
+            --><img src="../Image/img/apeach.png" alt="캐릭터 설명" width="480"/><!--
+            --><img src="../Image/img/frodo.png" alt="캐릭터 설명" width="480"/><!--
+            --><img src="../Image/img/jayg.png" alt="캐릭터 설명" width="480"/><!--
+        --></div> <!--#friends-->
+        </div><!--//#kakaoBox-->
+</div><!--//#wrap -->
+<script src="../library/jquery.js"></script>
+<script>
+    let deg=0;
+    $("#nextBtn").click(function () {
+        deg+=90;
+        $('#friends').css('transform',"rotate("+deg+"deg)");
+
+    }); //nextBtn click() end
+    $("#prevBtn").click(function () {
+        deg-=90;
+        $('#friends').css('transform',"rotate("+deg+"deg)");
+    }); //prevBtn click() end
+</script>
+</body>
+</html>

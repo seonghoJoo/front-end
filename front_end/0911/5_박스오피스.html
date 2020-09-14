@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>영화진흥위원회 박스오피스</title>
+    <style>
+        th,td{
+            padding:8px 12px;
+            border : 1px solid #424242;
+            text-align: center;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        select{
+            font-size: 20px;
+        }
+        #loader{
+            width: 100%;
+            height: 100%;
+            position:fixed;
+            background-position: center;
+            background-image: url("../Image/img/loader.svg");
+            background-repeat: no-repeat;
+            background-color: rgba(255,255,255,0.75);
+            left: 0;
+            top:0;
+
+            display : none;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="title">2020년 9월 10일 박스오피스</h1>
+    <select id="year">
+        <option value="2020" selected>2020</option>
+    </select> 년
+    <select id="month">
+        <option selected>1</option>
+    </select> 월
+    <select id="day">
+        <option selected>1</option>
+    </select> 일
+    <table>
+        <thead>
+            <tr>
+                <th>순번</th>
+                <th>순위</th>
+                <th>제목</th>
+                <th>개봉일</th>
+                <th>누적관객수</th>
+                <th>누적매출액</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="noData" colspan="6">ㅜ_ㅜ</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6">영화진흥위원회 제공</td>
+            </tr>
+        </tfoot>
+
+    </table>
+    <!-- 로고 이미지 가져오기-->
+    <div id="loader"></div>
+<script src="../library/jquery.js"></script>
+<script>
+
+    let dayArr = new Array(31,29,31,30,31,30,31,31,30,31,30);
+    const $loader = $('#loader');
+
+    $('#day').click(function () {
+        for(let i=2;i<=dayArr[$('#month option:selected').val()-1];i++){
+            $('#day').append('<option>'+i);
+        }
+    });
+    // $('#year, #month, #day').change(getBoxOfficeList);
+    $('#day').change(getBoxOfficeList);
+    function getBoxOfficeList(){
+        $loader.show();
+        //년
+        const year = $('#year option:selected').val();
+        //월
+        let month = $('#month option:selected').val();
+        //일
+        let day = $('#day option:selected').val();
+        if(month <10){
+            month = '0'+month;
+        }
+        if(day < 10){
+            day = '0'+day;
+        }
+        //console.log(month);
+        // alert($('#year option:selected').val() + this.value);
+        //ajax
+        $.ajax({
+            url : "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json",
+            data : {
+                key: "430156241533f1d058c603178cc3ca0e",
+                targetDt: year+month+day
+            },//서버로 넘기는 데이터,
+            method : "GET",
+            error:function () {
+               alert("서버오류");
+            },//error end
+            success : function (json) {
+                // console.log(json.boxOfficeResult.dailyBoxOfficeList[0]);
+                const movies = json.boxOfficeResult.dailyBoxOfficeList;
+                $('#noData').remove();
+                $('tr').empty();
+                $(movies).each(function () {
+                    // console.log(this.openDt + this.audiAcc + this.salesAcc + this.movieNm + this.rank);
+                    const $td1 = $('<td>').text(this.rnum);
+                    const $td2 = $('<td>').text(this.rank);
+                    const $td3 = $('<td>').text(this.movieNm);
+                    const $td4 = $('<td>').text(this.openDt);
+                    const $td5 = $('<td>').text(this.audiAcc);
+                    const $td6 = $('<td>').text(this.salesAcc);
+                    $('<tr>').append($td1,$td2,$td3,$td4,$td5,$td6)
+                             .appendTo('tbody');
+                    $('#title').text(year +"년 "+month + "월 " + day+ "일 박스오피스");
+                });
+
+                $loader.fadeOut();
+           }//success end
+        }); //$.ajax() end
+    };//getBoxOfficeList()
+
+    for(let i=2019;i>=2005;i--){
+        $('#year').append('<option value=i>'+i);
+    }
+    for(let i=2;i<=12;i++){
+        $('#month').append('<option>'+i);
+    }
+    //console.log(dayArr[$('#month option:selected').val()-1] + " : " +$('#month option:selected').val());
+
+</script>
+</body>
+</html>

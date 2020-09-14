@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>요소의 생성</title>
+    <style>
+        #box{
+            margin-top: 10px;
+            width: 400px;
+            height: auto;
+            min-height: 300px;
+            max-height: 1000px;
+            background-color: #9fa8da;
+            padding : 20px;
+        }
+        /*td에 css 함 */
+        td{
+            border: 1px solid #fff;
+            padding: 10px 14px;
+        }
+        table{
+            border-collapse: collapse;
+        }
+
+    </style>
+</head>
+<body>
+    <button id="btn">생성!</button>
+    <div id="box">
+        <table>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="../library/jquery.js"></script>
+    <script>
+        $('#btn').click(function () {
+
+            // const $table= $('<table>');
+            const $table = $("<table><tbody></tbody></table>");
+
+            // 1번째 tr 요소 생성
+            const $tr1 = $("<tr><td>1</td><td>2</td></tr>");
+
+            // 2번째 tr 요소 생성
+            const $tr2 = $('<tr>');
+            // jQ
+            // uery 가 알아서 처리해줌
+            // const $tr2 = $('<tr />');
+            // const $tr2 = $('<tr></tr>');
+            // 변수엔 항상 jqery 객체들엔 $ 붙이는게 국룰임
+
+            // 3번 td
+            const $td3 = $('<td>3</td>');
+
+            // 4번 td (얘가 더 편함) 변수 넣기 좋음
+            const $td4 = $('<td>').text(4);
+
+            // 2번째 tr에 td3 과 td4를 붙임
+            $tr2.append($td3,$td4);
+
+            //table에 $tr1 , $tr2 을 붙입니다
+            $table.append($tr1, $tr2);
+
+            // box에 table을 붙임
+            $('#box').append($table);
+
+            // // 1번째 tr을 table 요소에 붙임
+            // $table.append($tr1);
+            // const 자동차 트럭에다 짐을 싣는거라고 생각하면 되
+            // $('#box').append($table);
+
+            /*
+                    table 1개
+                    tbody 1개
+                    tr 2개
+                    td 4개
+            * */
+
+
+            /*
+                DOM tree 구조
+                $("img") : DOM 안에 img 요소를 선택한것
+                $("<img>") : img 요소객체 생성 (메모리 상)
+
+                요소에 붙일때는 append
+                1) 부모.append(자식)
+                2)
+            */
+            //  jQuery
+            //  const $img = $("<img src='../Image/img/profile.jpg' width='100'/>");
+            //const $img = $("<img>").attr("src",'../Image/img/profile.jpg');
+            //  요소에 붙이는 메서드
+            //$('#box').append($img)
+            //console.log($img);
+
+        }); //click () 종료
+
+    </script>
+</body>
+</html>

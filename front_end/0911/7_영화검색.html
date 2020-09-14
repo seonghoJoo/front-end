@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>영화검색</title>
+    <link rel="stylesheet" href="../css/notosanskr.css"/>
+    <link rel="stylesheet" href="../css/all.min.css"/>
+    <style>
+        body{
+            font-family: "Noto Sans KR" , Serif, sans-serif;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        th,td{
+            border:1px solid #424242;
+            font-size: 20px;
+            padding : 8px 12px;
+        }
+        #loader{
+            width: 100%;
+            height: 100%;
+            position:fixed;
+            background-position: center;
+            background-image: url("../Image/img/loader.svg");
+            background-repeat: no-repeat;
+            background-color: rgba(255,255,255,0.75);
+            left: 0;
+            top:0;
+
+            display : none;
+        }
+        input{
+            font-size: 20px;
+        }
+        #q{
+            margin:20px 0 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1><i class="fas fa-film"></i> 아주 멋진 영화검색 웹서비스</h1>
+
+    <input id="q" name="movieNm" placeholder="검색할 영화명"/>
+    <button id="searchBtn"><i class="fas fa-search"></i>검색</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>영화명</th>
+                <th>감독</th>
+                <th>장르</th>
+                <th>개봉일</th>
+                <th>제작사</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="noData" colspan="5">아무것도 없쥬?</td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="loader"></div>
+
+<script src="../library/jquery.js"></script>
+<script>
+    let text;
+    $('#searchBtn').click(function (e) {
+        text = getValue();
+        searchMovie(text);
+    });
+
+    $('#q').keyup(function (e) {
+        if(13==e.keyCode){
+            text = getValue();
+            searchMovie(text);
+        }
+
+    });
+    function getValue() {
+        $('#loader').show();
+        return $('#q').val();
+    }
+    function searchMovie(movieName){
+        $.ajax({
+            url:"http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?",
+            data:{
+                key:"9e1d66686981108729229f2d0df7e50f",
+                movieNm: movieName,
+                itemPerPage:"100"
+            },
+            error : function () {
+                alert("서버오류")
+            },
+            success : function (json) {
+                const movie = json.movieListResult.movieList;
+                $('tbody').empty();
+                $('#noData').remove();
+                $('#loader').fadeOut();
+                $(movie).each(function () {
+                    const $td1 = $('<td>').text(this.movieNm);
+
+                    // console.log(this.directors);
+
+                    let directors=this.directors;
+                    let tempDirectors="";
+                    $(directors).each(function () {
+                        tempDirectors+=this.peopleNm+", ";
+                    });
+                    let $td2;
+                    if(tempDirectors==''){
+                        $td2 = $('<td>').text('x');
+                    }else{
+                        tempDirectors = tempDirectors.slice(0,-2);
+                        $td2 = $('<td>').text(tempDirectors);
+                    }
+                    const $td3 = $('<td>').text(this.genreAlt);
+                    let $td4;
+                    if(this.openDt==''){
+                        $td4 = $('<td>').text('x');
+                    }else{
+                        $td4 = $('<td>').text(this.openDt);
+                    }
+                    let companys=this.companys;
+                    let tempCompanys="";
+                    $(companys).each(function () {
+                        tempCompanys+=this.companyNm+", ";
+                    });
+                    let $td5;
+                    if(tempCompanys==''){
+                        $td5 = $('<td>').text('x');
+                    }else{
+                        tempCompanys = tempCompanys.slice(0,-2);
+                        $td5 = $('<td>').text(tempCompanys);
+                    }
+                    $('<tr>').append($td1,$td2,$td3,$td4,$td5)
+                    .appendTo('tbody');
+                });
+
+            }
+        })
+    };
+    $(window).scroll(function () {
+
+    })
+
+</script>
+</body>
+</html>

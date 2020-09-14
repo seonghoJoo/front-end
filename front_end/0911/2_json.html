@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>json</title>
+</head>
+<body>
+
+<script src="../library/jquery.js"></script>
+<script>
+
+    /*  드라마 목록 json
+    */
+    const seriesList = [
+        {"title" : "왕좌의 게임", "openDate" : "2011-04-17", "director" : "앨런 테일러"},
+        {"title" : "엄브렐러아카데미", "openDate" : "2019-02-15", "director" : "스티븐 블랙먼"},
+        {"title" : "오피스", "openDate" : "2005-03-24", "director" : "그렉 다니엘스", },
+        {"title" : "멀린", "openDate" : "2008-09-20", "director" : "줄리 가드너", },
+        {"title" : "스페이스 포스", "openDate" : "2020-05-29", "director" : "그렉 다니엘스", }
+    ];
+    //console.log(seriesList[2].openDate);
+
+    $.each(seriesList,function (idx){
+       alert(this.title);
+    });
+    $(seriesList).each(function (idx) {
+        alert(this.title);
+    });
+
+    /*  배열 (array)
+        -  변수들의 묶음
+        -  배열의 생성 : [], new Array();
+        -  인덱스 번지수로 접근한다. idx=0부터 시작
+        -  length 속성 : 길이
+        director = director.substring(0,director.length-1);
+
+    */
+    const arr = [1,2,5,7,10];
+
+    // 객체 속성들의 묶음
+    const series = {
+        "title" : "왕좌의 게임",
+        "genre" : "판타지",
+        "director" : "앨런테일러",
+        "actor" : "피터 딘클리지",
+        "openDate" : "20110417"
+    };
+    //장르를 액션으로
+    series.genre = "액션";
+
+    //alert(series.genre);
+    /*
+        json은 자바스크립트의 배열 + 객체로 이루어짐 // 끝
+
+    * */
+</script>
+</body>
+</html>

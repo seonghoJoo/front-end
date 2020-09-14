@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 슬라이드 기초</title>
+    <link rel="stylesheet" href="../css/notosanskr.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <style>
+        #wrap{
+            width: 600px;
+            height: 520px;
+            margin:auto;
+            background-color: transparent;
+            position:relative;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        #wrap #prev_btn{
+            position:absolute;
+            width: 50px;
+            height: 50px;
+            font-size: 40px;
+            background-color: transparent;
+            left:0;
+            top:50%;
+            margin: -25px -25px 0 0;
+        }
+        #wrap #next_btn{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            font-size: 40px;
+            background-color: transparent;
+            right:0;
+            top:50%;
+            margin: -25px 0 0 -25px;
+        }
+        .kakaoBox{
+            border:10px solid black;
+            /*width 값 꼭 필수 auto가 되면 margin 쌉바름*/
+            width: 480px;
+            height: 500px;
+
+            /*블록레벨의 수평가운데 정렬*/
+            margin:auto;
+
+            /*포지셔닝 컨텍스트 지정*/
+            position : relative;
+            overflow: hidden;
+        }
+        .kakaoBox #friends{
+            width:2880px;
+            background-color: rgba(32,32,32,0.1);
+            left:0;
+            bottom:0;
+            position: absolute;
+
+            transition:.3s cubic-bezier(.67,.07,.85,1.11);
+        }
+        button:hover{
+             color:black;
+         }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <button id="prev_btn"><i class="fas fa-chevron-left"></i></button>
+        <button id="next_btn"><i class="fas fa-chevron-right"></i></button>
+        <div class="kakaoBox">
+            <div id="friends">  <!--엔터가 도중에 끼어있기 때문에 제거해야한다 바로 주석~-->
+                <img src="../Image/img/muzi.png" alt="캐릭터 설명" width="480"/><!--
+            --><img src="../Image/img/apeach.png" alt="캐릭터 설명" width="480"/><!--
+            --><img src="../Image/img/frodo.png" alt="캐릭터 설명" width="480"/><!--
+            --><img src="../Image/img/jayg.png" alt="캐릭터 설명" width="480"/><!--
+            --><img src="../Image/img/neo.png" alt="캐릭터 설명" width="480"/><!--
+            --><img src="../Image/img/tube.png" alt="캐릭터 설명" width="480"/><!--
+        --></div><!-- //#!!frinds-->
+        </div><!-- //#!!kakaoBox-->
+
+    </div><!-- #!!wrap-->
+<script src="../library/jquery.js"></script>
+<script>
+    let imgPosition=0;
+
+    $('#prev_btn').click(function () {
+        //480 * (6-1)
+        if(imgPosition<=-2400){
+            imgPosition=0;
+        }else{
+            imgPosition-=480;
+        }
+        $('#friends').css("left",imgPosition+"px");
+    });//#prev_btn click() end
+    $('#next_btn').click(function () {
+        if(imgPosition>=0){
+            imgPosition=-2400;
+        }else{
+            imgPosition+=480;
+        }
+        $('#friends').css("left",imgPosition+"px");
+    });//#prev_btn click() end
+
+</script>
+</body>
+</html>

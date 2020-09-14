@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>요소의 생성 추가 삭제</title>
+    <style>
+        ul{
+            width: 300px;
+            background-color: #9fa8da;
+            padding:20px;
+            margin:0;
+            list-style: none;
+        }
+        /*0 1 0 1*/
+        #animalList li{
+            margin:20px auto;
+            background-color: #B39DDB;
+            width: 200px;
+            height: 60px;
+            font-size: 30px;
+            line-height: 60px;
+            text-align: center;
+            cursor:pointer;
+        }
+        /*기존 li:hover 의 구체성은 0 0 1 1이었어서 background-color가 적용되지 않았었다.*/
+        /*0 1 1 1*/
+        #animalList li:hover{
+            background-color: #673AB7;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+    </style>
+</head>
+<body>
+<p>
+    <input id="name" placeholder="동물이름 입력"/>
+    <button id="createBtn">생성</button>
+    <button id="removeAllBtn">전부삭제</button>
+</p>
+<ul id="animalList">
+    <li>개미핥기</li>
+</ul>
+<script src="../library/jquery.js"></script>
+<script>
+    $('#name').val('').focus();
+    $('#createBtn').click(function (e) {
+        createAnimal();
+    });
+
+    $('#name').keyup(function (e) {
+        //엔터 칠때만 호출
+        if(e.keyCode == 13){
+            createAnimal();
+        }
+    });
+    $('#removeAllBtn').click(function () {
+        $('#animalList').empty();
+    });
+
+    //  유저가 입력한 이름으로 li 요소를 생성하여
+    //  ul 요소에 붙이는 함수(이벤트 핸들러)
+    function createAnimal() {
+        const val = $('#name').val();
+        // const $table= $('<table>');
+        /*
+            const $li = $("<li>"+val+"</li>");
+            $('#animalList').append($li);
+        */
+        // $('<li>').text(val).appendTo('#animalList');
+        // $('<li>').text(val)
+        //         .prependTo('#animalList');
+
+        // :last는 jQuery 전용선택자(css에서 사용불가)
+        // $('li:last-child').after($('<li>').text(val));
+
+        // $('<li>').text(val).insertAfter('li:last-child');
+        // $('li:last-child').before($('<li>').text(val));
+        // $('<li>').text(val).insertBefore('li:nth-child(1)');
+        // $('li:nth-child(1)').before($('<li>').text(val));
+        $('#name').val('').focus();
+
+    };
+
+    /*
+            요소를 DOM에 추가하는 메서드
+            -  부모.append(자식): 자식을 부모의 마지막 자식으로 추가
+            -  자식.appendTo(부모) : 자식을 부모의 마지막 자식으로 추가
+            -  부모.prepend(자식) : 자식을 부모의 첫번째 자식으로 추가
+            -  자식.prependTo(부모) : 자식을 부모의 첫번째 자식으로 추가
+
+            -  기존형제.after(새로 추가되는 요소) : $('li:last-child').after($('<li>').text(val));
+            -  새로추가되는요소.insertAfter(기존형제) : $('<li>').text(val).insertAfter('li:last-child');
+
+            -  기존형제.before(새로 추가되는 요소) : $('li:nth-child(1)').before($('<li>').text(val));
+            -  새로추가되는요소.insertBefore(기존형제) : $('<li>').text(val).insertBefore('li:nth-child(1)');
+    * */
+
+</script>
+</body>
+</html>
