@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>요소의탐색</title>
+    <style>
+        td{
+            width: 60px;
+            padding: 10px 0px;
+            border:1px solid #424242;
+            text-align: center;
+        }
+        table{
+            position:absolute;
+            left:100px;
+            top: 200px;
+            font-size: 20px;
+            font-weight: bold;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+            </tr>
+        </tbody>
+    </table>
+
+<script src="../library/jquery.js"></script>
+<script>
+    // 1~12 까지의 td 가 배열의 형태로 존재함
+    // $('td').eq(1).css("background","red");
+
+    // 2
+    $('td:eq(1)').css("background","#e91E63");
+
+    // tr의 첫번째 자식
+    // 1 4 7 10
+    // $("td:nth-child(1)").css("background","#e91E63");
+
+    // 12
+    $("tr:nth-child(4)>td:nth-child(1)").css("background","#e91E63");
+
+    /*
+        탐색 관련 메서드
+        -  eq(인덱스) : 배열중 해당 index 번지 요소 선택
+        -  next() : 다음요소 선택
+        -  prev() : 이전요소 선텍
+
+        -  parent() : 부모요소 선택
+        -  parents(선택자) : 조상요소들 중 선택
+        -  children() : 자식요소들 선택
+        -  find(선택자) : 자손요소들 중 선택
+           .children().eq(1) 대신 .find("td:eqI(1)")
+    * */
+    $('td:eq(4)').css("background","#673AB7")  // 5번 td
+                 // 다음영역도 같이~
+                 .next()
+                 .css("background","#673AB7")  // 6번 td
+
+                 .parent()      // 2번째 tr
+                 .next()        // 3번째 tr의
+                 .children()    // 7 8 9 td
+                 .eq(2)         // 그중에 9번 선택
+                 .css("background","#673AB7")
+
+                 .parent()      // 3번째 tr
+                 .next()        // 4번째 tr
+                 .children()    // 10 11 12
+                 .eq(1)         // 11
+                 .css("background","yellow")
+
+                 .parent()      // 4번째 tr
+                 .find("td:eq(2)")  //12
+                 .css("background","green");
+    // 부모로 가야하고 자식의 두번째 요소 트리요소
+
+</script>
+</body>
+</html>
