@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>요소생성추가</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <style>
+        #box{
+            width: 100%;
+            height: 100%;
+            position:fixed;
+            background-color:rgba(16,60,130,.7);
+
+        }
+        #box .circle{
+            color: white;
+            font-size: 35px;
+            text-align: center;
+            position: fixed;
+            transition: .1s ease;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border-radius: 50px;
+            background-color: #000000;
+            top:0;
+            left: 0;
+            user-select: none;
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="circle">0</div>
+    </div>
+<script src="../library/jquery.js"></script>
+<script>
+    let num=1;
+    $("#box").click(function (e) {
+
+        const borderRadius = Math.floor(Math.random() * 200) + 50;
+        const x = e.clientX;
+        const y = e.clientY;
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+
+        $("<div class='circle'>").css({
+            backgroundColor: "rgb(" + r+","+g+","+b+")",
+            borderRadius : borderRadius,
+            lineHeight : borderRadius+"px",
+            fontSize : borderRadius *0.5,
+            left : x - borderRadius*0.5,
+            top : y - borderRadius*0.5,
+            width: borderRadius,
+            height : borderRadius,
+            display : "block"
+        }).text(num++).appendTo("#box");
+
+
+        // $circle=$('.circle');
+        // $circle.css({
+        //     backgroundColor: "rgb(" + r+","+g+","+b+")",
+        //     borderRadius : borderRadius,
+        //     lineHeight : borderRadius+"px",
+        //     fontSize : borderRadius *0.5,
+        //     left : x - borderRadius*0.5,
+        //     top : y - borderRadius*0.5,
+        //     width: borderRadius,
+        //     height : borderRadius
+        // })
+       // $circle
+       // console.log($circle);
+        // let $div = $('<div>'+$circle+'</div>');
+
+        //$('#box').append('<div class='+$circle+'></div>');
+        // $('html').append("<div class="+$circle+"></div>");
+        //$('#box').append("<div class="+$div+"></div>");
+    });
+
+</script>
+</body>
+</html>

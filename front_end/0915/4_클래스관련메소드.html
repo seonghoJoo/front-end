@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>클래스관련메소드</title>
+    <link rel="stylesheet" href="../css/reset.css">
     <style>
         .box{
             margin: 32px;
@@ -11,10 +12,14 @@
             background: #4DD0E1;
         }
         #toggleBtn{
+            margin:400px 0 0 0 ;
         }
         .circle{
             border-radius: 50%;
             background-color: #e91E63;
+        }
+        .tri{
+
         }
 
     </style>
@@ -22,20 +27,45 @@
 <body>
 
 <button id="toggleBtn">붙였다 떼기</button>
-<div class="box circle"></div>
+<div class="box "></div>
 <script src="../library/jquery.js"></script>
 <script>
     /*
         클래스 관련 메서드
-        -  addClass()
-        -  removeClass()
+        -  addClass(클래스명) : 해당 클래스를 추가
+        -  removeClass(클래스명) : 해당 클래스 명만 제거
+        -  hasClass(클래스명) : 해당클래스를 가지고 있으면 true 없으면 false
+        -  toggleClass(클래스명) :
 
         text()
         css()
         val()
         attr("class", "box") ??? : ???
-
     */
+    // $('#toggleBtn').click(function () {
+    //
+    // });
+
+    /*
+        on(이벤트 명, 함수)  : 해당 이벤트리스너를 붙임
+    */
+    $('#toggleBtn').on("click",function () {
+        $('.box').toggleClass('circle');
+
+        // if($('.box').hasClass('circle')) {
+        //     //  circle이 있으니깐 제거를 해야함.
+        //    $('.box').removeClass('circle');
+        // }else{
+        //     // 클래스가 box 인 div 요소를 선택한 후
+        //     // 기존 box 클래스에 circle 이라는 클래스를 추가
+        //     $('.box').addClass("circle");
+        // } //if~else end
+
+
+        // box 클래스를 circle 클래스로 변경
+        // $('.box').attr("class", "circle");
+
+    }); //#toggleBtn click() end
 
 </script>
 </body>

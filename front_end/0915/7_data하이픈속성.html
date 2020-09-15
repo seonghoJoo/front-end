@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>하이픈 속성</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<!--
+    data- 속성 : 요소 안에 데이터를 삽입하기 위해서
+    (HTML5에 추가된 표준속성)
+
+
+-->
+    <img src="../0914/img/c1.jpg" width="160" data-no="78" data-name="Aston Martin DBX" data-car-type="SUV"/><!--
+    --><img src="../0914/img/c2.jpg" width="160" data-no="102" data-name="Maserati MC20" data-car-type="Coupe"/><!--
+    --><img src="../0914/img/c3.jpg" width="160" data-no="115" data-name="BMW M8 Competition" data-car-type="Coupe"/><!--
+    --><img src="../0914/img/c4.jpg" width="160" data-no="124" data-name="Porsche 911" data-car-type="Coupe"/><!--
+    --><img src="../0914/img/c5.jpg" width="160" data-no="159" data-name="Mercedes BenZ S Class" data-car-type="Sedan"/>
+
+<script src="../library/jquery.js"></script>
+<script>
+
+    /*
+        데이터베이스의 값을 넣는게 아니라
+        데이터베이스의 값도 넣을수 있다.
+    */
+
+    console.log(($('img')[0].dataset));
+
+    $('img').on("click",function () {
+        //  data-속성의 값을 얻어오는 방법
+        //  1) HTML5 (순수자바스크립트) : dataset.명
+        //  2) attr("명") : jQuery
+        //  3) data("명") : jQuery
+
+        // 1)
+        // 순수자바스크립트 API 활용
+        // const no = this.dataset.no;
+        // this는 순수 자바스크립트 $(this)는 jquery
+
+        // 2)
+        // jQuery의 attr 메서드 활용
+        //const no = $(this).attr("data-no");
+
+        // 3)
+        // jQuery의 data 메서드 활용
+
+
+        //const no = this.dataset.name;
+        // const no = $(this).attr("data-name");
+        //const no = $(this).data("name");
+
+        //const no = this.dataset.carType;
+        //const no = $(this).attr("data-car-type");
+        const no = $(this).data("carType");
+        alert(no);
+
+    });
+</script>
+</body>
+</html>
