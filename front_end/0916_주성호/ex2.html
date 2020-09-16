@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>ex2</title>
+	<!--	브라우저 기본 css 초기화-->
+	<link rel="stylesheet" href="css/reset.css"/>
+	<!--	notosans 폰트 불러오는 css-->
+	<link rel="stylesheet" href="css/notosanskr.css"/>
+	<!-- 파비콘 불러오기-->
+	<link rel="icon" href="img/K_favicon.ico"/>
+	<style>
+		/*0 1 0 0*/
+		#wrap{
+			/*너비 높이*/
+			width: 600px;
+			height: 200px;
+			/*수평 정렬*/
+			margin: 50px auto;
+			/*왜인지 모르겠는데 overflow hidden 해야할것만 같음... */
+			/*overflow: hidden;*/
+			background-color: red;
+			/*그림자 생성*/
+			border-right: 10px solid black;
+			border-bottom: 10px solid black;
+		}
+		/*가상요소선택자 오른쪽 삐침*/
+		#wrap::after{
+			/*content 속성은 필요한데 지금은 안쓸거야!*/
+			content: "";
+			/*삐져나온 삼각형 그리는 요소*/
+			top:50px;
+			position: absolute;
+			/*아래왼쪽삼각형*/
+			border-top:10px solid white;
+			border-left:10px solid black;
+		}
+		/*가상요소선택자 아래쪽 삐침*/
+		#wrap::before{
+			/*content 속성은 필요한데 지금은 안쓸거야!*/
+			content: "";
+			/*삐져나온 삼각형 그리는 요소*/
+			top:250px;
+			position: absolute;
+			/*위오른쪽 삼각형*/
+			border-bottom:10px solid white;
+			border-right:10px solid black;
+		}
+		/*0 1 0 0*/
+		#header{
+			width: 600px;
+			height: calc(200px - 116px);
+			background-color: #dee3eb;
+		}
+		/*0 2 0 0*/
+		#header #logo{
+			/*너비*/
+			width: 66px;
+			/*높이*/
+			height: 20px;
+			margin:32px 0 0 20px;
+			/*반복*/
+			background-repeat: no-repeat;
+			/*뒷배경 이미지*/
+			background-image:url("img/logo_kakao.png");
+		}
+		/*0 1 0 1*/
+		#gnb li{
+			/*오늘 수업 늦게와서 position:relative 못들었음*/
+			position:relative;
+			/*수평으로 나타내기*/
+			width: 120px;
+			height: 116px;
+			float: left;
+
+			/*백그라운드 이미지 설정*/
+			background-repeat: no-repeat;
+			background-color: #dee3eb;
+			background-image: url("img/ko_img_gnb_150615.png");
+		}
+		/*마우스 오버시 색상 #FFC107*/
+		#gnb li:hover{
+			background-color: #ffc107;
+		}
+		/*0 1 1 0*/
+		/*IS 기법*/
+		#gnb .talk{
+			background-position: 0 0;
+		}
+		/*0 1 1 0*/
+		/*IS 기법*/
+		#gnb .story{
+			background-position: -120px 0;
+
+		}
+		/*0 1 1 0*/
+		/*IS 기법*/
+		#gnb .taxi{
+			background-position: -240px 0;
+
+		}
+		/*0 1 1 0*/
+		/*IS 기법*/
+		#gnb .game{
+			background-position: -720px -116px;
+
+		}
+		/*0 1 1 0*/
+		/*IS 기법*/
+		#gnb .group{
+			background-position: -480px 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">
+			<h1 id="logo" class="screen_out"><a href="">kakao</a></h1>
+		</div><!--//header-->
+
+		<div id="gnb">
+			<h2 class="screen_out">주요서비스</h2>
+			<ul>
+				<li class="talk screen_out"><a href="">카카오톡</a></li>
+				<li class="story screen_out"><a href="">카카오스토리</a></li>
+				<li class="taxi screen_out"><a href="">카카오택시</a></li>
+				<li class="game screen_out"><a href="">카카오게임</a></li>
+				<li class="group screen_out"><a href="">카카오그룹</a></li>
+			</ul>
+		</div>
+	</div><!--//wrap-->
+</body>
+</html>
+
+
+

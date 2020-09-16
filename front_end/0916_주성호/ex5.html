@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>카카오프렌즈 이름 맞추기</title>
+        <!--	브라우저 기본 css 초기화-->
+        <link rel="stylesheet" href="css/reset.css"/>
+        <!--	notosans 폰트 불러오는 css-->
+        <link rel="stylesheet" href="css/notosanskr.css"/>
+        <!--	fontAwesome 불러오는 css-->
+        <link rel="stylesheet" href="css/all.min.css"/>
+        <!--       파비콘-->
+        <link rel="icon" href="img/K_favicon.ico"/>
+		<style>
+            /*기본 폰트 적용*/
+            html{
+                font-family: "Noto Sans KR",sans-serif,Serif;
+            }
+            /*0 1 0 0*/
+            #wrap{
+                /*수평정렬*/
+                margin: 40px auto;
+                /*너비 높이*/
+                width: 1400px;
+                height: 800px;
+                /*박스쉐도우*/
+                box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+                /*보더*/
+                border: 10px solid saddlebrown;
+                /*글자 가운데 정렬*/
+                text-align: center;
+            }
+            /*0 1 0 1*/
+            #wrap h1{
+                /*h1 글자 설정*/
+                margin : 40px;
+                font-size: 70px;
+                font-weight: 700;
+                color:saddlebrown;
+            }
+            #imgBox{
+                /*너비 높이*/
+                width: 500px;
+                height: 500px;
+                /*이미지 넘침 방지*/
+                overflow: hidden;
+                /*wrap에 대하여 수평정렬*/
+                margin:50px auto;
+            }
+            #imgs{
+                /*진리의 transition*/
+                transition: 1s ease;
+                /*무지에서 시작하기 설정임*/
+                top:0;
+                /*포지셔닝 컨텍스트 지정*/
+                position : relative;
+            }
+            #nameBox{
+                /*너비 설정*/
+                width: calc(160px * 7 - 20px);
+                /*수평 정렬*/
+                margin:auto;
+            }
+            /*0 1 0 1*/
+            #nameBox li{
+                /*너비 높이*/
+                width: 140px;
+                height: 50px;
+                /*수직정렬*/
+                line-height: 50px;
+                /*수평 나열*/
+                float: left;
+                /*글자 설정*/
+                font-size: 30px;
+                font-weight: 500;
+                /*마진*/
+                margin: 0 10px;
+                /*배경색*/
+                background-color: gold;
+
+            }
+            /*0 1 1 1*/
+            #nameBox li:first-child{
+                /*마진제거*/
+                margin-left:0;
+            }
+            /*0 1 1 1*/
+            #nameBox li:last-child{
+                /*마진제거*/
+                margin-right: 0;
+            }
+            /*0 1 0 2*/
+            #nameBox li a{
+                /*a 요소 설정*/
+                width: 140px;
+                height: 50px;
+                cursor: pointer;
+                display: block;
+            }
+            /*마우스 올리면 색변화*/
+            #nameBox li a:hover{
+                 background-color:saddlebrown;
+             }
+        </style>
+	</head>
+	<body>
+		<div id="wrap">
+			<h1><i class="fa fa-comment"></i> 카카오 프렌즈 이름 맞추기</h1>
+			<div id="imgBox">
+                <div id="imgs"><!--
+                    --><img src="img/k1.png" alt="무지" width="500"/><!--
+                    --><img src="img/k2.png" alt="어피치" width="500"/><!--
+                    --><img src="img/k3.png" alt="제이지" width="500"/><!--
+                    --><img src="img/k4.png" alt="프로도" width="500"/><!--
+                    --><img src="img/k5.png" alt="네오" width="500"/><!--
+                    --><img src="img/k6.png" alt="튜브" width="500"/><!--
+                    --><img src="img/k7.png" alt="라이언" width="500"/><!--
+                --></div><!--//#imgs -->
+			</div><!--//#imgBox -->
+            <div id="nameBox">
+                <h2 class="screen_out">카카오프렌즈 이름들</h2>
+                <ul>
+                    <li><a href="">무지</a></li>
+                    <li><a href="">어피치</a></li>
+                    <li><a href="">제이지</a></li>
+                    <li><a href="">프로도</a></li>
+                    <li><a href="">네오</a></li>
+                    <li><a href="">튜브</a></li>
+                    <li><a href="">라이언</a></li>
+                </ul>
+            </div><!--//#nameBox -->
+		</div><!--//wrap -->
+<script src="js/jquery.js"></script>
+<script>
+    // img height = 500으로 고정
+    let imgPosition=-500;
+
+    //아무데서나 시작하기 위해 한번만 호출
+    // -1은 나올수 없는 index이기 때문에 줌
+    let startIdx = randomNumberCreatorNotDuplicated(-1);
+    $('#imgs').css({top:startIdx*imgPosition});
+    console.log(startIdx*imgPosition);
+
+    $('#nameBox li').click(function (e) {
+        // 페이지 넘어가기 방지
+        e.preventDefault();
+        // 클릭한 li의 요소 index 가져오기
+        const idx = $(this).index();
+
+        // 이미지의 현재 position top의 위치 가져오기
+        const topPx = $('#imgs').css("top");
+        // 000px 에서 px 제거
+        let imgPos = topPx.slice(0,-2)
+        // 이미지 idx 구하기
+        let imgIndex = imgPos / imgPosition;
+
+        console.log("현재: " + idx + " 이미지:" + imgIndex);
+        if(idx == imgIndex){
+            alert("정답입니다!");
+
+            // 난수 생성 (중복 제거 함수 dfs)
+            const createRandomIndex = randomNumberCreatorNotDuplicated(idx);
+
+            // 난수 생성 1초 텀을 두고 img를 움직인다 난수 생성의 시간을 벌어주기 위해
+            setTimeout(function () {
+                console.log("기존: " + idx+ " 랜덤: " + createRandomIndex);
+                const move = createRandomIndex * imgPosition;
+                $('#imgs').css("top",move+"px");
+            },1000);//setTimeout() 종료
+
+        }else{
+            alert("오답입니다 ㅠ_ㅠ");
+        }//if~else 종료
+    });
+    // 난수 생성 중복 제거
+    function randomNumberCreatorNotDuplicated(idx) {
+        // 7개의 정답이 있고 이에따라 7개의 난수를 생성한다
+        let RandomIndex = Math.floor(Math.random() * 7);
+        // 중복 여부 체크 중복이 있을시 dfs로 탐색하여 난수생성 중복이 안나올때까지
+        if(idx ==RandomIndex){
+            RandomIndex = randomNumberCreatorNotDuplicated(idx);
+        }else{
+        }
+        return RandomIndex;
+    }//!##randomNumberCreatorNotDuplicated(idx) 종료
+</script>
+    </body>
+</html>

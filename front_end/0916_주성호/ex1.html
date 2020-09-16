@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>2단 레이아웃 제작</title>
+<!--	브라우저 기본 css 초기화-->
+	<link rel="stylesheet" href="css/reset.css"/>
+<!--	notosans 폰트 불러오는 css-->
+	<link rel="stylesheet" href="css/notosanskr.css"/>
+<!--	fontAwesome 불러오는 css-->
+	<link rel="stylesheet" href="css/all.min.css"/>
+	<style>
+		/*0 0 0 1*/
+		html{
+			font-family: "Noto Sans KR",sans-serif,Serif;
+		}
+		/*0 1 0 0*/
+		#wrap{
+
+			width: 1000px;
+			/*수평 정렬*/
+			margin: auto;
+			border : 2px dotted #424242;
+		}
+		/*0 1 0 0*/
+		#header{
+			width: 1000px;
+			height: 100px;
+			/*글자 가운데 정렬 및 폰트 굵기*/
+			font-weight: 900;
+			font-size:40px;
+			line-height: 100px;
+			text-align: center;
+
+			border-bottom : 2px dotted #424242;
+		}
+		/*0 1 0 0*/
+		#contents{
+			/*박스모델 크기 700 x 500 맞추기 위해 699(contents) + 1 (border) */
+			width: 698px;
+			height: 500px;
+			border-right: 2px dotted #424242;
+
+			/*글자 가운데 정렬 및 폰트 굵기*/
+			font-weight: 900;
+			font-size:40px;
+			line-height: 500px;
+			text-align: center;
+
+			/*수평 놓기*/
+			float: left;
+		}
+		/*0 1 0 0*/
+		#sidebar{
+			/*박스모델 크기 300 250*/
+			width: 300px;
+			height: 250px;
+
+			/*글자 가운데 정렬 및 폰트 굵기*/
+			font-weight: 900;
+			font-size:30px;
+			line-height: 250px;
+			text-align: center;
+
+			/*수평 놓기*/
+			float: left;
+		}
+		/*0 1 0 0*/
+		#footer{
+			/*박스모델 크기 1002 100 1000 100*/
+			width: 1000px;
+			height: 100px;
+			border-top:2px dotted #424242;
+
+			/*float : left 속성 없애기*/
+			clear: both;
+
+			/*글자 가운데 정렬 및 폰트 굵기*/
+			font-weight: 100;
+			font-size:15px;
+			line-height: 100px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+			<div id="header"><i class="far fa-gem"></i> 필구의 웹서비스</div>
+			<div id="contents"><i class="fas fa-map-marker-alt"></i> 콘텐츠 영역</div>
+			<div id="sidebar"><i class="fas fa-camera-retro"></i> 사이드바</div>
+			<div id="footer">&copy; 2020 bmj.com</div>
+	</div><!--#wrap 종료 -->
+</body>
+</html>
+
+
+
+
+

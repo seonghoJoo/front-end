@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>interactive 웹서비스</title>
+		<!--	브라우저 기본 css 초기화-->
+		<link rel="stylesheet" href="css/reset.css"/>
+		<!--	notosans 폰트 불러오는 css-->
+		<link rel="stylesheet" href="css/notosanskr.css"/>
+		<!--	fontAwesome 불러오는 css-->
+		<link rel="stylesheet" href="css/all.min.css"/>
+		<style>
+			/*버튼 클릭시 border 제거*/
+			button{
+				border: 0;
+				outline: 0;
+			}
+			#wrap{
+				/*폰트 지정*/
+				font-family: "Noto Sans KR", sans-serif, Serif;
+				/*너비 높이*/
+				width: 700px;
+				height: 700px;
+				/*h1 요소 띄워주기 위해 overflow 할 시 문이 넘어갈때 가려짐*/
+				/*마진 겹침 문제 해결*/
+				padding-top:20px;
+				/*높이감 조성*/
+				box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+				/*수평 정렬*/
+				margin:50px auto;
+				text-align: center;
+			}
+			/*0 1 0 1*/
+			#wrap h1{
+				/*h1 글자속성 설정*/
+				font-size: 32px;
+				font-weight: 900;
+				color:gold;
+			}
+			/*0 1 0 0*/
+			#box{
+				/*wrap 내 수평 정렬*/
+				margin:40px auto;
+				/*너비 높이*/
+				width: 500px;
+				height: 500px;
+				/*라이언 gif 불러오기 500 x 500*/
+				background-image: url("img/ryan.gif");
+				background-size: 500px 500px;
+				/*박스쉐도우*/
+				box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+			}
+			/*0 1 1 0*/
+			#box .door{
+				/*너비 높이*/
+				width: 250px;
+				height: 500px;
+
+				/*수직 정렬*/
+				line-height: 500px;
+				/*icon 설정*/
+				font-size: 350px;
+				color: white;
+				/*수평으로 나열*/
+				float: left;
+				/*진리의 트랜지션*/
+				/*큐빅바이저 사용*/
+				transition:1s cubic-bezier(.59,.11,.58,1.92);
+			}
+			/*0 2 0 0*/
+			#box #man{
+				/*배경색*/
+				background-color: #e91E63;
+				/*왼쪽 축*/
+				transform-origin: 0% 50%;
+			}
+			/*0 2 0 0*/
+			#box #woman{
+				/*배경색*/
+				background-color: #0277BD;
+				/*오른쪽 축*/
+				transform-origin: 100% 50%;
+			}
+			#executeBtn{
+				width: 200px;
+				height: 60px;
+				background-color: #046304;
+				color: white;
+				font-size: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<h1>문을 여시오!</h1>
+			<div id="box">
+				<div id="man" class="door"><i class="fa fa-male"></i></div>
+				<div id="woman" class="door"><i class="fa fa-female"></i></div>
+			</div><!--//box-->
+            <button id="executeBtn">열고 닫기</button>
+		</div><!--//wrap-->
+
+	<script src="js/jquery.js"></script>
+	<script>
+		// open 토글
+		let openFlag=0;
+		// 버튼 클릭
+		$('#executeBtn').click(function (e) {
+
+			//닫혀있는 상태 -> 열기
+			if(openFlag==0){
+				// 남자 문 열어버리기
+				$('#man').css({
+					// y축 방향으로 180도
+					transform : "rotateY(180deg)",
+					// 왼편이 축이되는 설정
+					transformOrigin: "0% 50%",
+				});//$man.css 종료
+				// 여자 문 열어버리기
+				$('#woman').css({
+					// y축 방향으로 180도
+					transform : "rotateY(180deg)",
+					// 오른편이 축이되는 설정
+					transformOrigin: "100% 50%",
+				});//$woman.css 종료
+				//open flag On
+				openFlag=1;
+			}
+			// 열려있는 상태 -> 닫기
+			else{
+				//남자 문 닫기
+				$('#man').css({
+					// y축 방향으로 0도로 되돌아가기
+					transform : "rotateY(0deg)",
+					transformOrigin: "0% 50%"
+				});//$man.css 종료
+				//여자 문 닫기
+				$('#woman').css({
+					// y축 방향으로 0도로 되돌아가기
+					transform : "rotateY(0deg)",
+					transformOrigin: "100% 50%",
+				});//$woman.css 종료
+				//open flag Off
+				openFlag=0;
+			}// #!! if~else문 종료
+		});
+	</script>
+	</body>
+</html>

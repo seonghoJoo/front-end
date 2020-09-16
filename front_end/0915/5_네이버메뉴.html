@@ -35,7 +35,7 @@
 
         .shop_header h2 a {
             display: inline-block;
-            display: block;
+            /*display: block;*/
             width: 26px;
             height: 18px;
             background-position: -98px -56px;
@@ -185,7 +185,9 @@
         //  5) .tab 요소들 중 해당 index에 있는 요소에 on 클래스를 더함
         $(".tab").eq(idx)
                  .addClass("on");
-
+        const aText = $(this).text();
+        //alert(aText);
+        //$('.shop_header h2 a').text(aText);
     });//.shop_tab li click() end
 
 </script>
