@@ -15,11 +15,14 @@
 			/*너비 높이*/
 			width: 600px;
 			height: 200px;
+
 			/*수평 정렬*/
 			margin: 50px auto;
+
 			/*왜인지 모르겠는데 overflow hidden 해야할것만 같음... */
 			/*overflow: hidden;*/
 			background-color: red;
+
 			/*그림자 생성*/
 			border-right: 10px solid black;
 			border-bottom: 10px solid black;
@@ -28,9 +31,11 @@
 		#wrap::after{
 			/*content 속성은 필요한데 지금은 안쓸거야!*/
 			content: "";
+
 			/*삐져나온 삼각형 그리는 요소*/
 			top:50px;
 			position: absolute;
+
 			/*아래왼쪽삼각형*/
 			border-top:10px solid white;
 			border-left:10px solid black;
@@ -39,9 +44,11 @@
 		#wrap::before{
 			/*content 속성은 필요한데 지금은 안쓸거야!*/
 			content: "";
+
 			/*삐져나온 삼각형 그리는 요소*/
 			top:250px;
 			position: absolute;
+
 			/*위오른쪽 삼각형*/
 			border-bottom:10px solid white;
 			border-right:10px solid black;
@@ -56,11 +63,14 @@
 		#header #logo{
 			/*너비*/
 			width: 66px;
+
 			/*높이*/
 			height: 20px;
 			margin:32px 0 0 20px;
+
 			/*반복*/
 			background-repeat: no-repeat;
+
 			/*뒷배경 이미지*/
 			background-image:url("img/logo_kakao.png");
 		}
@@ -68,6 +78,7 @@
 		#gnb li{
 			/*오늘 수업 늦게와서 position:relative 못들었음*/
 			position:relative;
+
 			/*수평으로 나타내기*/
 			width: 120px;
 			height: 116px;

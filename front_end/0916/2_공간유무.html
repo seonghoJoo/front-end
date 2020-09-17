@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>공간유무</title>
+    <style>
+        #parent {
+            width:600px;
+            height:400px;
+            background-color: silver;
+        }
+        #this {
+            width:300px;
+            background-color: #2196F3;
+            float: left;
+
+            /*
+                공간을 차지하지 않는 요소 (부모와 연관이 없어짐)
+                - absolute, fixed 지정
+                - float 지정
+                부모를 몰라
+                - width가 auto일때 자식의 width와 동일
+                - margin:auto일때 가운데 처리 불가
+
+                공간을 차지
+                - relative 3층 오히려 쉬움 (우리가 익숙하게 알고있는 개념) block 레벨 3층으로 띄워줌
+
+             */
+        }
+        #child {
+            width:100px;
+            height:100px;
+            background-color: #F44336;
+        }
+        #box {
+            width:150px;
+            height:100px;
+            background-color: #00E676;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="this">
+            <div id="child"></div><!--//#child-->
+        </div><!--//#this-->
+        <div id="box"></div>
+    </div><!--//#parent-->
+</body>
+</html>
