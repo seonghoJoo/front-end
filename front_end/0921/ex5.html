@@ -3,35 +3,124 @@
 	<head>
 		<meta charset="utf-8">
 		<title>카카오프렌즈 이름 맞추기</title>
-		
+        <link rel="stylesheet" href="css/all.min.css" />
+        <link rel="stylesheet" href="css/notosanskr.css" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <style>
+            #wrap{
+                width: 900px;
+                border:10px solid #424242;
+                margin: 20px auto;
+                text-align: center;
+                font-family: "Noto Sans KR", sans-serif, Serif;
+            }
+            #wrap h1{
+                font-weight: 900;
+                font-size: 40px;
+                margin:20px 0;
+                text-align: center;
+            }
+            #imgBox{
+                width: 340px;
+                height: 340px;
+                overflow: hidden;
+                margin:auto;
+                /* 포지셔닝 컨텍스트*/
+                position:relative;
+            }
+            #imgs{
+                width: 340px;
+                height: 2380px;/*calc(340px * 7) --> 2380*/
+                top:0;
+                transition:.2s ease;
+                position:absolute;
+            }
+            #nameBox{
+                background: #e91E63;
+                margin:20px 0;
+                text-align: center;
+            }
+            #nameBox li{
+                background: #0277BD;
+                /*
+                        inline의 장점(수평, text-align :center)과
+                        block의 장점 (크기지정 공간차지)
+                        을 합친게 inline-block
+                */
+                display:inline-block;
+                margin:0 5px;
+            }
+            #nameBox li>a{
+                display: block;
+                padding : 20px 24px;
+                text-decoration: none;
+                font-weight: 700;
+                color: #dee3eb;
+                font-size: 22px;
+                transition:.2s ease;
+            }
+            #nameBox li:hover{
+                background-color: #ffc107;
+                box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+        </style>
 	</head>
 	<body>
 		<div id="wrap">
 			<h1><i class="fa fa-comment"></i> 카카오 프렌즈 이름 맞추기</h1>
 			<div id="imgBox">
-                <div id="imgs">
-                    <img src="img/k1.png" alt="무지"/>
-                    <img src="img/k2.png" alt="어피치"/>
-                    <img src="img/k3.png" alt="제이지"/>
-                    <img src="img/k4.png" alt="프로도"/>
-                    <img src="img/k5.png" alt="네오"/>
-                    <img src="img/k6.png" alt="튜브"/>
-                    <img src="img/k7.png" alt="라이언"/>
-                </div><!--//#imgs -->    
+                <div id="imgs"><!--
+                    --><img src="img/k1.png" alt="무지"/><!--
+                    --><img src="img/k2.png" alt="어피치"/><!--
+                    --><img src="img/k3.png" alt="제이지"/><!--
+                    --><img src="img/k4.png" alt="프로도"/><!--
+                    --><img src="img/k5.png" alt="네오"/><!--
+                    --><img src="img/k6.png" alt="튜브"/><!--
+                    --><img src="img/k7.png" alt="라이언"/><!--
+                --></div><!--//#imgs -->
 			</div><!--//#imgBox -->
             <div id="nameBox">
                 <h2 class="screen_out">카카오프렌즈 이름들</h2>
-                <ul>
-                    <li><a href="">무지</a></li>
-                    <li><a href="">어피치</a></li>
-                    <li><a href="">제이지</a></li>
-                    <li><a href="">프로도</a></li>
-                    <li><a href="">네오</a></li>
-                    <li><a href="">튜브</a></li>
-                    <li><a href="">라이언</a></li>
-                </ul>
+                <ul><!--
+                    --><li><a href="">무지</a></li><!--
+                    --><li><a href="">어피치</a></li><!--
+                    --><li><a href="">제이지</a></li><!--
+                    --><li><a href="">프로도</a></li><!--
+                    --><li><a href="">네오</a></li><!--
+                    --><li><a href="">튜브</a></li><!--
+                    --><li><a href="">라이언</a></li><!--
+                --></ul>
             </div><!--//#nameBox -->
 		</div><!--//wrap -->
-		
+		<script src="js/jquery.js"></script>
+        <script>
+            // 정답을 저장하는 전역변수
+            // 완전 초기값은 음수로 함
+            let answer = -1;
+            randomFriends();
+            // 랜덤하게 친구를 보여줌
+            function randomFriends(){
+                answer = Math.floor(Math.random() * 7);
+                let move = answer * -340;
+                $('#imgs').css({
+                    top:move
+                });
+                console.log(answer);
+            }//randomFriend() end
+            $('#nameBox li').click(function (e) {
+                const idx = $(this).index();
+                // alert(idx + " : " + answer);
+                e.preventDefault();
+                if(idx == answer){
+                    randomFriends();
+                    alert("정답!");
+                }else{
+                    alert("오답");
+                }//if ~ else end
+            });//#nameBox li click() end
+
+
+
+        </script>
 	</body>
 </html>
