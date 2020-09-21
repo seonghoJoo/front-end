@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>2단 레이아웃 제작</title>
+<!--		노토산스 css 불러오기-->
+		<link rel="stylesheet" href="css/notosanskr.css" />
+<!--		폰트어썸 css 불러오기-->
+		<link rel="stylesheet" href="css/all.min.css" />
+<!--		reset css 불러오기-->
+		<link rel="stylesheet" href="css/reset.css" />
+		<style>
+			html{
+				font-family: "Noto Sans KR", sans-serif, Serif;
+				text-align: center;
+			}
+
+			#wrap{
+				/*박스모델 크기 : 1004 height+4*/
+				width: 1000px;
+				border:2px dotted #424242;
+				/* 가운데 수평 정렬*/
+				margin : auto;
+			}
+			#header{
+				/*박스모델 크기 : 1000 98+2*/
+				width: 1000px;
+				height: 98px;
+				border-bottom: 2px dotted #424242;
+				line-height: 98px;
+				font-weight: 900;
+				font-size: 40px;
+			}
+			#contents{
+				width: 698px;
+
+				height: 500px;
+				border-right: 2px dotted #424242;
+				line-height: 500px;
+				float:left;
+
+				/*중복 제거*/
+				/*font-weight: 700;*/
+				/*font-size: 35px;*/
+
+			}
+			#sidebar{
+				width: 300px;
+				height: 300px;
+				line-height: 300px;
+				float:left;
+
+				/*중복 제거*/
+				/*font-weight: 700;*/
+				/*font-size: 35px;*/
+
+			}
+			#wrap h2{
+				font-weight: 700;
+				font-size: 36px;
+			}
+			#footer{
+				/*
+					float left로 인해 띄워줘서 공간을 차지하지 않기 때문에
+					글자만 밀린거임
+				*/
+				clear: both;
+				font-size: 20px;
+				width: 1000px;
+				height: 98px;
+				border-top:2px dotted #424242;
+				line-height: 98px;
+				font-weight: 100;
+			}
+
+		</style>
+	</head>
+	<body>
+	<!-- 1. float을 잘 쓸수 있느냐 없느냐? -->
+	<!-- 2. 박스모델의 크기를 정확히 맞추냐?	-->
+	<!-- 3. id class명 규칙	-->
+	<!-- 4. 수업 코딩 컨벤션(협약 규칙)
+
+		HTML의 id, class 규칙
+		id : 낙타표기법
+		imgBox
+		class : 언더바표기법
+		box_img
+		-->
+		<div id="wrap">
+			<div id="header">
+				<h1><i class="fa fa-diagnoses"></i> 성호의 웹서비스</h1>
+			</div><!-- // #header 종료-->
+			<div id="contents">
+				<h2><i class="fa fa-camera"></i> 콘텐츠 영역</h2>
+			</div><!-- // #contens 종료-->
+			<div id="sidebar">
+				<h2><i class="fa fa-location-arrow"></i> 사이드바</h2>
+			</div><!-- // #sidebar 종료-->
+			<div id="footer">
+				<address>&copy; 2020 bmj.com</address>
+			</div><!-- // #footer 종료-->
+		</div><!-- // #wrap  종료-->
+	</body>
+</html>
+
+
+
+
+

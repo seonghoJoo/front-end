@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>ex2</title>
+		<link rel="stylesheet" href="css/reset.css"/>
+		<style>
+			/*
+
+				너비 높이
+				602 178
+				박스 쉐도우까지 더하면
+				612 188
+			*/
+			#wrap{
+				width: 600px;
+				/*	box model 높이
+					logo : 60
+					ul : 116
+				*/
+				height: 176px;
+				position: fixed;
+				left : 50%;
+				top : 50%;
+				/*박스쉐도우 까지 포함해서 가운데*/
+				margin: -94px 0 0 -306px ;
+				background-color: #eeeeee;
+				/*
+						쉐도우 주는 방법
+						박스쉐도우 쌓기
+				*/
+				border:1px solid #424242;
+				box-shadow: 1px 1px 0 #424242,
+				2px 2px 0 #424242,
+				3px 3px 0 #424242,
+				4px 4px 0 #424242,
+				5px 5px 0 #424242,
+				6px 6px 0 #424242,
+				7px 7px 0 #424242,
+				8px 8px 0 #424242,
+				9px 9px 0 #424242,
+				10px 10px 0 #424242;
+			}
+			#logo{
+				width: 66px;
+				height: 20px;
+				margin:20px;
+			}
+			#logo a{
+				width: 66px;
+				height: 20px;
+				display: block;
+				background-image:url("img/logo_kakao.png");
+				text-indent: -9999px;
+				overflow: hidden;
+			}
+			#gnb ul{
+				/*방법 1*/
+				overflow: hidden;
+
+				/*방법 2*/
+				/*height: 116px;*/
+			}
+			#gnb li{
+				width: 120px;
+				height: 116px;
+				float: left;
+			}
+			#gnb li>a{
+				width: 120px;
+				height: 116px;
+				display: block;
+				/*background-color: #e91E63;*/
+				background-image: url("img/ko_img_gnb_150615.png");
+				text-indent: -9999px;
+				overflow: hidden;
+				transition:.2s ease;
+			}
+			#gnb li>a:hover{
+				background-color: #ffc107;
+			}
+			.story a{
+				background-position: -120px 0;
+			}
+			.taxi a{
+				background-position: -240px 0;
+			}
+			.game a{
+				background-position: -720px -116px;
+			}
+			.group a{
+				background-position: -480px 0;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="header">
+				<h1 id="logo"><a href="">kakao</a></h1>
+			</div><!--//header-->
+			<div id="gnb">
+				<h2 class="screen_out">주요서비스</h2>
+				<ul>
+					<li class="talk"><a href="">카카오톡</a></li>
+					<li class="story"><a href="">카카오스토리</a></li>
+					<li class="taxi"><a href="">카카오택시</a></li>
+					<li class="game"><a href="">카카오게임</a></li>
+					<li class="group"><a href="">카카오그룹</a></li>
+				</ul>	
+			</div>
+		</div><!--//wrap-->
+	</body>
+</html>
+
+
+
