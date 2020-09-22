@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>text 예제</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            border : 1px solid #424242;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>text 메서드와 html메서드의 차이</h1>
+    <button>입력!</button>
+    <div id="text"></div>
+    <div id="html"></div>
+    <script src="js/jquery.js"></script>
+    <script>
+        $('button').click(function () {
+
+            const msg = "<img src='../Image/c1.jpg";
+            // 코드안에다가 장난질 sanitize을 막아야함
+            // 방명록 장난질 많이 침
+            // 문자열 안에 요소가 들어가도 text는 무조건 text 처리
+            // html은 요소가 들어간 채로 text를 처리하기 때문에 위험
+
+            const msg1 = "<script>alert('테스트입니다.');<\/script>";
+            // 무조건 문자열처리(요소가 있어도)
+            $('#text').text(msg);
+            // 문자열 안에 요소가 있으면 요소로 인식
+            $('#html').html(msg1);
+
+        });//button click end
+    </script>
+</body>
+</html>

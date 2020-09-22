@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>구구단예제</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <style>
+        #box{
+            margin-top: 20px;
+            width: 300px;
+
+            padding : 20px;
+            background-color: silver;
+            line-height: 25px;
+        }
+        #formBox{
+            margin:20px;
+        }
+        #danInput{
+            padding : 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="formBox">
+    <!-- form에다가 css 절대 입히면 안된다-->
+    <form id="form">
+        <input id="danInput" autocomplete="off"/><!--
+            --><button>출력</button>
+    </form>
+</div>
+<ul id="box">
+</ul>
+
+<script src="js/jquery.js"></script>
+<script>
+    // 객체를 한번만 만들면 된다
+    // .focus 새로고침시 바로 input 대기
+    const $dan = $('#danInput').focus();
+    const $box = $('#box');
+    // getter들만 빼면 모든 메서드들의 리턴값이
+    // 메서드의 리턴자료형이 그 객체임
+    // (getter를 제외한 모든~ 편리함을 위해) 이를 메서드 체인이라한다.
+
+    // ~~~. css setter (예를 들어주셨었음)
+    /*
+        form에서 input요소에서의 엔터와 버튼 클릭하면
+        form의 submit 이벤트가 발생-> 즉 편리함
+    */
+    $('#form').on("submit",function (e) {
+        // a요소에서 링크이동 막음
+        // form 에서 action으로 submit 막음
+        e.preventDefault();
+
+        const dan = $dan.val();//getter는 값이 넘어올수밖에 없음.
+        // 검색 비우고 focus 주기
+        // 유저가 입력한 단을 지우고 포커스 맞추기
+        $dan.val("").focus();
+        $('#box').empty();
+
+        for(let i=1 ; i<10;i++){
+            // $("li")  -> 기존의 li 요소를 선택하는 것임
+            const $li = $("<li>" + dan + " * " + i +" = " + dan*i+"</li>");
+            const $li1 = $("<li>" + dan + " * " + i +" = " + dan*i+"</li>");
+            $('#box').append($li);
+            $('#box').append($li1);
+            //$('<li>').text(dan+" * " + i + " = " + dan*i).appendTo($box);
+        }//for end
+    });
+</script>
+</body>
+</html>
