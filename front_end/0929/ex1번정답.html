@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>복습문제 1번</title>
+    <link href="css/notosanskr.css" rel="stylesheet"/>
+    <link href="css/reset.css" rel="stylesheet"/>
+    <style>
+        #wrap{
+            font-family: "Noto Sans KR", sans-serif, Serif;
+            width: 1000px;
+            margin:100px auto;
+            text-align: center;
+        }
+        #wrap h1{
+            height: 120px;
+            margin:60px;
+            color:#424242;
+            /*
+                    font는 font-size, font-weight,
+                    font-varient,font-style,
+                    font-family, line height 까지
+                    한번에 쓰는 대표속성
+
+                    순서가 제일 뒤가 font-family, 뒤에서 두번째가 font-size/line-height
+            */
+            font : 900 60px/120px "Noto Sans KR", sans-serif, Serif;
+            transition: .5s ease;
+        }
+        /* 0 1 0 1*/
+        #wrap button{
+            width: 200px;
+            height: 70px;
+            text-align: center;
+            color:#fff;
+            background-color: #0277BD;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            font: 700 32px/70px "Noto Sans KR", sans-serif, Serif;
+        }
+        #wrap button:hover{
+            background-color: #024a74;
+            box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+        }
+        /*0 1 2*/
+        #wrap h1.big{
+            transform:scale(2);
+            color:blue;
+            text-shadow: 0 0 10px #673AB7;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <h1>버튼을 눌러보세요</h1>
+    <button>난 버튼</button>
+</div>
+<script src="js/jquery.js"></script>
+<script>
+
+    $('#wrap button').on("click",function(){
+        $('#wrap h1').toggleClass("big")
+    });
+
+</script>
+</body>
+</html>

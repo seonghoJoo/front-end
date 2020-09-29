@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>몇초걸렸는지 확인</title>
+</head>
+<body>
+    <button>눌러봐!</button>
+    <script src="js/jquery.js"></script>
+    <script>
+        // 실행하자마자 Date 객체 생성
+        const start = new Date();
+
+        $("button").on("click",function (){
+           const end = new Date();
+           alert((end-start) /1000);
+        });//button click end
+
+    </script>
+</body>
+</html>

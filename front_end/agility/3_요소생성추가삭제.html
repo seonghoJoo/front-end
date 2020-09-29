@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>요소의 생성 추가 삭제</title>
+    <style>
+
+        #animalList {
+            width:200px;
+            list-style: none;
+            margin:0;
+            padding: 20px;
+            background-color: skyblue;
+        }
+        /* 0 1 0 1 */
+        #animalList li {
+            width:200px;
+            height:60px;
+            background-color: lightpink;
+            text-align: center;
+            line-height: 60px;
+            cursor: pointer;
+            margin:20px 0;
+            user-select: none;
+        }
+        /* 0 1 1 1   */
+        #animalList li:hover {
+            background-color: deeppink;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            
+        }
+    </style>
+</head>
+<body>
+<p>
+    <input id="name" placeholder="동물이름입력" autocomplete="off"/>
+    <button id="createBtn">생성</button>
+    <button id="removeAllBtn">전부 삭제</button>
+</p>
+<ul id="animalList">
+    <li>개미핥기</li>
+</ul>
+<script src="js/jquery.js"></script>
+<script>
+
+    /*
+            인자 2개 : 그 순간 존재하는 요소들에 이벤트리스너 붙이는 메서드
+            자신.on(이벤트명, 이벤트핸들러함수)
+
+            인자 3개 : 조상의 자신이 붙으면 이벤트 리스너가 붙음(아직 존재하지 않은 요소에도 이벤트 리스너를 붙일 수 있음)
+            조상.on(이벤트명, 자신, 이벤트핸들러 함수)
+    */
+
+    $('#animalList').on("click","li",function () {
+        // 요소 삭제 : remove()
+        $(this).remove();
+
+
+    });//#animalList li click() end
+
+    $("#removeAllBtn").click(function () {
+
+        //자식요소들 전부 비우기
+        $("#animalList").empty();
+
+    });//#removeAllBtn click() end
+
+
+
+    $("#createBtn").click(createAnimal);//#createBtn click() end
+
+    $("#name").keyup(function (e) {
+
+        if(e.keyCode==13) {
+            //엔터칠때만 호출
+            createAnimal();
+        }//if end
+
+    });//#name keyup() end
+
+
+    /*
+        요소를 DOM에 추가하는 메서드
+        - 부모.append(자식) : 자식을
+        부모의 마지막 자식으로 추가
+        - 자식.appendTo(부모) : 자식을
+        부모의 마지막 자식으로 추가
+        - 부모.prepend(자식) : 자식을
+        부모의 첫번째 자식으로 추가
+        - 자식.prependTo(부모) : 자식을
+        부모의 첫번째 자식으로 추가
+
+        - 기존형제.after(새로추가되는요소)
+        - 새로추가되는요소.insertAfter(기존형제)
+
+        - 기존형제.before(새로추가되는요소)
+        - 새로추가되는요소.insertBefore(기존형제)
+
+
+
+     */
+
+
+
+    //유저가 입력한 이름으로 li요소를 생성하여
+    //ul요소에 붙이는 함수(이벤트핸들러)
+    function createAnimal() {
+
+        const value = $("#name").val();
+
+        $("#name").val("").focus();
+
+        // const $li = $("<li>").text(value);
+        // $("#animalList").append($li);
+
+        $("<li>").text(value)
+                 .appendTo("#animalList");
+
+        //$("#animalList").prepend($("<li>").text(value));
+
+        // $("<li>").text(value)
+        //          .prependTo("#animalList");
+
+        //:last는 jquery전용선택자(css에서 사용불가)
+        //$("li:last").after($("<li>").text(value));
+
+        //$("<li>").text(value).insertAfter("li:last");
+
+        //$("li:first").before($("<li>").text(value));
+
+        // $("<li>").text(value)
+        //          .insertBefore("li:first");
+
+    }//createAnimal() end
+
+</script>
+</body>
+</html>

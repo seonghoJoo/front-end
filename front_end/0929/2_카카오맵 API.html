@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <meta charset="utf-8"/>
+    <title>Kakao 지도 시작하기</title>
+    <style>
+        #map{
+            width:500px;
+            height:400px;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=41d7dfddd1b58dcb52f20d3f784129d7"></script>
+<script>
+    // container가 id=map을 찾는다.
+    let container = document.getElementById('map');
+    // map을 제작할 때 option 객체
+    let options = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667),
+        // LEVEL : 확대 축소 1~12
+        level: 3
+    };
+
+    // map에 다가넣을 파라미터
+    let map = new kakao.maps.Map(container, options);
+    let zoomControl = new kakao.maps.ZoomControl();
+
+    // 지도 오른쪽에 줌 컨트롤이 표시되도록 지도에 컨트롤을 추가한다.
+    map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
+    //마커를 생성
+    let marker = new kakao.maps.Marker({
+        map: map,
+        // 마커 표시될 위치
+        position: new kakao.maps.LatLng(33.450701, 126.570667)
+    });
+</script>
+</body>
+
+</html>

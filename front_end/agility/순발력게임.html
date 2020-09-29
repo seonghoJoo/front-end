@@ -106,32 +106,71 @@
     // 객체를 계속 만들기 싫을떄
     const $startBtn = $('#startBtn');
     const $numList = $('#numberList');
+    let start,end;
+    // 정답을 저    장하는 변수
+    let answer=1;
+    // 만들 숫자 갯수
+    let limit=5;
+
     /*
             2020-09-28 15:49 주성호
             클릭하면 startButton 클ㄹ릭시
     */
     $startBtn.click(function () {
         //$(this).addClass("open");
-        $startBtn.addClass("open");
+        start = new Date();
+        //전부 초기화
+        //정답도 1로 초기화
+        answer=1;
+        // 새로 배열 재배치
+        setNumberItems();
+
     });//click() end
 
     /*
          2020-09-28 15:49 주성호
          클릭하면 li 시각적으로 보이는거 없앰
- */
-    $('#numberList li').click(function () {
-        $(this).addClass("hide");
-    });
-    function setNumberItems(){
+    */
+    // 조상.on("click", "li"(자신),function);
+    $numList.on("click","li",function () {
+        // 객체는 최소화 해서 만들어야한다
+        const $this = $(this);
 
-        const numbers = getShuffleNumbers(25);
+        // 우리가 클릭한 그 요소의 글자를 얻어옴
+        const num = $this.text();
+        if(num == answer){
+
+            // 정답요소 숨김
+            $this.addClass("hide");
+            // 정답을 1증가
+            answer++;
+
+            if(answer>limit){
+                //한 게임이 끝!!
+                // startbutton으로 가리기
+                $startBtn.removeClass("open");
+                $numList.empty();
+                end = new Date();
+                alert("게임 끝 " + (end-start)/1000 + "초 걸렸습니다");
+            }//if end
+        }else{
+            alert("오답");
+        }
+
+
+    });// #numberList li click() end
+
+
+    function setNumberItems(){
+        const numbers = getShuffleNumbers(limit);
         // 랜덤한 색상
         // 그리고 랜덤한 번호로 li를 생성후 ul에 append
-        for(let i =1;i<=25;i++){
+        for(let i =0;i<limit;i++){
             //const $li = $('<li>').css("background",getRandomColor());
             //$numList.append($li);
             $("<li>").text(numbers[i]).css("background",getRandomColor()).appendTo("#numberList");
         }// for end
+        $startBtn.addClass("open");
     }// setNumberItems() end
     setNumberItems();
 </script>

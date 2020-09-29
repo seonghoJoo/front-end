@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>원하는 사이트 클릭</title>
+</head>
+<body>
+    <h1>원하는 사이트 클릭</h1>
+    <button id="google">구글</button>
+    <button id="facebook">페이스북</button>
+    <button id="instagram">인스타그램</button>
+    <button id="twitter">트위터</button>
+<script src="js/jquery.js"></script>
+<script>
+    const $button = $('button');
+    $button.click(function () {
+        // 요소의 id 가져오기
+        const id = $(this).attr("id");
+        // 정말 많이 쓰이는
+        location.href="https://"+id+".com";
+    });//button click() end
+
+</script>
+</body>
+</html>

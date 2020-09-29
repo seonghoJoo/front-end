@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>복습문제 2번</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+</head>
+<body>
+    <h1>당신이 가고 싶은 사이트를 클릭하세요</h1>
+    <button><i class="fab fa-google"></i> 구글</button>
+    <button><i class="fab fa-facebook"></i> 페이스북</button></a>
+    <button><i class="fab fa-twitter"></i> 트위터</button>
+    <button><i class="fab fa-instagram"></i> 인스타그램</button>
+
+    <script src="js/jquery.js"></script>
+    <script>
+        const $button = $('button');
+
+        $button.on("click",function () {
+            const site = $(this).text();
+            if(site==" 구글"){
+                location.href="https://google.com";
+            }else if(site==" 페이스북") {
+                location.href="https://www.facebook.com";
+            }else if(site==" 트위터"){
+                location.href="https://www.twitter.com";
+            }else if(site==" 인스타그램"){
+                location.href="https://www.instagram.com";
+            }
+        })
+
+    </script>
+</body>
+
+</html>

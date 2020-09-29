@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>원하는 사이트 클릭</title>
+</head>
+<body>
+<h1>원하는 사이트 클릭</h1>
+<button data-site="google">구글</button>
+<button data-site="facebook">페이스북</button>
+<button data-site="instagram">인스타그램</button>
+<button data-site="twitter">트위터</button>
+<script src="js/jquery.js"></script>
+<script>
+    const $button = $('button');
+    $button.click(function () {
+        // 요소의 id 가져오기
+        const site = $(this).data("site");
+        // 정말 많이 쓰이는
+        location.href="https://"+site+".com";
+
+        // 강사님 추천 방식
+        const site1 = this.dataset.site;
+    });//button click() end
+
+</script>
+</body>
+</html>
