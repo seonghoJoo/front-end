@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>평점 표시</title>
+    <style>
+        .box{
+            height: 16px;
+            background-image: url("img/ico_newsview_200522.png");
+        }
+        .grade_star{
+            width: 88px;
+            background-position: 0 -300px;
+        }
+        .inner_star{
+            /*width:auto block level 부모의 width 그대로 받음*/
+            width: 0;
+            background-position: 0 -320px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grade_star box">
+        <div class="inner_star box" style="width: 92%"></div>
+    </div>
+
+</body>
+</html>

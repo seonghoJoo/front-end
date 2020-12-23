@@ -27,7 +27,6 @@
         #animalList li:hover {
             background-color: deeppink;
             box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            
         }
     </style>
 </head>
@@ -55,7 +54,6 @@
         // 요소 삭제 : remove()
         $(this).remove();
 
-
     });//#animalList li click() end
 
     $("#removeAllBtn").click(function () {
@@ -65,19 +63,14 @@
 
     });//#removeAllBtn click() end
 
-
-
     $("#createBtn").click(createAnimal);//#createBtn click() end
 
     $("#name").keyup(function (e) {
-
         if(e.keyCode==13) {
             //엔터칠때만 호출
             createAnimal();
         }//if end
-
     });//#name keyup() end
-
 
     /*
         요소를 DOM에 추가하는 메서드

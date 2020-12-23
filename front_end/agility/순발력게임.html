@@ -135,16 +135,13 @@
     $numList.on("click","li",function () {
         // 객체는 최소화 해서 만들어야한다
         const $this = $(this);
-
         // 우리가 클릭한 그 요소의 글자를 얻어옴
         const num = $this.text();
         if(num == answer){
-
             // 정답요소 숨김
             $this.addClass("hide");
             // 정답을 1증가
             answer++;
-
             if(answer>limit){
                 //한 게임이 끝!!
                 // startbutton으로 가리기
@@ -156,10 +153,7 @@
         }else{
             alert("오답");
         }
-
-
     });// #numberList li click() end
-
 
     function setNumberItems(){
         const numbers = getShuffleNumbers(limit);
