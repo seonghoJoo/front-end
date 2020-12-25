@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3934a87-588c-4606-b24a-98b286101229" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/1205/1_array.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/1205/2_map.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/1205/3_filter.js" afterDir="false" />
@@ -57,6 +58,75 @@
       <change beforePath="$PROJECT_DIR$/0909/6_요소의생성.html" beforeDir="false" afterPath="$PROJECT_DIR$/0909/6_요소의생성.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/0910/8_요소의 생성 추가 삭제.html" beforeDir="false" afterPath="$PROJECT_DIR$/0910/8_요소의 생성 추가 삭제.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/0911/5_박스오피스.html" beforeDir="false" afterPath="$PROJECT_DIR$/0911/5_박스오피스.html" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/1223/1_평점표시.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1223/2_toggle_button.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1223/3_underscore템플릿.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1223/4_underscore lecture예제.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1223/img/coach1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1223/img/energy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1223/img/energy_small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1223/img/ico_newsview_200522.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1223/img/muscle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1223/img/muscle_color.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1223/img/단위.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1223/js/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1223/js/underscore-min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1223/lectureList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0821/3_ir_is기법.html" beforeDir="false" afterPath="$PROJECT_DIR$/0821/3_ir_is기법.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0821/4_오버플로우.html" beforeDir="false" afterPath="$PROJECT_DIR$/0821/4_오버플로우.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0909/2_주성호_사연.html" beforeDir="false" afterPath="$PROJECT_DIR$/0909/2_주성호_사연.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0911/4_ajax 복습.html" beforeDir="false" afterPath="$PROJECT_DIR$/0911/4_ajax 복습.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agility/2_shuffle.html" beforeDir="false" afterPath="$PROJECT_DIR$/agility/2_shuffle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agility/3_요소생성추가삭제.html" beforeDir="false" afterPath="$PROJECT_DIR$/agility/3_요소생성추가삭제.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agility/4_몇초걸렸는지 확인.html" beforeDir="false" afterPath="$PROJECT_DIR$/agility/4_몇초걸렸는지 확인.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agility/순발력게임.html" beforeDir="false" afterPath="$PROJECT_DIR$/agility/순발력게임.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/all.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/apple.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/notosanskr.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/reset.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/NotoSansKR-Black-Hestia.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/NotoSansKR-Black-Hestia.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/NotoSansKR-Black-Hestia.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/NotoSansKR-Bold-Hestia.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/NotoSansKR-Bold-Hestia.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/NotoSansKR-Bold-Hestia.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/NotoSansKR-DemiLight-Hestia.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/NotoSansKR-DemiLight-Hestia.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/NotoSansKR-DemiLight-Hestia.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/NotoSansKR-Light-Hestia.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/NotoSansKR-Light-Hestia.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/NotoSansKR-Light-Hestia.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/NotoSansKR-Medium-Hestia.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/NotoSansKR-Medium-Hestia.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/NotoSansKR-Medium-Hestia.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/NotoSansKR-Regular-Hestia.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/NotoSansKR-Regular-Hestia.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/NotoSansKR-Regular-Hestia.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/NotoSansKR-Thin-Hestia.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/NotoSansKR-Thin-Hestia.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/NotoSansKR-Thin-Hestia.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/SFProKR_regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/SFProKR_semibold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/fa-brands-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/fa-brands-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/fa-brands-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/fa-brands-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/fa-brands-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/fa-regular-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/fa-regular-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/fa-regular-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/fa-regular-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/fa-regular-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/fa-solid-900.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/fa-solid-900.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/fa-solid-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/fa-solid-900.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/fa-solid-900.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/sf-pro-display_regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/sf-pro-display_semibold.woff2" beforeDir="false" />
+>>>>>>> a38bcb2882bc0078a8f284565d0bee0fa9e66d39
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,20 +156,35 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../library/front_end/quill_editor" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/1223/js" />
+>>>>>>> a38bcb2882bc0078a8f284565d0bee0fa9e66d39
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+<<<<<<< HEAD
+=======
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\BMJ\workspace\front-end\JAVA_Class\front_end\1223\js" />
+      <recent name="C:\BMJ\workspace\front_end\0827" />
+      <recent name="C:\BMJ\workspace\front_end\0825_주성호\css" />
+      <recent name="C:\BMJ\workspace\front_end\0825_주성호" />
+      <recent name="C:\BMJ\workspace\front_end\0825" />
+    </key>
+>>>>>>> a38bcb2882bc0078a8f284565d0bee0fa9e66d39
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\BMJ\workspace\front-end\JAVA_Class\front_end\1223\img" />
+      <recent name="C:\BMJ\workspace\front-end\JAVA_Class\front_end\1223\js" />
+      <recent name="C:\BMJ\workspace\front-end\JAVA_Class\front_end\1223" />
       <recent name="C:\Users\user\WebstormProjects\JAVA_Class\front_end\Image\img" />
       <recent name="C:\BMJ\workspace\front_end\0826_주성호" />
-      <recent name="C:\BMJ\workspace\front_end\0826" />
-      <recent name="C:\BMJ\workspace\front_end\0825" />
-      <recent name="C:\BMJ\workspace\front_end" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\BMJ\workspace\front_end\0827" />
@@ -130,6 +215,7 @@
       <workItem from="1598575114042" duration="1796000" />
       <workItem from="1599697114092" duration="24800000" />
       <workItem from="1599781657719" duration="29364000" />
+<<<<<<< HEAD
       <workItem from="1608093821789" duration="38000" />
       <workItem from="1608095977855" duration="3880000" />
       <workItem from="1608199567974" duration="35000" />
@@ -143,6 +229,16 @@
       <workItem from="1608542026381" duration="621000" />
       <workItem from="1608595094769" duration="9890000" />
       <workItem from="1608644935803" duration="1317000" />
+=======
+      <workItem from="1604541005561" duration="1261000" />
+      <workItem from="1605155008431" duration="4537000" />
+      <workItem from="1605660368695" duration="603000" />
+      <workItem from="1607477055597" duration="5000" />
+      <workItem from="1608170198753" duration="1934000" />
+      <workItem from="1608183350661" duration="7000" />
+      <workItem from="1608188294802" duration="1395000" />
+      <workItem from="1608683429271" duration="8790000" />
+>>>>>>> a38bcb2882bc0078a8f284565d0bee0fa9e66d39
     </task>
     <servers />
   </component>
@@ -161,10 +257,13 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="WindowStateProjectService">
     <state x="2660" y="275" key="FileChooserDialogImpl" timestamp="1608648891957">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2660" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608648891957" />
   </component>
+=======
+>>>>>>> a38bcb2882bc0078a8f284565d0bee0fa9e66d39
 </project>

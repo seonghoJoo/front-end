@@ -1,6 +1,10 @@
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
+<<<<<<< HEAD
+=======
+   브라우저의 CSS 초기화
+>>>>>>> a38bcb2882bc0078a8f284565d0bee0fa9e66d39
 */
 
 html, body, div, span, applet, object, iframe,
@@ -47,6 +51,7 @@ table {
     border-spacing: 0;
 }
 
+<<<<<<< HEAD
 /*screen_out*/
 .screen_out{
     overflow: hidden;
@@ -65,3 +70,14 @@ a:visited { color: black; text-decoration: none;}
 /*    border:none;*/
 /*}*/
 
+=======
+/*screen_out 추가*/
+.screen_out{
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    overflow:hidden;
+    text-indent: -9999px;
+}<!--css 상에서는 숨기지만 리더기가 읽어준다. -->
+>>>>>>> a38bcb2882bc0078a8f284565d0bee0fa9e66d39

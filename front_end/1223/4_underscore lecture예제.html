@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>언더스코어템플릿</title>
+</head>
+<body>
+
+<!--    정렬필터-->
+<div id="sort">
+    <strong>정렬</strong>
+    <input id="kcal" type="radio" name="sort" value="kcal" checked/>
+    <label for="kcal">칼로리순</label>
+    <input id="sales" type="radio" name="sort" value="sales"/>
+    <label for="sales">판매순</label>
+    <input id="register" type="radio" name="sort" value="register"/>
+    <label for="register">등록순</label>
+    <input id="coachTier" type="radio" name="sort" value="coachTier"/>
+    <label for="coachTier">코치티어순</label>
+    <input id="score" type="radio" name="sort" value="score"/>
+    <label for="score">평점순</label>
+    <input id="price" type="radio" name="sort" value="price"/>
+    <label for="price">가격순</label>
+</div>
+<!--    난이도 필터-->
+<div id="levelFilter">
+    <strong>난이도</strong>
+    <button id="allLevel" class="level_btn">전체</button>
+    <button id="bigginer" class="level_btn">초급</button>
+    <button id="intermediate" class="level_btn">중급</button>
+    <button id="advanced" class="level_btn">고급</button>
+</div>
+<!--    선호 성별 필터-->
+<div id="genderFilter">
+    <strong>대상</strong>
+    <button id="anything" class="gender_btn">전체</button>
+    <button id="male" class="gender_btn">남자</button>
+    <button id="female" class="gender_btn">여자</button>
+    <button id="middle" class="gender_btn">공용</button>
+</div>
+<!--    강의시간 필터-->
+<div id="lengthFilter">
+    <strong>시간</strong> <label for="sampleSlider">0</label>
+    <input type="text" id="sampleSlider" />
+</div>
+</div><!--lectureFilter end-->
+
+<div id="lectureListBox">
+    <ul id="lectureList">
+
+    </ul><!--//lectureList end-->
+</div><!--//lectureListBox end-->
+
+<!-- 강의 템플릿-->
+<script type="text/template" id="lectureTmpl">
+    <li class="lecture_card"><!-- 강의 카드-->
+        <img src="img/coach1.jpg" width="300px" height="200px"/><!-- 강의 이미지-->
+        <div class="card_contents"><!-- 강의 카드내용-->
+            <div class="bar"><!-- kcal, 난이도, 평점 바-->
+                <div class="card_bar lecture_kcal">320kcal</div>
+                <div class="card_bar lecture_level">초급</div>
+                <div class="card_bar lecture_score">4.2(2123)</div>
+            </div>
+            <div class="lecture_title"><!-- 강의 타이틀 -->
+                강의이름이열글자였나스무글자였나기억안나
+            </div>
+            <div class="bar"><!-- 강의 강사 이름 등급 바-->
+                <div class="card_bar lecture_name" >코치명은7글자</div>
+                <div class="card_bar lecture_tier">트레이너</div>
+            </div>
+            <div class="bar lecture_sales_info"> <!-- 강의 판매 관련정보-->
+                <div class="card_bar bar lecture_price"><!-- 강의 가격-->
+                    <div class="card_bar">
+                        <img src="img/energy.png" width="28"/> <!-- 에너지 이미지-->
+                    </div>
+                    <div class="card_bar"> <!-- 강의 가격-->
+                        32
+                    </div>
+                </div>
+                <div class="card_bar lecture_due">7일</div> <!-- 강의 기간-->
+                <div class="card_bar lecture_gender"> <i class="fas fa-mars"></i></div> <!-- 강의 선호성별-->
+            </div>
+        </div>
+    </li><!--강의 카드 end-->
+</script>
+<!-- //강의 템플릿-->
+<button>더보기</button>
+<script src="js/jquery.js"></script>
+<script src="js/underscore-min.js"></script>
+
+<script>
+    //강의 템플릿
+    const lectureTmpl = _.template($('#lectureTmpl').html());
+
+
+    $lectureList.append(lectureTmpl());
+
+    // 강의 목록(ul)
+    const lectureList = $('#lectureList');
+
+    // 필터에 따라서 강의 목록을 불러오는 함수
+    function getLectureList(){
+        $lectureList.append(lectureTmpl());
+    }//getLectureList() end
+
+
+</script>
+</body>
+</html>

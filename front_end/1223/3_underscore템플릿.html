@@ -2,18 +2,57 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+<<<<<<< HEAD
     <title>언더스코어 템플릿</title>
 </head>
 <body>
 <ul id="lectureList">
 
 </ul>
+=======
+    <title>언더스코어템플릿</title>
+</head>
+<body>
+<ul id="lectureList">
+    <li class="lecture_card"><!-- 강의 카드-->
+        <img src="img/coach1.jpg" width="300px" height="200px"/><!-- 강의 이미지-->
+        <div class="card_contents"><!-- 강의 카드내용-->
+            <div class="bar"><!-- kcal, 난이도, 평점 바-->
+                <div class="card_bar lecture_kcal">320kcal</div>
+                <div class="card_bar lecture_level">초급</div>
+                <div class="card_bar lecture_score">4.2(2123)</div>
+            </div>
+            <div class="lecture_title"><!-- 강의 타이틀 -->
+                강의이름이열글자였나스무글자였나기억안나
+            </div>
+            <div class="bar"><!-- 강의 강사 이름 등급 바-->
+                <div class="card_bar lecture_name" >코치명은7글자</div>
+                <div class="card_bar lecture_tier">트레이너</div>
+            </div>
+            <div class="bar lecture_sales_info"> <!-- 강의 판매 관련정보-->
+                <div class="card_bar bar lecture_price"><!-- 강의 가격-->
+                    <div class="card_bar">
+                        <img src="../../../../../../Users/E/Downloads/frontend/img/energy.png" width="28"/> <!-- 에너지 이미지-->
+                    </div>
+                    <div class="card_bar"> <!-- 강의 가격-->
+                        32
+                    </div>
+                </div>
+                <div class="card_bar lecture_due">7일</div> <!-- 강의 기간-->
+                <div class="card_bar lecture_gender"> <i class="fas fa-mars"></i></div> <!-- 강의 선호성별-->
+            </div>
+        </div>
+    </li><!--강의 카드 end-->
+</ul>
+
+>>>>>>> a38bcb2882bc0078a8f284565d0bee0fa9e66d39
 <script type="text/template" id="lectureTmpl">
     <li>크크크</li>
 </script>
 <button>더보기</button>
 <script src="js/jquery.js"></script>
 <script src="js/underscore-min.js"></script>
+<<<<<<< HEAD
 <script>
 
     const lectureTmpl = _.template($("#lectureTmpl").html());
@@ -23,6 +62,25 @@
     $("button").on("click",function () {
         $lectureList.append(lectureTmpl());
     });//button click end
+=======
+
+<script>
+
+    //lectureTmpl은 함수이다.
+    const lectureTmpl = _.template($('#lectureTmpl').html());
+
+    const $lectureList = $('#lectureList');
+
+    $('button').on("click",function () {
+        $lectureList.append(lectureTmpl());
+
+    });//on과 bind가 같음
+    // 이벤트 리스너 붙였다 떼기
+    // on bind
+    // off unbind
+
+    $lectureList.tml(lectureTmpl);
+>>>>>>> a38bcb2882bc0078a8f284565d0bee0fa9e66d39
 
 
 </script>
