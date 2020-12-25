@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/notosanskr.css"/>
+    <link rel="stylesheet" href="css/all.min.css"/>
+    <link rel="stylesheet" href="css/rSlider.min.css">
+    <style>
+        /*   컨테이너 CSS */
+        #container{
+            width: 1100px;
+            height: auto;
+            border-left:1px solid #424242;
+            border-right:1px solid #424242;
+            margin: auto;
+
+        }
+        /*   강의 필터 CSS */
+        #lectureFilter{
+            width: 1100px;
+            height: 300px;
+            padding: 10px 0px;
+            box-shadow: 1px 1px 5px 0 rgba(0,0,0,0.5);
+            /*margin-bottom: 30px;*/
+            /*background-color: aquamarine;*/
+        }
+        /*   필터 항목박스 CSS */
+        #sort,#levelFilter,#lengthFilter,#genderFilter {
+            width: 1000px;
+            height:60px;
+            line-height: 60px;
+            margin: auto;
+            /*background-color: red;*/
+            vertical-align: center;
+        }
+        /*   필터 항목 CSS */
+        #lectureFilter strong {
+            width: 60px;
+            height: 40px;
+            margin: 0px 10px;
+            line-height: 40px;
+            font-size: 20px;
+            font-weight:bold;
+
+        }
+        /*   라벨 버튼 CSS */
+       #container label,#container button{
+            height: 38px;
+            padding: 0px;
+            border: 1px solid black;
+            background-color: white;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            outline: none;
+        }
+        #sort {
+            /*background-color: aqua;*/
+        }
+        /*   정렬라벨 CSS */
+        #sort label {
+            width: 118px;
+            height: 38px;
+        }
+        /*필터 항목 제목 CSS*/
+        #lectureFilter #sort strong,#lectureFilter #genderFilter strong,#lengthFilter strong, #levelFilter strong {
+            padding-right: 20px;
+        }
+        /*필터 버튼 CSS*/
+        #levelFilter button, #genderFilter button{
+            width: 58px;
+        }
+        /* 시간 필터 CSS */
+        #container #lengthFilter {
+            /*background-color: orangered;*/
+            position: relative;
+
+        }
+        #container #lectureFilter #lengthFilter label{
+            border: none;
+            position: absolute;
+            left: 500px;
+            user-select: none;
+
+        }
+        #container #lengthFilter .rs-container{
+            display: inline-block;
+            vertical-align: middle;
+            position: absolute;
+            /*border: 1px solid red;*/
+
+        }
+        /*강의 리스트 */
+        #container ul{
+            width: 1000px;
+            margin: auto;
+            overflow: hidden;
+        }
+        /*강의 카드*/
+        .lecture_card{
+            width: 300px;
+            height:300px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+            border-radius: 15%;
+            position: relative;
+            float: left;
+            overflow: hidden;
+            margin: 40px 15px;
+        }
+        /*카드 내용 CSS*/
+        .card_contents{
+            width:300px;
+            height: 130px;
+            font-weight: bold;
+            position: absolute;
+            bottom: 0;
+        }
+        /*컨텐츠 단 설정*/
+        .bar {
+            overflow: hidden;
+        }
+        /*단 수평블록 설정*/
+        .card_bar{
+            float:left;
+        }
+        /*kcal 난이도 평점 단*/
+        .card_contents .lecture_kcal,.card_contents .lecture_level ,.card_contents .lecture_score{
+            /*position: absolute;*/
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+        /*칼로리 박스*/
+        .lecture_kcal {
+            width: 120px;
+            background-color: rgb(249,27,78);
+            height:30px;
+            line-height: 30px;
+            color: white;
+        }
+        /*난이도 박스*/
+        .lecture_level{
+            width:60px;
+            background-color: rgb(255,255,255);
+            height:28px;
+            line-height: 30px;
+            border-bottom: 1px solid rgb(249,27,78);
+            border-top: 1px solid rgb(249,27,78);
+            color:  rgb(249,27,78);
+        }
+        /*평점 박스*/
+        .lecture_score{
+            width:120px;
+            background-color: rgb(249,27,78);
+            height:30px;
+            line-height: 30px;
+            color: white;
+         }
+        /*강의 타이틀 박스*/
+        .lecture_title{
+            width:300px;
+            height:30px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 30px;
+        }
+        /*깅의 강사 이름 */
+        .lecture_name{
+            width:150px;
+            height:30px;
+            line-height: 30px;
+            margin-left: 40px;
+            background-color: white;
+            font-size: 20px;
+            text-align: right;
+            /*border: 1px solid #424242;*/
+        }
+        /*강사 티어*/
+        .lecture_tier{
+            width:50px;
+            font-size: 12px;
+            text-align: left;
+            height: 30px;
+            line-height: 30px;
+            /*border: 1px solid #424242;*/
+        }
+        /*강의 판매 정보*/
+        .lecture_sales_info{
+            width: 200px;
+            margin: auto;
+            height: 34px;
+            line-height: 32px;
+            padding-right: 5px;
+        }
+        /*강의 가격*/
+        .lecture_price{
+            width: 100px;
+            height: 28px;
+            line-height: 30px;
+            border: 1px solid rgb(249,27,78);
+        }
+        /*강의 기간*/
+        .lecture_due{
+            background-color: rgb(249,27,78);
+            color: white;
+            width: 60px;
+            height:30px;
+            text-align: center;
+        }
+        /*강의 선호 성별*/
+        .lecture_gender{
+           float:right;
+            font-size: 30px;
+            color: rgb(249,27,78);
+        }
+        /*on 설정*/
+        #container #lectureFilter .on{
+            color: rgb(249,27,78);
+            border-color: rgb(249,27,78);
+        }
+        /*#container #lectureList .on{*/
+        /*    color: rgb(249,27,78);*/
+        /*    border-color: rgb(249,27,78);*/
+        /*}*/
+
+        /*라디오인풋 비활성화 */
+        input[type=radio]{
+            display:none;
+        }
+        /*라디오인풋+라벨 CSS */
+        /* +: 다음요소 선택자*/
+        input[type=radio] + label {
+            display:inline-block;
+            /*padding: 8px 12px;*/
+            border: 1px solid black;
+            border-radius: 25px;
+            cursor:pointer;
+            user-select:none;
+            margin:5px 0;
+            text-align: center;
+            line-height: 30px;
+        }
+        input[type=radio] + label:hover,button:hover{
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        input[type=radio]:checked + label{
+            color: rgb(249,27,78);
+            border-color: rgb(249,27,78);
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+<div id="lectureFilter"><!--필터-->
+<!--    정렬필터-->
+    <div id="sort">
+        <strong>정렬</strong>
+        <input id="kcal" type="radio" name="sort" value="kcal" checked/>
+        <label for="kcal">칼로리순</label>
+        <input id="sales" type="radio" name="sort" value="sales"/>
+        <label for="sales">판매순</label>
+        <input id="register" type="radio" name="sort" value="register"/>
+        <label for="register">등록순</label>
+        <input id="coachTier" type="radio" name="sort" value="coachTier"/>
+        <label for="coachTier">코치티어순</label>
+        <input id="score" type="radio" name="sort" value="score"/>
+        <label for="score">평점순</label>
+        <input id="price" type="radio" name="sort" value="price"/>
+        <label for="price">가격순</label>
+    </div>
+<!--    난이도 필터-->
+    <div id="levelFilter">
+        <strong>난이도</strong>
+        <button id="allLevel" class="level_btn">전체</button>
+        <button id="bigginer" class="level_btn">초급</button>
+        <button id="intermediate" class="level_btn">중급</button>
+        <button id="advanced" class="level_btn">고급</button>
+    </div>
+<!--    선호 성별 필터-->
+    <div id="genderFilter">
+        <strong>대상</strong>
+        <button id="anything" class="gender_btn">전체</button>
+        <button id="male" class="gender_btn">남자</button>
+        <button id="female" class="gender_btn">여자</button>
+        <button id="middle" class="gender_btn">공용</button>
+    </div>
+<!--    강의시간 필터-->
+    <div id="lengthFilter">
+        <strong>시간</strong> <label for="sampleSlider">0</label>
+        <input type="text" id="sampleSlider" />
+    </div>
+</div><!--lectureFilter end-->
+<div id="lectureListBox"><!--lectureListBox-->
+    <ul id="lectureList">
+
+    </ul>
+</div><!--lectureListBox end-->
+</div><!--container end-->
+
+<!-- 강의 템플릿 -->
+<script type="text/template" id="lectureTmpl">
+    <@ _.each(lectureList, function(lecture){ @>
+    <li class="lecture_card"><!-- 강의 카드-->
+        <img src="<@=lecture.image@>" width="300px" height="200px"/><!-- 강의 이미지-->
+        <div class="card_contents"><!-- 강의 카드내용-->
+            <div class="bar"><!-- kcal, 난이도, 평점 바-->
+                <div class="card_bar lecture_kcal"><@=lecture.calorie@>kcal</div>
+                <div class="card_bar lecture_level"><@=lecture.calorie@></div>
+                <div class="card_bar lecture_score"><@=lecture.score@>(<@=lecture.reviewCount@>)</div>
+            </div>
+            <div class="lecture_title"><!-- 강의 타이틀 -->
+                <@=lecture.title@>
+            </div>
+            <div class="bar"><!-- 강의 강사 이름 등급 바-->
+                <div class="card_bar lecture_name" ><@=lecture.coach@></div>
+                <div class="card_bar lecture_tier"><@=lecture.tier@></div>
+            </div>
+            <div class="bar lecture_sales_info"> <!-- 강의 판매 관련정보-->
+                <div class="card_bar bar lecture_price"><!-- 강의 가격-->
+                    <div class="card_bar">
+                        <img src="img/energy.png" width="28"/> <!-- 에너지 이미지-->
+                    </div>
+                    <div class="card_bar"> <!-- 강의 가격-->
+                        <@=lecture.energy@>
+                    </div>
+                </div>
+                <div class="card_bar lecture_due"><@=lecture.available@></div> <!-- 강의 기간-->
+                <div class="card_bar lecture_gender">
+                <@ if(lecture.helpful=="F") { @>
+                    <i class="fas fa-venus"></i>
+                <@ }else if(lecture.helpful=="M") { @>
+                    <i class="fas fa-mars"></i>
+                <@ } else { @>
+                    <i class="fas fa-venus-mars"></i>
+                <@} @>
+                </div> <!-- 강의 선호성별-->
+            </div>
+        </div>
+    </li><!--강의 카드 end-->
+    <@})@>
+</script>
+<!--// 강의 템플릿 -->
+
+<script src="js/jquery.js"></script>
+<script src="js/rSlider.min.js"></script>
+<script src="js/underscore-min.js"></script>
+<script>
+
+    // 언더스코어는 기본적으로 %을 사용하는데 %는  jsp에서 사용할 수 없기 때문에 % -> @ 로변경하는 코드가 필요함
+    _.templateSettings = {interpolate: /\<\@\=(.+?)\@\>/gim,evaluate: /\<\@([\s\S]+?)\@\>/gim,escape: /\<\@\-(.+?)\@\>/gim};
+
+
+
+    //강의템플릿
+    const lectureTmpl = _.template($("#lectureTmpl").html());
+
+    //강의목록(ul)
+    const $lectureList = $("#lectureList");
+
+    //필터에 따라서 강의목록을 불러오는 함수
+    function getLectureList() {
+
+        $.ajax({
+            url:"ajax/lectureList.json",
+            error:function() {
+                alert("해당 서비스 점검중입니다. 나중에 시도해주세요.");
+            },
+            success:function (json) {
+                $lectureList.html(lectureTmpl({lectureList : json}));
+            }
+        })
+
+
+    }//getLectureList end
+
+
+    /*
+        23일 이후 수업에서 했어야 했던 일을 적어보면
+        이제 이 페이지에 맞게 json을 만들어야 합니다.
+
+        ajax폴더에 lectureList.json이라고 저장하겠습니다.
+
+        그리고 그를 ajax함수로 호출하면 됩니다.
+
+        1) lectureList.json 만들기
+        - 이게 바로 가 데이터베이스 모델링과 일치하는 부분입니다. 필요한 데이터가 뭔지 생각해봐야죠
+        - 기준은 lecture template 에 변경되는 데이터들입니다.
+        - 사진, 칼로리, 수준, 평점, 리뷰개수, 강의이름, 코치명, 코치의 등급, 가격, 날짜, 남녀 이정도가 되겠네요. 그리고 당연히 primary key 가 있겠죠?
+
+        no, (primary key)
+        calorie, (칼로리)
+        title, (강의명)
+        level (Beginning, Intermediate, Advanced),  유저들의 수준
+        image, 강의사진
+        score, 평점
+        reviewCount, 리뷰개수
+        coach, 코치명
+        tier(Trainer.....), 트레이너의 수준
+        energy, 가격
+        available, 날짜
+        helpful : Male, Female, All 도움이 되는 성별
+
+        - 위에 맞게 json을 만듭니다. 그리고 그를 몇개 리스트로 만들면 됩니다.
+        - json만들때 유의사항은 최소 글자, 최대 글자에 맞게 만드셔야 합니다.그래야 카드 템플릿이 제대로 작동되는지 알겠죠
+
+
+
+     */
+
+    $("input[type=radio]").on("change",function() {
+       getLectureList();
+    });//change end
+
+    //라이브러리 객체 선언
+    var slider = new rSlider({
+        target: '#sampleSlider',
+        values: [0, 30, 60, 90, 120, 150, 180],
+        range: true,
+        width: 300,
+        set: [30, 120],
+        tooltip:false,
+        onChange: function (vals) {
+            // left,right  형식으로 묶여있는 value 값을  String 분할
+            var times=vals.split(',');
+            if(times[1]==180){ // right 커서가 180일 때
+                $("#lengthFilter label").text(times[0]+"분부터 조회");
+            }else{//right커서가 180이 아닐 때(max가 180이므로 180 이하)
+                $("#lengthFilter label").text(times[0]+"분 부터 "+times[1]+"분까지 조회");
+            }
+        }
+    });
+</script>
+</body>
+</html>

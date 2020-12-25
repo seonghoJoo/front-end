@@ -98,18 +98,18 @@
         // alert($('#year option:selected').val() + this.value);
         //ajax
         $.ajax({
-            url : "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json",
-            data : {
-                key: "430156241533f1d058c603178cc3ca0e",
-                targetDt: year+month+day
-            },//서버로 넘기는 데이터,
-            method : "GET",
-            error:function () {
-               alert("서버오류");
-            },//error end
-            success : function (json) {
-                // console.log(json.boxOfficeResult.dailyBoxOfficeList[0]);
-                const movies = json.boxOfficeResult.dailyBoxOfficeList;
+                    url : "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json",
+                    data : {
+                        key: "430156241533f1d058c603178cc3ca0e",
+                        targetDt: year+month+day
+                    },//서버로 넘기는 데이터,
+                    method : "GET",
+                    error:function () {
+                    alert("서버오류");
+                },//error end
+                success : function (json) {
+                    // console.log(json.boxOfficeResult.dailyBoxOfficeList[0]);
+                    const movies = json.boxOfficeResult.dailyBoxOfficeList;
                 $('#noData').remove();
                 $('tr').empty();
                 $(movies).each(function () {

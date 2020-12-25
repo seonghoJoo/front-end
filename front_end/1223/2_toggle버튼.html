@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>토글 버튼</title>
+    <style>
+        .toggle span {
+            display: inline-block;
+            width:63px;
+            height:36px;
+            border-radius: 18px;
+            background-color: #bbb;
+            cursor: pointer;
+            transition: .2s ease;
+        }
+        .toggle input {
+            display: none;
+        }
+        .toggle input:checked+span {
+            background-color: #2699f7;
+        }
+        .toggle span::before {
+            content: "";
+            display: block;
+            width:28px;
+            height:28px;
+            border-radius: 28px;
+            background-color: #fff;
+            margin:4px;
+            transition: .2s ease;
+        }
+        .toggle input:checked+span::before {
+            transform: translateX(26px);
+        }
+    </style>
+</head>
+<body>
+    <label class="toggle">
+        <input type="checkbox">
+        <span></span>
+    </label>
+
+</body>
+</html>

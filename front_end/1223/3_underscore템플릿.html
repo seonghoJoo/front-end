@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>언더스코어 템플릿</title>
+</head>
+<body>
+<ul id="lectureList">
+
+</ul>
+<script type="text/template" id="lectureTmpl">
+    <li>크크크</li>
+</script>
+<button>더보기</button>
+<script src="js/jquery.js"></script>
+<script src="js/underscore-min.js"></script>
+<script>
+
+    const lectureTmpl = _.template($("#lectureTmpl").html());
+
+    const $lectureList = $("#lectureList");
+
+    $("button").on("click",function () {
+        $lectureList.append(lectureTmpl());
+    });//button click end
+
+
+</script>
+</body>
+</html>

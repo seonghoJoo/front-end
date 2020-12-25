@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>밋팅 메인</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/iconmonstr-iconic-font.min.css" />
+
+    <style>
+        body, html {
+            height: 100%;
+
+        }
+        #container{
+            padding-top: 0;
+        /*
+        오버라이딩
+        */
+        }
+
+
+        /* The hero image */
+        .hero_image {
+            /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg).
+            This will make the text easier to read*/
+            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+            url("img/meeting hero1.jpg"),
+            url("img/meeting hero2.jpg"),
+            url("img/meeting hero3.jpg");
+
+            /* Set a specific height */
+            height: 50%;
+            /* Position and center the image to scale nicely on all screens */
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: left top,
+                                center top,
+                                right top;
+            position: relative;
+            background-color: #FCEBBD;
+        }
+        .meeting_filters{
+            /*background-color: #0f4c82;*/
+            width:1080px;
+            height: 70px;
+            /*부모에 하이트 지정*/
+            border-bottom: 2px solid #eee;
+        }
+        .meeting_tab{
+            height: 42px;
+            width:260px;
+            border-right:2px solid #eee;
+            float:left;
+            margin-top: 20px;
+        }
+        .meeting_tab li{
+            float: left;
+            width:120px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            transition: .3s ease;
+            /*background: #00e676;*/
+        }
+        .meeting_tab a{
+            display: block;
+            width:120px;
+            height: 40px;
+
+        }
+        .meeting_tab li:nth-child(1){
+            border-radius: 20px 0 0 20px;
+            border:1px solid #9E9E9E;
+        }
+        .meeting_tab li:nth-child(2){
+            border-radius: 0 20px 20px 0;
+            border:1px solid #9E9E9E;
+            border-left: none;
+        }
+        .meeting_tab li:hover{
+            background-color: #ff6333;
+        }
+
+        .meeting_tab .on{
+            background-color: #ff6333;
+        }
+        .search_specifics{
+            width:610px;
+            height:42px;
+            float:left;
+            margin-top:20px;
+            /*background: #8BC34A;*/
+        }
+        .search_specifics li{
+            float: left;
+            width:100px;
+            height:40px;
+            line-height: 40px;
+            text-align: center;
+            border:1px solid #9E9E9E;
+            border-radius: 10px;
+            margin-left: 20px;
+        }
+        .search_specifics a{
+            display: block;
+            width:100px;
+            height:40px;
+            line-height: 40px;
+        }
+        .meeting_content{
+            overflow: hidden;
+            width: 1080px;
+        }
+        .meeting_title{
+            float:left;
+            width:220px;
+            height:64px;
+            line-height: 64px;
+            font-weight: bold;
+            /*background: #D1C4E9;*/
+        }
+        .meeting_title h2{
+            font-size: 30px;
+            color:#424242;
+        }
+        .theme_wrap{
+            position:relative;
+            overflow: hidden;
+            width:800px;
+            height:64px;
+            /*background: hotpink;*/
+        }
+        .theme_wrap .btn{
+            position: absolute;
+            border:none;
+            outline: none;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 24px;
+            color: #757575;
+            top:19px;
+        }
+        .theme_wrap .btn.prev{
+            left:0;
+        }
+        .theme_wrap .btn.next{
+            right:0;
+        }
+        .theme_box{
+            width:728px;
+            height:64px;
+            float: left;
+            position: relative;
+            overflow: hidden;
+            /*버튼 width 만큼 마진레프트 줌*/
+            margin-left: 36px;
+        }
+        .theme_list{
+            position: absolute;
+            overflow: hidden;
+            height: 64px;
+            width:1400px;
+            /*background: seagreen;*/
+            transition: .2s ease;
+        }
+        .theme_list li{
+            float: left;
+            padding:4px 8px;
+            display: inline-block;
+            border:1px solid #E0E0E0;
+            border-radius: 4px;
+            margin-right:10px;
+            margin-top: 18.5px;
+            transition: .2s ease;
+        }
+
+        .theme_list a{
+            display: block;
+            color: #BDBDBD;
+        }
+        .theme_list li:hover{
+            background: #ffab40;
+        }
+        .meeting_list{
+            overflow: hidden;
+            float: left;
+
+        }
+        .meeting_list_each{
+            float: left;
+            width:267px;
+            margin: 20px 4px 20px 0;
+        }
+        .meeting_list_each:nth-child(4n){
+            margin-right: 0;
+        }
+        .meeting_cover{
+            position:relative;
+        }
+        .meeting_cover i{
+            display: block;
+            position: absolute;
+            right:0;
+            top:0;
+            color:#fff;
+        }
+        .meeting_info {
+            margin: 10px 0 0 35px;
+        }
+        .meeting_info li {
+            margin-bottom: 4px;
+            /*color: #757575;*/
+        }
+        .saemo_point * {
+            vertical-align: middle;
+        }
+
+        .meeting_name *    {
+            vertical-align: middle;
+        }
+        .meeting_name span{
+            font-size: 20px;
+        }
+        .saemo_point span{
+            color: #ffab40;
+        }
+        .crew_name{
+            font-weight: bold;
+        }
+
+        .pop_where_wrap {
+            /* 브라우저 기준 */
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,.75);
+            display: none;
+            left: 0;
+            top:0;
+
+        }
+        .pop_where_wrap.on{
+            display: block;
+        }
+        .pop_where_box{
+            width:360px;
+            height: 560px;
+            border-radius: 4px;
+            border: 1px solid transparent;
+            position:fixed;
+            /*position: absolute;*/
+            left: 50%;
+            top:50%;
+            margin: -281px 0 0 -181px;
+            background-color: #fafafa;
+            /*display: none;*/
+        }
+        /*.pop_where_box.on{*/
+        /*    !**/
+        /*    어디서 클릭하면 팝업창 뜰 수 있도록 함*/
+        /*    *!*/
+        /*    display: block;*/
+        /*}*/
+        .pop_where_header_wrap{
+            width: 360px;
+            height: 58px;
+            position:relative;
+            border-bottom: 2px solid #eee;
+        }
+        .pop_where_header_title{
+            position:absolute;
+            top:0;
+            left: 16px;
+            padding: 15.5px 0;
+        }
+        .pop_close_button{
+            position: absolute;
+            border:none;
+            background-color: transparent;
+            outline: none;
+            right:8px;
+            top:12px;
+            color:#757575;
+            cursor: pointer;
+            font-size: 25px;
+        }
+        .filter_where{
+            font-size: 25px;
+        }
+        .pop_where_container{
+            width: 360px;
+            height: 500px;
+            overflow: hidden;
+        }
+        .korea_states{
+            width: 105px;
+            height: 500px;
+            float: left;
+            overflow: scroll;
+            overflow-x: hidden;
+            /*
+            x축 스크롤 안보이게 하기 위해서 설정함
+            */
+        }
+        .korea_states li{
+            width: 90px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+        .states_specifics{
+            width: 255px;
+            height: 500px;
+            float: left;
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+        .states_specifics>ul{
+            display: none;
+        }
+        .states_specifics>ul.on{
+            /*
+            구체성 문제로 작동 안한거였음!
+            */
+            display: block;
+        }
+        .states_specifics>ul>li{
+            width:220px;
+            height: 50px;
+            line-height: 50px;
+            margin-left:20px;
+
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <div id="header"><!--header start-->
+        <div class="inner">
+            <div class="header_logo_search"><!--header_left start-->
+                <img src="img/logo.png" alt="saemo logo" title="saemo logo" />
+                <form class="header_search"><!--header_search-->
+                    <fieldset><!--fieldset-->
+                        <legend class="screen_out">검색</legend>
+                        <input placeholder="검색어를 입력하세요." maxlength="10" />
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </fieldset><!--//header_search-->
+                </form><!--//#form -->
+            </div><!--//header_left end-->
+            <div class="header_crew_list_meeting_status"><!--header_right start-->
+                <div class="header_crew_list"><!--header_crew_list-->
+                    <ul>
+                        <li><a href="/"><img class="header_crew_list_on" src="img/sports5.jpg" width="40" height="40" /></a></li>
+                        <li><a href="/"><img src="img/outdoor5.jpg" width="40" height="40" /></a></li>
+                        <li><a href="/"><img src="img/study1.jpg" width="40" height="40" /></a></li>
+                    </ul>
+                </div><!--//header_crew_list -->
+                <div class="header_meeting_home"><a href=""><i class="far fa-handshake"></i></a></div>
+                <div class="header_status"><a href=""><i class="fas fa-user-circle"></i></a></div>
+                <div class="header_status_dropbox">
+                    <h3 class="screen_out">내메뉴</h3>
+                    <ul>
+                        <li><a href="">마이페이지</a></li>
+                        <li><a href="">로그아웃</a></li>
+                    </ul>
+                </div>
+            </div><!--//header_right end-->
+        </div><!--// inner end-->
+    </div><!--//header end-->
+    <div class="hero_image"></div>
+    <div id="container"><!--container start-->
+    <div class="meeting_filters"><!-- meeting_filters start-->
+        <ul class="meeting_tab">
+            <li><a href="">밋팅</a></li>
+            <li><a href="">정착된 크루</a></li>
+        </ul>
+        <ul class="search_specifics">
+            <li><a href="">분류</a></li>
+            <li><a href="">언제</a></li>
+            <li class="where"><a href="">어디서</a></li>
+            <li><a href="">연령대</a></li>
+            <li><a href="">전적</a></li>
+        </ul>
+    </div><!--//meeting_filters end-->
+        <div class="meeting_content"><!--meeting_content start-->
+            <div class="meeting_title">
+                <h2>신청 가능한 밋팅</h2>
+            </div>
+            <div class="theme_wrap">
+            <div class="theme_box">
+                <ul class="theme_list">
+                    <li><a href="">너희와 있어 즐겁다</a></li>
+                    <li><a href="">이쁜 달밤 아래에서</a></li>
+                    <li><a href="">건강부터 챙기자</a></li>
+                    <li><a href="">내일은 없다</a></li>
+                    <li><a href="">나가자! 싸우자!</a></li>
+                    <li><a href="">그 때처럼 처음처럼</a></li>
+                    <li><a href="">움직이기 싫어~</a></li>
+                    <li><a href="">주저리 주저리</a></li>
+                    <li><a href="">1.2kg1.2kg</a></li>
+                    <li><a href="">요즘 그게 유행이래</a></li>
+                </ul>
+            </div>
+                <button class="btn prev fas fa-chevron-circle-left"></button>
+                <button class="btn next fas fa-chevron-circle-right"></button>
+            </div><!--//theme_wrap end-->
+            <ul class="meeting_list"><!--meeting_list start-->
+                <li class="meeting_list_each">
+                    <div class="meeting_cover">
+                        <a href=""><img src="img/soccer_game.jpg" width="267" height="160" alt="밋팅커버"/></a>
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <ul class="meeting_info">
+                        <li class="saemo_point"><img src="img/saemopoint.png" width="20" height="20"/><span> 7000</span></li>
+                        <li class="crew_name">날아라 슛돌이</li>
+                        <li class="meeting_name"><span>강남배 조기축구</span> <img src="img/fighting.png" width="20" height="20"/></li>
+                         <li class="meeting_location">강남초 운동장</li>
+
+                    </ul>
+                </li>
+                <li class="meeting_list_each">
+                    <div class="meeting_cover">
+                        <a href=""><img src="img/hanging_out.jpg" width="267" height="160" alt="밋팅커버"/></a>
+                        <i class="fas fa-praying-hands"></i>
+                    </div>
+                    <ul class="meeting_info">
+                        <li class="saemo_point"><img src="img/saemopoint.png" width="20" height="20"/><span> 3000</span></li>
+                        <li class="crew_name">산오름</li>
+                        <li class="meeting_name"><span>관악산 등산</span> <img src="img/get_together.png" width="20" height="20"/></li>
+                        <li class="meeting_location">사당역 2번 출구</li>
+                    </ul>
+                </li>
+                <li class="meeting_list_each">
+                    <div class="meeting_cover">
+                        <a href=""><img src="img/valleyball.jpg" width="267" height="160" alt="밋팅커버"/></a>
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <ul class="meeting_info">
+                        <li class="saemo_point"><img src="img/saemopoint.png" width="20" height="20"/><span> 9000</span></li>
+                        <li class="crew_name">SEOUL VOLLEY</li>
+                        <li class="meeting_name"><span>동작구배 밸리볼</span> <img src="img/fighting.png" width="20" height="20"/></li>
+                        <li class="meeting_location">밸리볼 대결</li>
+                    </ul>
+                </li>
+                <li class="meeting_list_each">
+                    <div class="meeting_cover">
+                        <a href=""><img src="img/beach.jpg" width="267" height="160" alt="밋팅커버"/></a>
+                        <i class="fas fa-praying-hands"></i>
+                    </div>
+                    <ul class="meeting_info">
+                        <li class="saemo_point"><img src="img/saemopoint.png" width="20" height="20"/><span> 5000</span></li>
+                        <li class="crew_name">경기서핑크루</li>
+                        <li class="meeting_name"><span>안목해변 겨울서핑</span> <img src="img/get_together.png" width="20" height="20"/></li>
+                        <li class="meeting_location">안목해변</li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!--//meeting_content end-->
+    </div><!--//container end-->
+    <div id="footer"><!--//footer start-->
+        <div class="inner"><!--//inner start-->
+            <ul class="footer_container_help"><!--// footer_conatiner_left start-->
+                <li><a href="">이용약관</a></li>
+                <li><a href="">FAQ</a></li>
+                <li><a href="">회사소개</a></li>
+            </ul><!--// footer_conatiner_left end-->
+            <div class="footer_container_company_name clear_fix">
+                <span> &copy; 두괄</span>
+            </div><!--// footer_conatiner_start end-->
+            <dl>
+                <dt>
+                    <address class="footer_address">주소 : 서울특별시 관악구 봉천로 72-6 7층</address>
+                </dt>
+                <dt>
+                    <div class="footer_phone_num">전화번호 : 02-123-1234</div>
+                </dt>
+            </dl>
+        </div><!--//footer_container end-->
+    </div><!--//footer end-->
+<!--일부러 풋터밑에 팝업창 위치시킴 이렇게 하면 풋터 보더 탑이 팝업창 위로 가로지르지 않음. 또 위치 선정 쉬움.-->
+    <div class="pop_where_wrap">
+    <div class="pop_where_box"><!--pop_where_box start-->
+        <div class="pop_where_header_wrap"><!--pop_where_header_wrap start-->
+            <div class="pop_where_header_title">
+                <span class="filter_where">어디서</span>
+            </div>
+            <button name="close_btn" type="button" class="pop_close_button fas fa-times">
+            </button>
+        </div><!--//pop_where_header_wrap end-->
+        <div class="pop_where_container"><!--pop_where_container start-->
+
+        </div><!--//pop_where_container end-->
+    </div><!--//pop_where_box start-->
+    </div>
+
+<!-- 시도구군 템플릿 -->
+<script type="text/template" id="whereTmpl">
+    <ul class="korea_states">
+    <@ _.each(sidoList,function(sido) {@>
+        <li><a href=""><@=sido.name@></a></li>
+    <@}) @>
+    </ul>
+    <div class="states_specifics"><!--states_specifics start-->
+    <@ _.each(gugunList,function(guguns,idx) { @>
+        <ul class="specifics_list <@ if(idx==0){ @> on<@ } @>" >
+        <@ _.each(guguns,function(gugun) {@>
+            <li><a href=""><@=gugun.name@> <span><@=gugun.size@></span></a></li>
+       <@ })@>
+        </ul>
+    <@ })@>
+    </div>
+</script>
+
+
+<script src="js/jquery.js"></script>
+<script src="js/underscore-min.js"></script>
+<script>
+
+    // 언더스코어는 기본적으로 %을 사용하는데 %는  jsp에서 사용할 수 없기 때문에 % -> @ 로변경하는 코드가 필요함
+    _.templateSettings = {interpolate: /\<\@\=(.+?)\@\>/gim,evaluate: /\<\@([\s\S]+?)\@\>/gim,escape: /\<\@\-(.+?)\@\>/gim};
+
+    /*
+    이 페이지에 필요한 ajax는
+    1)  각 필터에 맞게 밋팅(밋팅 목록)
+    2) 각 필터에 맞게 크루(크루 목록)
+    3) 해당 필터에 맞는 어디서(시도구군 목록)
+    4) 각 필터에 맞는 테마(있는 테마 목록)
+
+    그 중 이 예제에서는 어디서만 구현하겠음
+
+    진행순서
+
+    1) ajax 폴더에 where.json 파일로 저장(sidogugun json을 이 페이지에 맞게 변경하여 저장)
+
+    - sidoCd와 code는 우리가 데이터베이스를 만들때는 no로 할 가능성이 높으니까 no로 변경(ctrl+r하면 한번에 변경이 가능)하고 각 구군에 몇 개의 크루가 있는지 개수가 나와야 하므로 size 속성 추가
+    - 그리고 각 sido전체가 필요해서 첫번째 객체에 전체 객체를 생성
+    - 편리함을 위해서 sidoList와 gugunList를 두개로 나눔
+    - ajax로 넘어오는 json은 객체 : 속성은 두개 sidoList, gugunList
+    - 각 sidoList와 gugunList는 배열
+
+    3) ajax 구현
+    - 우선 sidogugun 템플릿(id를 whereTmpl로 지정했음) 만들기
+    - 그리고 getWhereList 함수 만들기
+    - ajax 구현순으로 진행
+
+
+     */
+
+    // 어디에를 누르면 뜨는 where 팝업
+    const $popWhereContainer = $(".pop_where_container");
+    const whereTmpl = _.template($("#whereTmpl").html());
+
+    function getWhereList() {
+
+        $.ajax({
+            url:"ajax/where.json",
+            dataType:"json",
+            type:"get",
+            error:function() {
+                alert("해당 서비스 점검중입니다. 나중에 시도해주세요.");
+            },
+            success : function (json) {
+                $popWhereContainer.html(whereTmpl(json));
+            }
+        });
+
+    }//getWhereList end
+
+    //한 지역 누르면 세부 지역 뜨게 하기(변경된 점은 ajax로 만들어진 li에 이벤트리스너를 붙이기 위해서 on 인자 3개짜리 사용!!!!)
+    $popWhereContainer.on("click",".korea_states li",function (e) {
+        e.preventDefault();
+        const sequence = $(this).index();
+        $(".states_specifics>ul").removeClass("on");
+        $(".states_specifics>ul").eq(sequence).addClass("on");
+    });
+
+    //이 아래는 변경점 없음
+    // .korea_states li click이벤트 처리하는 코드는 삭제됨(위에 있음)
+
+    const $headerStatus = $('.header_status');
+    const $headerStatusDropbox = $('.header_status_dropbox');
+
+    $headerStatus.click(function (e) {
+        e.preventDefault();
+        $headerStatusDropbox.toggleClass("show");
+    });
+
+    let left = 0;
+    let idx = 0;
+
+    $(".next").click(function () {
+       const width = $(".theme_list").children().eq(idx++).width();
+
+        left -= (width+28);
+
+        $(".theme_list").css("left",left);
+        if(idx==5){
+            $(".next").hide();
+        }
+
+    });//.next click() end
+
+    $(".prev").click(function () {
+        const width = $(".theme_list").children().eq(--idx).width();
+        left += (width+28);
+         if(idx !== 5) {
+             $(".next").show();
+         }//if end
+        if(idx < 0){
+            left=0;
+            idx=0;
+        }
+
+         $(".theme_list").css("left",left);
+
+     });//.prev click() end
+
+    //정착된 크루탭 클릭하기
+    $(".meeting_tab").children().eq(1).click(function (e) {
+        const title = $(this).text();
+        e.preventDefault();
+        $(".search_specifics").children().eq(1).hide();
+        $(".meeting_title").text(title).css({
+            fontSize: 30+"px",
+            color: "#424242"
+        });
+        $(".theme_wrap").hide();
+    });
+
+    //미팅탭 누를 때 신청 가능한 밋팅으로 글씨 바뀌게 하기
+    $(".meeting_tab").children().eq(0).click(function (e) {
+
+        e.preventDefault();
+
+        $(".search_specifics").children().eq(1).show();
+        $(".meeting_title").text("신청 가능한 밋팅").css({
+            fontSize: 30+"px",
+            color: "#424242"
+        });
+        $(".theme_wrap").show();
+    });
+
+    $(".meeting_tab li").click(function (e) {
+        e.preventDefault();
+        $(".meeting_tab li").removeClass("on");
+        $(this).addClass("on");
+    });
+
+    //어디서 버튼 누르면 팝업창 뜰 수 있도록 함
+    $(".search_specifics .where").click(function (e) {
+        e.preventDefault();
+        getWhereList();
+        $(".pop_where_wrap").addClass("on");
+        $("html").addClass("on");
+
+    });
+
+    //엑스버튼 누르면 꺼지도록
+    $(".pop_close_button").click(function () {
+        $(".pop_where_wrap").removeClass("on");
+        //다시 눌렀을 때 빈 상태에서 다시 시작하게 하기 위함.
+        $(".states_specifics>ul").removeClass("on");
+        $("html").removeClass("on");
+    });
+</script>
+
+</body>
+</html>
