@@ -2,17 +2,11 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-<<<<<<< HEAD
     <title>언더스코어 템플릿</title>
 </head>
 <body>
-<ul id="lectureList">
-
 </ul>
-=======
     <title>언더스코어템플릿</title>
-</head>
-<body>
 <ul id="lectureList">
     <li class="lecture_card"><!-- 강의 카드-->
         <img src="img/coach1.jpg" width="300px" height="200px"/><!-- 강의 이미지-->
@@ -32,7 +26,7 @@
             <div class="bar lecture_sales_info"> <!-- 강의 판매 관련정보-->
                 <div class="card_bar bar lecture_price"><!-- 강의 가격-->
                     <div class="card_bar">
-                        <img src="../../../../../../Users/E/Downloads/frontend/img/energy.png" width="28"/> <!-- 에너지 이미지-->
+                        <img src="img/energy.png" width="28"/> <!-- 에너지 이미지-->
                     </div>
                     <div class="card_bar"> <!-- 강의 가격-->
                         32
@@ -45,14 +39,12 @@
     </li><!--강의 카드 end-->
 </ul>
 
->>>>>>> a38bcb2882bc0078a8f284565d0bee0fa9e66d39
 <script type="text/template" id="lectureTmpl">
     <li>크크크</li>
 </script>
 <button>더보기</button>
 <script src="js/jquery.js"></script>
 <script src="js/underscore-min.js"></script>
-<<<<<<< HEAD
 <script>
 
     const lectureTmpl = _.template($("#lectureTmpl").html());
@@ -62,25 +54,21 @@
     $("button").on("click",function () {
         $lectureList.append(lectureTmpl());
     });//button click end
-=======
 
-<script>
 
     //lectureTmpl은 함수이다.
-    const lectureTmpl = _.template($('#lectureTmpl').html());
+    // const lectureTmpl = _.template($('#lectureTmpl').html());
+    //
+    // const $lectureList = $('#lectureList');
+    //
+    // $('button').on("click",function () {
+    //     $lectureList.append(lectureTmpl());
+    //
+    // });//on과 bind가 같음
+    // // 이벤트 리스너 붙였다 떼기
+    // // on bind
+    // // off unbind
 
-    const $lectureList = $('#lectureList');
-
-    $('button').on("click",function () {
-        $lectureList.append(lectureTmpl());
-
-    });//on과 bind가 같음
-    // 이벤트 리스너 붙였다 떼기
-    // on bind
-    // off unbind
-
-    $lectureList.tml(lectureTmpl);
->>>>>>> a38bcb2882bc0078a8f284565d0bee0fa9e66d39
 
 
 </script>

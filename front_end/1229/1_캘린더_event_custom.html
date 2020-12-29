@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset='utf-8' />
+<link href='css/main.css' rel='stylesheet' />
+<style>
+
+  body {
+    font-family: "Noto Sans KR",sans-serif;
+  }
+
+  #calendar {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .test {
+    background-color: #FCE4EC;
+  }
+  .test::before {
+    content: "";
+    background-image: url(img/fighting.png);
+    display: block;
+    width:20px;
+    height:20px;
+    background-position: center;
+    background-size: 100% 100%;
+
+  }
+  .test2 {
+    background-color: #E1F5FE;
+  }
+  .test2::before {
+    content: "";
+    background-image: url(img/muscle.png);
+    display: block;
+    width:20px;
+    height:20px;
+    background-position: center;
+    background-size: 100% 100%;
+  }
+  .test3 {
+    background-color: #FFF8E1;
+  }
+  .test3::before {
+    content: "";
+    background-image: url(img/lecture.png);
+    display: block;
+    width:20px;
+    height:20px;
+    background-position: center;
+    background-size: 100% 100%;
+  }
+</style>
+</head>
+<body>
+<div id='calendar'></div>
+<script src="js/main.js"></script>
+<script src='js/locales-all.js'></script>
+<script src="js/jquery.js"></script>
+<script>
+
+  const events = [
+    {
+      title: '수업1',
+      start: '2020-12-03T13:00:00',
+      className:"test"
+    },
+    {
+      title: '수업2',
+      start: '2020-12-04T14:00:00',
+      className:"test"
+    },
+    {
+      title: '운동1',
+      start: '2020-12-04T15:00:00',
+      className:"test2"
+    },
+    {
+      title: '운동2',
+      start: '2020-12-05T16:00:00',
+      className:"test2"
+    },
+    {
+      title: '운동3',
+      start: '2020-12-06T17:00:00',
+      className:"test2"
+    },
+    {
+      title: '강의1',
+      start: '2020-12-07T17:00:00',
+      className:"test3"
+    },
+    {
+      title: '강의2',
+      start: '2020-12-07T12:00:00',
+      className:"test3"
+    },{
+      title: '운동4',
+      start: '2020-12-07T11:00:00',
+      className:"test2"
+    }
+  ];
+
+  const calendarEl = document.getElementById('calendar');
+
+  const calendar = new FullCalendar.Calendar(calendarEl, {
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right:''
+    },
+    initialDate: new Date(),
+    navLinks: true, // can click day/week names to navigate views
+    businessHours: true, // display business hours
+    editable: true,
+    selectable: true,
+    events:events,
+    locale:"ko",
+    dayMaxEventRows: true,
+    eventClick:function (info) {
+      //alert("test");
+      //console.log(info);
+
+      //info.el에 class가 test or test2가 있음
+      const $el = $(info.el);
+
+      if($el.hasClass("test")) {
+        alert("여기가 test임");
+      }else if($el.hasClass("test2")) {
+        alert("여기가 test2임");
+      }//if~else if end
+
+    },
+    dateClick:function (info) {
+
+      //날짜 클릭시 이벤트 추가
+
+      let title = prompt("이벤트 이름을 입력하세요");
+
+      const event =  {
+        title: title,
+        start: info.date,
+        className:"test"
+      };
+
+      calendar.addEvent(event);
+    }
+
+  });
+
+  calendar.render();
+</script>
+</body>
+</html>

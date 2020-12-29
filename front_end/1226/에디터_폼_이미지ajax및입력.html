@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>에디터 폼 설정</title>
+<link rel="stylesheet" href="css/quill.snow.css" />
+  <!-- 1) 필요한 웹폰트 지정 -->
+  <link rel="stylesheet" href="css/notosanskr.css" />
+<style>
+
+  body {
+    font-family: "Noto Sans KR",sans-serif;
+  }
+  #standalone-container {
+    margin:auto;
+    max-width: 1000px;
+  }
+  #editor-container {
+    /* 기본 폰트 설정 */
+    font-family: "Noto Sans KR",sans-serif;
+    font-size:20px;
+    height: 600px;
+  }
+
+</style>
+</head>
+<body>
+<h1>글쓰기</h1>
+<form id="writeForm" action="write.jbp" method="get">
+  <!-- 실제 서버로 넘어가는 파라미터는 이놈!! -->
+  <input type="hidden" id="contents" name="contents" />
+  <button>글쓰기</button>
+<div id="standalone-container">
+  <div id="toolbar-container">
+    <span class="ql-formats">
+      <select class="ql-size">
+        <option>20px</option>
+        <option>28px</option>
+        <option>36px</option>
+        <option>48px</option>
+      </select>
+    </span>
+    <span class="ql-formats">
+      <button class="ql-bold"></button>
+      <button class="ql-italic"></button>
+      <button class="ql-underline"></button>
+      <button class="ql-strike"></button>
+    </span>
+    <span class="ql-formats">
+      <select class="ql-color"></select>
+      <select class="ql-background"></select>
+    </span>
+    <span class="ql-formats">
+      <button class="ql-list" value="ordered"></button>
+      <button class="ql-list" value="bullet"></button>
+      <button class="ql-indent" value="-1"></button>
+      <button class="ql-indent" value="+1"></button>
+    </span>
+
+    <span class="ql-formats">
+      <button class="ql-link"></button>
+      <button class="ql-image"></button>
+    </span>
+  </div>
+  <div id="editor-container"></div>
+</div>
+</form>
+<script src="js/jquery.js"></script>
+<script src="js/quill.min.js"></script>
+<script>
+
+  $("#writeForm").on("submit",function (e) {
+
+    //e.preventDefault();
+   const contents = quill.getContents();
+
+    console.log(contents.ops[0].insert);
+
+    // 첫번째 값이 엔터면 아무것도 글자를 쓰지 않았음
+    if(contents.ops[0].insert=="\n") {
+      alert("글자를 입력해주세요!");
+      return false;
+    }else {
+
+      const contentString =JSON.stringify(contents);
+      //input type=hidden에 value로 세팅
+      $("#contents").val(contentString);
+      return true;
+    }
+
+  });//#writeForm submit() end
+
+  var quill = new Quill('#editor-container', {
+    modules: {
+      toolbar: {container:'#toolbar-container',
+        //이미지 선택시 파일 업로드를 위해서
+        handlers: {
+          'image': selectLocalImage
+        }
+      }
+    },
+    theme: 'snow'
+  });
+
+  function selectLocalImage() {
+
+    const input = $("<input type='file'>");
+    input.click();
+
+    input.on("change",function() {
+
+      const file = this.files[0];
+
+
+      if (/^image\//.test(file.type)) {
+
+        //alert("여기에 오면 파일이 있고 사진임");
+
+        //multipart/form-data에 필요함
+        const formData = new FormData();
+
+        formData.append("uploadImg", file, file.name);
+        formData.append("type", "B");//B는 board의 줄임말
+
+        //여기서 ajax로 파일 업로드 수행
+        $.ajax({
+          url:"ajax/uploadImage.json",
+          processData : false,//multipart/form-data
+          contentType : false,//multipart/form-data
+          data : formData,//multipart/form-data
+          type : 'POST',//multipart/form-data
+          dataType : "json",
+          error : function(xhr, error, code) {
+            alert("에러:" + code);
+          },
+          success:function(json) {
+            /*퀼만*/
+            const range = quill.getSelection();
+            console.log(range);
+
+            let idx = 0;
+            if(range!=null) {
+              idx = range.index;
+            }
+
+            /*퀼만*/
+            quill.insertEmbed(idx, 'image', json.url);
+            quill.insertText( quill.getSelection() + 1, ' ', Quill.sources.SILENT);
+
+          }
+        });
+
+
+     } else {
+        alert("이미지를 선택해주세요!");
+      }
+    })
+  }//selectLocalImage() end
+
+
+  var Size = Quill.import('attributors/style/size');
+  Size.whitelist = ['20px', '28px', '36px','48px'];
+  Quill.register(Size, true);
+
+</script>
+
+
+</body>
+</html>
